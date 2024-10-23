@@ -27,6 +27,7 @@
 .arrow {
   transition: transform 0.3s ease;
   font-size: 1.5rem;
+  margin-right: 11rem;
 }
 
 .arrowUp {
@@ -89,7 +90,13 @@
     color: #000336; /* Dark text for desktop */
     background-color: transparent;
     text-align: center; /* Center text inside link */
-    margin-right: 1rem; /* Space between nav link and quote button */
+  }
+
+  /* Arrow for dropdowns */
+  .arrow {
+    transition: transform 0.3s ease;
+    font-size: 1.5rem;
+    margin-right: 6rem;
   }
 
   /* Hover effect for large screens */
