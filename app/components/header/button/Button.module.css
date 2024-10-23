@@ -1,0 +1,35 @@
+.quoteButton {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: #000336;
+  color: #fff;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: medium;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  border: none;
+  text-align: center;
+  flex: 0 1 auto;
+  width: auto;
+  margin-top: 0;
+  margin-right: 1.3rem;
+}
+
+.quoteButton:hover {
+  background-color: #295d8c; 
+  cursor: pointer;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 1025px) {
+  .quoteButton {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .quoteButton {
+    display: none; /* Hide button on landscape */
+  }
+}

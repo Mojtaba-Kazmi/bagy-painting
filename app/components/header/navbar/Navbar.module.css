@@ -1,0 +1,63 @@
+/* General styles for the nav */
+.nav {
+  position: relative;
+}
+
+/* Menu list */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1px;
+  align-items: center;
+  justify-content: space-between; /* Space out items evenly */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Mobile menu hidden by default */
+@media (max-width: 1024px) {
+  .list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    background-color: #fff; /* Navy background for mobile menu */
+    transition: left 0.3s ease-in-out;
+    justify-content: flex-start;
+    margin-top: 6rem;
+    margin-left: 4rem;
+    border-radius: 8px;
+    min-width: 180px; /* Set minimum width for submenu */
+    max-height: 70vh; /* Use viewport height to allow more space in landscape */
+    overflow-y: auto; /* Allow scrolling vertically */
+    transition: all 0.3s ease-in-out;
+  }
+
+  .show {
+    left: 0;
+  }
+}
+
+/* Desktop full screen menu */
+@media (min-width: 1025px) {
+  .list {
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    height: auto;
+    background-color: transparent; /* Transparent background */
+  }
+}
+
+/* Navbar optimization for landscape */
+@media only screen and (max-height: 540px) and (orientation: landscape) {
+  .list {
+    max-height: 50vh; /* Reduce height in landscape to fit smaller screens */
+    gap: 5px;
+  }
+}
