@@ -1,0 +1,78 @@
+/* Logo styling */
+.section .logo {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactInfo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.contactDetails p a {
+  color: #000;
+  text-decoration: none;
+  
+}
+
+.contactNumber {
+  padding: 0.5rem 1rem;
+  background-color: #000336;
+  border: none;
+  font-size: 1.2rem;
+  color: #fff !important;
+  border-radius: 50px;
+  margin-bottom: 1rem;
+  
+}
+
+.contactNumber a {
+  color: #fff !important;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.legal a {
+ 
+  color: #000; /* Match header link color */
+  text-decoration: none;
+}
+
+.legal a:hover {
+  text-decoration: none;
+}
+
+/* Social media icons */
+.socials {
+  display: flex;
+  flex-direction: row; /* Stack icons horizontally */
+  align-items: flex-start; /* Align icons to the start */
+  margin-top: 1rem;
+}
+
+.socials a {
+  color: #000336; /* Match header link color */
+  margin-right: 1rem;
+  font-size: 1.5rem;
+}
+
+.socials a:hover {
+  color: #295d8c; /* Darker shade for hover effect */
+}
+
+/* Find Us link */
+.findUs {
+  margin-top: 1rem;
+  align-self: flex-start; /* Align to the start of the container */
+}
+
+.findUs a {
+  color: #000; /* Match header link color */
+  text-align: left; /* Align text to the left */
+  text-decoration: none;
+}
+
+.findUs a:hover {
+  text-decoration: none;
+}

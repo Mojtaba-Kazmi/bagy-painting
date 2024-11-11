@@ -1,0 +1,169 @@
+/* Menu item styling */
+.listItem {
+  position: relative;
+  width: 80%; /* Full width for mobile menu */
+  cursor: pointer;
+}
+
+.listItem a {
+  text-decoration: none; /* Removes underline from the link */
+  color: #000336;
+}
+
+.listItem:nth-child(1) {
+  --index: 0;
+}
+.listItem:nth-child(2) {
+  --index: 1;
+}
+.listItem:nth-child(3) {
+  --index: 2;
+}
+.listItem:nth-child(4) {
+  --index: 3;
+}
+.listItem:nth-child(5) {
+  --index: 4;
+}
+
+/* Add more as needed, or use a looping approach if using a preprocessor */
+.navLink {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #000336; /* White text on mobile menu */
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 100%;
+}
+
+/* Arrow for dropdowns */
+.arrow {
+  transition: transform 0.3s ease;
+  font-size: 1.5rem;
+  margin-right: 11rem;
+}
+
+.arrowUp {
+  transform: rotate(180deg);
+}
+
+/* Submenu styles */
+.submenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none; /* Hidden by default */
+  flex-direction: column;
+}
+
+.open .submenu {
+  display: flex; /* Show submenu when open */
+}
+
+.submenuItem {
+  padding-left: 40px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+.submenuLink {
+  text-decoration: none;
+  font-size: 16px;
+  color: #000336;
+  transition: color 0.2s ease;
+}
+
+.submenuLink:hover {
+  color: #fff;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* List Item Styles */
+.listItem {
+  opacity: 0; /* Start hidden */
+  animation: fadeInUp 0.5s ease forwards;
+  /* Stagger animation start time */
+  animation-delay: calc(0.2s * var(--index, 0));
+}
+
+/* Desktop full screen menu */
+@media (min-width: 1025px) {
+  .navLink {
+    font-weight: 600;
+    color: #000336; /* Dark text for desktop */
+    background-color: transparent;
+    text-align: center; /* Center text inside link */
+  }
+
+  /* Arrow for dropdowns */
+  .arrow {
+    transition: transform 0.3s ease;
+    font-size: 1.5rem;
+    margin-right: 6rem;
+  }
+
+  /* Hover effect for large screens */
+  .hasSubmenu:hover .submenu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff; /* White background for dropdown */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem;
+    margin: 0;
+    z-index: 20;
+    min-width: 150px;
+    border-radius: 8px;
+    font-weight: 400;
+    list-style: none;
+  }
+
+  .submenu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 50px 0;
+    width: 100%;
+  }
+
+  .submenuItem {
+    padding: 10px;
+  }
+
+  .submenuLink {
+    font-size: 16px;
+    color: #000336;
+  }
+
+  .submenuLink:hover {
+    color: #295d8c; /* Dark hover color */
+  }
+}
+
+/* Navbar optimization for landscape */
+@media only screen and (max-height: 540px) and (orientation: landscape) {
+  /* Arrow for dropdowns */
+  .arrow {
+    transition: transform 0.3s ease;
+    font-size: 1.5rem;
+    margin-right: 31rem;
+  }
+}

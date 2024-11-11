@@ -1,0 +1,22 @@
+{
+    "logo": {
+      "image": "/assets/logos/bagypainting-logo.svg",
+      "width": "200",
+      "height": "80",
+      "alt": "Bagy Painting"
+    },
+    "contact": {
+      "address": "Cork St, Salisbury Downs SA 5108, Australie",
+      "email": "info@bagypainting.com.au",
+      "number": "+61 422 000 876"
+    },
+    "links": {
+      "legal": "Legal Disclaimers",
+      "findUs": "Find Us"
+    },
+    "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=61559423281770",
+      "instagram": "https://www.instagram.com/bagypainting/",
+      "linkedin": "https://www.linkedin.com/company/bagy-painting/"
+    }
+  }

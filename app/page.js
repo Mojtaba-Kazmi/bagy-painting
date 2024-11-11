@@ -1,9 +1,31 @@
-import Header from "./components/header/Header";
+import { getAllMarkdownContent } from "@/lib/getAllMarkdownContent";
+import About from "../components/about/About";
+import HeroBanner from "../components/hero-banner/HeroBanner";
 
-export default function Home() {
+export default async function Home() {
+  const allMarkdownContent = await getAllMarkdownContent();
+  const homeAboutDescription =
+    allMarkdownContent["content/about"]?.["home-about"]?.content;
+
+  const homeAboutFetched = {
+    description: homeAboutDescription, // Set description from Markdown
+    awardText: "",
+    awardDescription:
+      "",
+    buttonText: "Contact Us",
+    buttonLink: "/services",
+    images: [
+      {
+        url: "/assets/images/about-home.webp",
+        alt: "Men Smiling holding paint roller",
+      },
+    ],
+  };
+
   return (
     <>
-      <Header />
+      <HeroBanner />
+      <About homeAboutInfo={homeAboutFetched} />
     </>
   );
 }

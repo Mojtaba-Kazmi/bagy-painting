@@ -1,0 +1,85 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.scrolled {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  transition: background-color 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding-top: 1rem; /* Add padding to ensure content fits well */
+}
+
+.hidden {
+  display: none; /* Hide the header when scrolling down */
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  background-color: transparent;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem; /* Ensure there's space below the navbar as well */
+}
+
+/* Full screen menu */
+.navbarMenu {
+  position: fixed;
+  top: -100vh;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000c6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: top 1s ease;
+  z-index: 1000;
+}
+
+.navbarMenu.active {
+  top: 0;
+}
+
+.navbarMenu.exit {
+  top: -100vh;
+}
+
+/* Move Media Query for Larger Screens to the End */
+@media (min-width: 1025px) {
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1200px; /* or 1400px depending on your preference */
+  }
+
+  .navbarMenu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    background-color: transparent;
+    position: static;
+    top: auto;
+    left: auto;
+    width: auto;
+    height: auto;
+    border: none;
+  }
+
+}
+

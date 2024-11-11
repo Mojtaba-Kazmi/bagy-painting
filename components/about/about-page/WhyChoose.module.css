@@ -1,0 +1,186 @@
+/* -------------------------------------------- */
+/* About Company Section (aboutCompanyData) Styles - Mobile First */
+/* -------------------------------------------- */
+
+.aboutCompanySection {
+  padding: 2rem; /* Mobile default padding */
+  background-color: #fff;
+  margin: 0.8rem;
+  border-radius: 8px;
+}
+
+.aboutContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%; /* Full width on mobile */
+  margin: 0 auto;
+  gap: 1rem;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 1.75rem; /* Slightly smaller for mobile */
+  font-weight: bold;
+  color: #252b46;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+/* Remove list bullets */
+.advantagesList {
+  display: flex;
+  flex-direction: column; /* Stacked on mobile */
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.advantageItem {
+  position: relative;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: 100%; /* Full width on mobile */
+  max-width: 320px; /* Max width to avoid too-wide cards on larger mobiles */
+}
+
+.advantageItem:hover {
+  transform: translateY(-8px); /* Subtle hover effect */
+}
+
+.advantageItemIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #0d7ec0;
+}
+
+.advantageItemTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+  color: #252b46;
+}
+
+.advantageItemDescription {
+  font-size: 0.95rem;
+  color: #6c728a;
+}
+
+.indexNumber {
+  font-weight: bold;
+  color: #f0037b;
+  margin-right: 0.5rem;
+}
+
+/* -------------------------------------------- */
+/* Responsive Adjustments for Tablet (Small Tablets, e.g., iPad Mini, iPad) */
+/* -------------------------------------------- */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .aboutCompanySection {
+    padding: 4rem; /* Increased padding for tablets */
+  }
+
+  .advantagesList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .advantageItem {
+    flex: 1 1 45%; /* Each item will take up 45% of the container on tablet */
+    max-width: 320px;
+  }
+
+  .sectionTitle {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .advantageItem:hover {
+    transform: translateY(-10px);
+  }
+}
+
+/* -------------------------------------------- */
+/* Desktop and Larger Tablet Screens - Restore Original Layout */
+/* -------------------------------------------- */
+@media (min-width: 1025px) {
+  @media (min-width: 1025px) {
+    .aboutCompanySection {
+      padding: 6rem;
+      background-color: #fff;
+      margin: 0.8rem; /* Simplified padding */
+      border-radius: 8px; /* Rounded corners */
+    }
+
+    .aboutContainer {
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .advantagesList {
+      display: flex;
+      flex-direction: row; /* Change to row for horizontal layout */
+      flex-wrap: wrap; /* Allow items to wrap */
+
+      gap: 1rem;
+      padding: 0;
+      list-style: none; /* Removes the bullet point */
+    }
+
+    .advantageItem {
+      position: relative;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      flex: 0 1 calc(33.33% - 1.33rem); /* Adjust to 33.33% for 3 items per row with gap */
+      max-width: 385px; /* Ensures a maximum width for each item */
+    }
+
+    .advantageItem:hover {
+      transform: translateY(-10px);
+    }
+
+    .advantageItemIcon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #0d7ec0;
+    }
+
+    .advantageItemTitle {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #252b46;
+    }
+
+    .advantageItemDescription {
+      font-size: 1rem;
+      color: #6c728a;
+    }
+
+    .sectionTitle {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #252b46;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .indexNumber {
+      font-weight: bold;
+      color: #f0037b; /* Custom color for the index number */
+      margin-right: 0.5rem;
+    }
+  }
+}

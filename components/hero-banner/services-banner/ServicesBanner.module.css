@@ -1,0 +1,155 @@
+/* Main container for the Services section */
+.serviceContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Wrapper to align service items in a row */
+.serviceItemsWrapper {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Each service item (circle image and text underneath) */
+.serviceItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #000336;
+  text-align: center;
+}
+
+.serviceItem img {
+  width: 60%;
+  height: auto;
+  object-fit: contain;
+}
+
+.serviceItem p {
+  font-size: 0.9rem;
+  margin: 0;
+  padding-top: 0.5rem;
+  color: #000; /* Ensures text visibility */
+}
+
+/* Styling for the button */
+.buttonContainer {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.btnGetQuote {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background-color: #161E32; /* Darker blue for higher contrast */
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1em;
+  border-radius: 50px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.btnGetQuote:focus, .btnGetQuote:active {
+  outline: 3px solid #ffffff; /* Or any color with good contrast */
+  background-color: #161E32;
+}
+
+.btnGetQuote:hover {
+  background-color: #161E32; /* Hover color with sufficient contrast */
+}
+
+/* Responsive Adjustments */
+
+/* Small tablets and large mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .serviceItemsWrapper {
+    gap: 1rem; /* Reduce gap between items */
+  }
+
+  .serviceItem {
+    width: 100px;
+    height: 100px;
+  }
+
+  .serviceItem p {
+    font-size: 0.8rem; /* Adjust font size to fit better */
+  }
+
+  .btnGetQuote {
+    font-size: 0.9em;
+    padding: 0.4rem 1.2rem;
+  }
+}
+
+/* Small mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .serviceContainer {
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+
+  .serviceItem {
+    width: 80px;
+    height: 80px;
+  }
+
+  .serviceItem img {
+    width: 50%; /* Adjust image size within circle */
+    height: auto;
+    object-fit: contain; /* Prevents image from being cropped */
+  }
+
+  .serviceItem p {
+    font-size: 0.75rem; /* Further reduce text size */
+  }
+
+  .btnGetQuote {
+    font-size: 0.85em;
+    padding: 0.6rem 1rem;
+  }
+}
+
+/* Larger tablets and small desktops (768px and above) */
+@media (min-width: 769px) {
+  .serviceItem {
+    width: 120px;
+    height: 120px;
+  }
+
+  .serviceItem p {
+    font-size: 0.9rem;
+  }
+
+  .btnGetQuote {
+    font-size: 1em;
+  }
+}
+
+/* Desktops and large screens (1024px and above) */
+@media (min-width: 1024px) {
+  .serviceItem {
+    width: 140px;
+    height: 140px;
+  }
+
+  .serviceItem p {
+    font-size: 1rem;
+  }
+
+  .btnGetQuote {
+    font-size: 1.1em;
+    padding: 0.6rem 1.6rem;
+  }
+}

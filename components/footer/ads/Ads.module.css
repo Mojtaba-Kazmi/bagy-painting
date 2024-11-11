@@ -1,0 +1,101 @@
+.ads {
+  position: relative;
+  width: 250px;
+  height: 450px; /* Accommodates the text, image, and button */
+  overflow: hidden;
+  
+}
+
+.ads p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000336;
+}
+
+.ads h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000336;
+}
+
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Start as invisible */
+  transform: scale(0.8); /* Start slightly smaller */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth opacity and scaling transitions */
+  animation: rotateAds 8s infinite; /* Total animation duration */
+}
+
+.card:nth-child(1) {
+  animation-delay: 0s; /* Starts immediately */
+}
+
+.card:nth-child(2) {
+  animation-delay: 4s; /* Starts after 4 seconds */
+}
+
+@keyframes rotateAds {
+  0%, 49% {
+    opacity: 1; /* Ad stays visible */
+    transform: scale(1); /* Fully scaled */
+  }
+  50% {
+    opacity: 0; /* Start fading out */
+    transform: scale(0.9); /* Scale down a bit */
+  }
+  100% {
+    opacity: 0; /* Remains invisible */
+    transform: scale(0.9); /* Keep scaled down */
+  }
+}
+
+/* Styling for the card content */
+.card h3 {
+  margin: 0;
+  text-align: left;
+}
+
+.card .image-container {
+  display: flex;
+  justify-content: center; /* Center the spinner when loading */
+  align-items: center; /* Center vertically */
+  height: 250px; /* Fixed height for the image area */
+  margin: 1.2rem 0;
+  position: relative; /* Allows positioning of the loader */
+}
+
+.ctaButton {
+  display: block;
+  margin: 1rem 0;
+  padding: 0.5rem 1.5rem;
+  background-color: #000336;
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.error {
+  color: red; /* Change to whatever color you want */
+  text-align: center; /* Center the error message */
+  margin-top: 10px; /* Space between the image and the error message */
+  font-size: 14px; /* Adjust the size for readability */
+}
+
+.adImage {
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  object-fit: cover; /* Maintain aspect ratio while covering */
+  display: block; /* Removes extra space below the image */
+}
+
+/* CSS class to hide the loader when not loading */
+.loader--hidden {
+  opacity: 0;
+  visibility: hidden;
+}

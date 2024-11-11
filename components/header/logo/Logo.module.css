@@ -1,0 +1,42 @@
+.logo {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+.logoWrapper {
+  /* Add any additional styles needed for the wrapper */
+  display: flex; /* Ensures contents are flexed */
+  justify-content: flex-start; /* Centers the image inside the wrapper */
+  width: 100%; /* Full width */
+}
+
+.logoImage {
+  width: 70%;
+  height: auto;
+  color: inherit;
+}
+
+.scrolled .logoImage {
+  width: 250px;
+  height: auto;
+}
+
+@media (min-width: 1025px) {
+  .logo {
+    flex: 0 1 auto;
+    margin: 0;
+  }
+  .logoImage {
+    width: 300px;
+    height: auto;
+  }
+}
+
+/* Logo optimization for landscape mode */
+@media only screen and (max-height: 540px) and (orientation: landscape) {
+  .logoImage {
+    width: 45%; /* Slightly smaller logo */
+  }
+}
