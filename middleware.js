@@ -7,16 +7,16 @@ export function middleware(request) {
     default-src 'self';
     script-src 'self' 'nonce-${nonce}' 'strict-dynamic' 'unsafe-eval' https: http:;
     style-src 'self' 'nonce-${nonce}';
-    img-src 'self' blob: data: https://placehold.co;
+    img-src 'self' blob: data: https://placehold.co https://www.bagypainting.com.au;
     font-src 'self' https://fonts.gstatic.com;
-    connect-src 'self' https://www.google-analytics.com https://analytics.vercel.com;
+    connect-src 'self' https://www.bagypainting.com.au https://www.google-analytics.com https://analytics.vercel.com;
     object-src 'none';
     base-uri 'self';
     form-action 'self';
     frame-ancestors 'none';
     block-all-mixed-content;
     upgrade-insecure-requests;
-    frame-src 'self' 'nonce-${nonce}' https://www.google.com https://www.gstatic.com  https://www.visualizecolor.com;
+    frame-src 'self' 'nonce-${nonce}' https://www.google.com https://www.gstatic.com  https://www.visualizecolor.com https://www.bagypainting.com.au;
   `;
   // Replace newline characters and spaces
   const contentSecurityPolicyHeaderValue = cspHeader
