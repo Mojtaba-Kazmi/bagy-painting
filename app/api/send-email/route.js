@@ -33,7 +33,7 @@ export async function POST(request) {
       port: 465, // Use 465 for SSL
       secure: true, // true for SSL
       auth: {
-        user: "admin@bagypainting.com.au", // Your email address on the SiteGround server
+        user: "info@bagypainting.com.au", // Your email address on the SiteGround server
         pass: process.env.EMAIL_PASSWORD, // Your email account password (use an environment variable for security)
       },
     });

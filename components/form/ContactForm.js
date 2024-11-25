@@ -38,7 +38,7 @@ const ContactForm = () => {
             {message?.type === "error" && (
               <span className={styles.errorText}>
                 {recaptchaToken
-                  ? "Please verify CAPTCHA"
+                  ? "Sorry, we couldn't send your email due to a technical issue. Please try again later or contact us directly"
                   : "Please complete CAPTCHA"}
               </span>
             )}
