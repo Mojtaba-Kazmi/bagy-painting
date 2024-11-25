@@ -42,7 +42,7 @@ const useContactForm = () => {
 
     try {
       // Make sure to send fullName and services
-      const res = await axios.post("/api/send-email", {
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/send-email`, {
         fullName: data.fullName,  // Ensure fullName is sent
         email: data.email,
         contactNumber: data.contactNumber,
