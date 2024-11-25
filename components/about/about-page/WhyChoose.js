@@ -1,35 +1,33 @@
 import styles from "./WhyChoose.module.css";
-
 import {
-  FaPalette,
   FaHandshake,
   FaCoins,
   FaAward,
   FaTools,
   FaLeaf,
-  FaTruck,
+  FaClock,
 } from "react-icons/fa";
 
-const WhyChoose = ({ aboutCompanyData }) => (
-  <section className={styles.aboutCompanySection}>
+const WhyChoose = ({ whyChooseData }) => (
+  <section className={styles.whyChooseSection}>
     <div className={styles.aboutContainer}>
-      <h3 className={styles.sectionTitle}>Why Choose Us</h3>
-      <p className={styles.companyInfo}>{aboutCompanyData.companyInfo}</p>
+      <h2 className={styles.sectionTitle}>Why Clients Trust Us</h2>
+      <p className={styles.companyInfo}>{whyChooseData.companyInfo}</p>
       <ul className={styles.advantagesList}>
-        {aboutCompanyData.reasons.map((reason, index) => (
+        {whyChooseData.reasons.map((reason, index) => (
           <li key={index} className={styles.advantageItem}>
             <div className={styles.advantageItemIcon}>
               {index === 0 && <FaAward />}
               {index === 1 && <FaTools />}
               {index === 2 && <FaLeaf />}
-              {index === 3 && <FaTruck />}
+              {index === 3 && <FaClock />}
               {index === 4 && <FaHandshake />}
               {index === 5 && <FaCoins />}
             </div>
-            <h4 className={styles.advantageItemTitle}>
+            <h3 className={styles.advantageItemTitle}>
               <span className={styles.indexNumber}>{`0${index + 1}.`}</span>{" "}
               {reason.title}
-            </h4>
+            </h3>
             <p className={styles.advantageItemDescription}>
               {reason.description}
             </p>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { servicesBanner } from "@/content/hero-banner/services-banner";
+import { servicesBanner } from "@/content/data/hero-banner/services-banner";
 import styles from "./ServicesBanner.module.css";
 
 const ServicesBanner = () => {

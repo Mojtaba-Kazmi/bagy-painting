@@ -1,0 +1,123 @@
+/* styles/Testimonials.module.css */
+
+.container {
+  padding: 0 0.5rem 0; /* Simplified padding */
+  background-color: #f5f4f6;
+}
+
+.wrapper {
+  padding: 0.5rem; /* Simplified padding */
+  background-color: #fff;
+  border-radius: 8px; /* Rounded corners */
+}
+
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heading {
+  display: flex;
+  justify-content: center; /* Use justify-content for horizontal centering */
+  align-items: center; /* This centers the items vertically */
+  text-align: center; /* Ensures text within child elements is centered */
+  color: #081333;
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  
+}
+
+.testimonialCard {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.testimonialHeader {
+  margin-bottom: 1.5rem;
+}
+
+.testimonialHeader p {
+  color: #081333;
+}
+
+.companyName {
+  font-size: 1.2rem;
+  color: #6b70f2;
+  font-weight: bold;
+}
+
+.testimonialText {
+  font-size: 1.2rem;
+  color: #6c728a;
+  margin-bottom: 1rem;
+}
+
+.clientInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clientImage {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.clientName {
+  font-size: 1.1rem;
+  color: #081333;
+  font-weight: bold;
+}
+
+.clientPosition {
+  font-size: 0.9rem;
+  color: #6c728a;
+}
+
+/* Testimonials.module.css */
+.starRating {
+  font-size: 1.5rem; /* Adjust the size of the stars */
+  color: #ffd700 !important; /* Gold color for filled stars */
+}
+/* Responsive */
+@media (min-width: 1200px) {
+  .wrapper {
+    padding: 6rem; /* Simplified padding */
+    background-color: #fff;
+    border-radius: 8px; /* Rounded corners */
+  }
+}
+
+@media (max-width: 653px) {
+  .testimonialsGrid {
+    grid-template-columns: 1fr; /* Stack cards vertically */
+    gap: 1rem;
+  }
+  
+  .testimonialCard {
+    padding: 1rem; /* Reduced padding on smaller screens */
+  }
+
+  .companyName {
+    font-size: 1rem; /* Adjusted font size */
+  }
+
+  .testimonialText {
+    font-size: 1rem; /* Adjusted font size */
+  }
+
+  .clientName {
+    font-size: 1rem; /* Adjusted font size */
+  }
+}
+

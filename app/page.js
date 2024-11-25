@@ -1,31 +1,31 @@
-import { getAllMarkdownContent } from "@/lib/getAllMarkdownContent";
-import About from "../components/about/About";
-import HeroBanner from "../components/hero-banner/HeroBanner";
+import About from "@/components/about/About";
+import BlogPosts from "@/components/blog/BlogPosts";
+import ContactForm from "@/components/form/ContactForm";
+import HeroBanner from "@/components/hero-banner/HeroBanner";
+import Services from "@/components/services/Services";
+import Testimonials from "@/components/testimonials/Testimonials";
+import { getHomePageSchema } from "@/metadata/schemas/getHomePageSchema";
+import { getHomePageData } from "@/utils/getHomePageData";
 
 export default async function Home() {
-  const allMarkdownContent = await getAllMarkdownContent();
-  const homeAboutDescription =
-    allMarkdownContent["content/about"]?.["home-about"]?.content;
+  const { homeAboutData, latestServices, latestBlogPosts } =
+    await getHomePageData();
 
-  const homeAboutFetched = {
-    description: homeAboutDescription, // Set description from Markdown
-    awardText: "",
-    awardDescription:
-      "",
-    buttonText: "Contact Us",
-    buttonLink: "/services",
-    images: [
-      {
-        url: "/assets/images/about-home.webp",
-        alt: "Men Smiling holding paint roller",
-      },
-    ],
-  };
+  const servicesSchema = getHomePageSchema();
 
   return (
     <>
+      {/* Inject JSON-LD Schemas */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
+      />
       <HeroBanner />
-      <About homeAboutInfo={homeAboutFetched} />
+      <About homeAboutInfo={homeAboutData} />
+      <Services latestServices={latestServices} />
+      <Testimonials />
+      <BlogPosts latestPosts={latestBlogPosts} />
+      <ContactForm />
     </>
   );
 }

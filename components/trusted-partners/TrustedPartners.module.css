@@ -3,8 +3,8 @@
 }
 
 .wrapper {
-  border-top: 2px solid #f6f4f4;
-  border-bottom: 2px solid #f6f4f4;
+  border-top: 1px solid #f6f4f4;
+  border-bottom: 1px solid #f6f4f4;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -17,7 +17,7 @@
 .heading {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #000;
+  color: #081333;
   margin-bottom: 1rem;
   text-align: center;
 }

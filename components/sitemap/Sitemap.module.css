@@ -1,0 +1,51 @@
+.sitemap {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  color: #081333;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+  margin: 0.2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.sitemapList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sitemapList li {
+  margin-bottom: 1rem;
+}
+
+.sitemapList a {
+  text-decoration: none;
+  color: #081333;
+  font-size: 1.1rem;
+}
+
+.sitemapList a:hover {
+  color: #265e87;
+}
+
+.subMenu {
+  margin-top: 1rem;
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.subMenu li {
+  margin-bottom: 0.5rem;
+}
+
+.subMenu a {
+  font-size: 1rem;
+  color: #081333;
+}
+
+.subMenu a:hover {
+  color: #265e87;
+}

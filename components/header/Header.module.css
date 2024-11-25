@@ -27,8 +27,8 @@
   align-items: center;
   width: 100%;
   background-color: transparent;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem; /* Ensure there's space below the navbar as well */
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 /* Full screen menu */

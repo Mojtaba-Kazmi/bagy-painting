@@ -1,0 +1,196 @@
+/* Main page layout */
+.servicesPage {
+  display: flex;
+  flex-direction: column; /* Default to column for mobile */
+  margin-top: 100px; /* Added margin to push the header down */
+  background-color: white; /* Set background color to white */
+  border-radius: 8px;
+  margin-left: 0.8rem;
+  margin-right: 0.8rem;
+}
+
+/* Wrapper to center content */
+.wrapper {
+  display: flex;
+  flex-direction: column; /* Default to column for mobile */
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Sidebar styles */
+.sidebar {
+  order: 2; /* Sidebar at the bottom by default */
+  width: 100%; /* Full width on mobile */
+  margin-top: 1rem; /* Add some space from main content */
+}
+
+.sidebar a {
+  text-decoration: none; /* Remove underline from links */
+  color: #081333; /* Ensure link color is defined */
+}
+
+/* Service list styling */
+.servicesList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+}
+
+/* Service list link styles */
+.servicesList ul li p {
+  margin: 0 0 5px 0;
+  color: #081333;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  display: block;
+  border-radius: 8px;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease; /* Added transition for hover effect */
+  background-color: rgb(245, 244, 246);
+}
+
+.servicesList ul li p:hover,
+.servicesList ul li p.active {
+  background-color: rgb(8, 19, 51);
+  color: #fff;
+  transform: scale(1.05); /* Zoom effect on hover */
+}
+
+/* Contact section styling */
+.contactSection {
+  margin-top: 10px;
+  padding: 20px;
+  background-color: #265e87;
+  text-align: center;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.contactSection h2 {
+  margin-bottom: 10px;
+}
+
+.contactSection button {
+  background-color: #081333;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.contactSection button:hover {
+  background-color: #265e87;
+}
+
+/* Main content styles */
+.mainContent {
+  order: 1; /* Main content displayed first by default */
+  width: 100%; /* Full width on mobile */
+}
+
+/* Service details styling */
+.serviceDetail {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.serviceHeader h1 {
+  text-align: left;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.serviceTitle {
+  font-size: 28px; /* Smaller font size on mobile */
+  font-weight: bold;
+  color: #081333;
+  margin-bottom: 10px;
+}
+
+.serviceMeta {
+  font-size: 14px;
+  color: #081333;
+}
+
+/* Image styles */
+.imageContainer {
+  text-align: left;
+}
+
+.thumbnail {
+  border-radius: 8px;
+  width: 100%; /* Ensure the image takes the full width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Cover to fill the container */
+}
+
+/* Service content styles */
+.serviceContent {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.serviceContent ul {
+  font-size: 17px;
+  line-height: 1.8;
+  list-style-type: none;
+  padding-left: 10px; /* Reduce overall left spacing */
+}
+
+.serviceContent h2 {
+  font-size: 1.5rem;
+}
+
+/* Responsive design for larger screens */
+@media (min-width: 769px) {
+  .servicesPage {
+    flex-direction: row; /* Change to row for larger screens */
+    padding: 6rem; /* 6rem for larger screens */
+  }
+
+  .sidebar {
+    order: 1; /* Sidebar on the left for larger screens */
+    width: 25%; /* Sidebar takes up 25% on larger screens */
+    border-right: solid 1px #f5f4f6;
+    padding: 0rem 0.5rem;
+    margin-top: 3.5rem;
+  }
+
+  .mainContent {
+    order: 2; /* Main content displayed second */
+    width: 75%; /* Main content takes up 75% on larger screens */
+  }
+
+  .wrapper {
+    flex-direction: row; /* Change to row for larger screens */
+    text-align: left;
+  }
+
+  .serviceHeader h1 {
+    text-align: left;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+  }
+
+  .contactSection {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f5f4f6;
+    color: #081333;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  /* Image styles */
+  .imageContainer {
+    text-align: left;
+    margin: 20px 0;
+    width: 300px;
+  }
+}

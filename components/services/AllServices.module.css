@@ -1,0 +1,190 @@
+/* ServicesList.module.css */
+
+/* Container for the services grid */
+.servicesGrid {
+  display: flex;
+  justify-content: center;
+  flex-direction: column; /* Default to column for mobile and tablet */
+  gap: 20px;
+  padding: 6rem; /* Padding for mobile */
+  background-color: #ffffff; /* Full-width background color */
+  margin: 0.2rem 0.2rem 0 0.2rem;
+  border-radius: 8px;
+}
+
+/* Individual service article styling */
+.article {
+  background-color: #ffffff;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center; /* Center content */
+  align-items: center; /* Center content horizontally */
+  padding: 30px; /* Added padding for content */
+  width: 100%; /* Full width for smaller screens */
+  max-width: 18rem; /* Set a max width for each card */
+}
+
+/* Hover effect for the service card */
+.article:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Service header image */
+.article header img {
+  width: 100%;
+  height: 220px; /* Adjusted height for larger displays */
+  object-fit: cover;
+}
+
+/* Service title */
+.article h2 {
+  color: #081333;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Service link styling */
+.article h2 a {
+  color: inherit;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.article h2 a:hover {
+  color: #265e87; /* Accent color on hover */
+  text-decoration: none;
+}
+
+/* Metadata (published date, provider) */
+.article p {
+  margin: 0;
+  font-size: 1.2rem; /* Responsive font size */
+  color: #5f6b7a;
+  line-height: 1.5; /* Improved line height */
+}
+
+/* Date styling */
+.article time {
+  color: #999;
+  font-size: 0.8rem; /* Responsive font size */
+  margin-left: 5px;
+}
+
+/* Learn more link */
+.article a {
+  margin-top: 15px; /* Slightly reduced margins */
+  font-size: 0.875rem; /* Responsive font size */
+  font-weight: 600;
+  color: #081333;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.article a:hover {
+  color: #265e87;
+}
+
+.serviceTitle {
+  text-decoration: none;
+}
+
+.continueReading {
+  margin-top: 15px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #081333;
+  text-transform: uppercase;
+  display: inline-block;
+  text-decoration: none; /* Ensure no underline initially */
+  transition: color 0.3s ease;
+}
+
+.continueReading:hover {
+  color: #265e87;
+  text-decoration: none; /* Add underline on hover */
+}
+
+/* Pagination styling */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 4rem;
+}
+
+/* Pagination button */
+.pagination button {
+  background-color: #081333;
+  color: white;
+  font-size: 0.875rem; /* Responsive font size */
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #265e87;
+}
+
+/* Disabled pagination button */
+.pagination button[disabled] {
+  background-color: #f5f4f6;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+
+/* On smaller screens (up to 768px), maintain vertical layout */
+@media (max-width: 768px) {
+  .servicesGrid {
+    padding: 2rem; /* Padding for mobile */
+  }
+
+  .article header img {
+    height: auto; /* Remove fixed height */
+    max-height: 180px; /* Optional: Set a max height */
+    object-fit: contain; /* Ensure the full image is visible */
+  }
+
+  .article h2 {
+    font-size: 1.25rem; /* Smaller title size for mobile */
+  }
+
+  .article p {
+    font-size: 0.8rem; /* Smaller metadata size for mobile */
+  }
+
+  .article a {
+    font-size: 0.8rem; /* Smaller link size for mobile */
+  }
+}
+
+/* On tablets (up to 1024px), maintain vertical layout */
+@media (max-width: 1024px) {
+  .servicesGrid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Default to column for mobile and tablet */
+    padding: 2rem; /* Padding for mobile */
+    background-color: #ffffff; /* Full-width background color */
+  }
+}
+
+/* For larger screens, switch to horizontal layout */
+@media (min-width: 1025px) {
+  .servicesGrid {
+    flex-direction: row; /* Switch to row layout */
+    flex-wrap: wrap; /* Allow wrapping */
+  }
+}

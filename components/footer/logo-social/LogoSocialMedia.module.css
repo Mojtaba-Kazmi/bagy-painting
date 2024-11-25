@@ -4,6 +4,10 @@
   flex-direction: column;
 }
 
+.logo img {
+  margin: 0 auto;
+}
+
 .contactInfo {
   font-size: 1.5rem;
   font-weight: bold;
@@ -13,7 +17,6 @@
 .contactDetails p a {
   color: #000;
   text-decoration: none;
-  
 }
 
 .contactNumber {
@@ -24,7 +27,6 @@
   color: #fff !important;
   border-radius: 50px;
   margin-bottom: 1rem;
-  
 }
 
 .contactNumber a {
@@ -34,7 +36,6 @@
 }
 
 .legal a {
- 
   color: #000; /* Match header link color */
   text-decoration: none;
 }
@@ -43,17 +44,16 @@
   text-decoration: none;
 }
 
-/* Social media icons */
 .socials {
   display: flex;
-  flex-direction: row; /* Stack icons horizontally */
-  align-items: flex-start; /* Align icons to the start */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Ensure icons are aligned vertically */
+  gap: 1rem; /* Adjust spacing between icons */
   margin-top: 1rem;
 }
 
 .socials a {
-  color: #000336; /* Match header link color */
-  margin-right: 1rem;
+  color: #000336;
   font-size: 1.5rem;
 }
 
@@ -75,4 +75,28 @@
 
 .findUs a:hover {
   text-decoration: none;
+}
+
+/* Large screen desktops (1025px and up) */
+@media (min-width: 1025px) {
+  .logo img {
+    margin: 0;
+  }
+
+  .socials {
+    display: flex;
+    justify-content: left; /* Center horizontally */
+    align-items:flex-start; /* Ensure icons are aligned vertically */
+    gap: 1rem; /* Adjust spacing between icons */
+    margin-top: 1rem;
+  }
+  
+  .socials a {
+    color: #000336;
+    font-size: 1.5rem;
+  }
+}
+
+.legal {
+  cursor: pointer;
 }

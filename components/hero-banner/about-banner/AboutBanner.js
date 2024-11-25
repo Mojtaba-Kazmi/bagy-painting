@@ -1,5 +1,5 @@
 import styles from "./AboutBanner.module.css";
-import { aboutBanner } from "@/content/hero-banner/about-banner";
+import { aboutBanner } from "@/content/data/hero-banner/about-banner";
 
 const AboutBanner = () => {
   return (

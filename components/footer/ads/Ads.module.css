@@ -3,7 +3,6 @@
   width: 250px;
   height: 450px; /* Accommodates the text, image, and button */
   overflow: hidden;
-  
 }
 
 .ads p {
@@ -67,17 +66,17 @@
 }
 
 .ctaButton {
-  display: block;
-  margin: 1rem 0;
+
+  margin: 1rem auto;
   padding: 0.5rem 1.5rem;
   background-color: #000336;
   color: #fff;
-  border-radius: 5px;
+  border-radius: 50px;
   text-align: center;
-  text-decoration: none;
   font-weight: bold;
   border: none;
   cursor: pointer;
+  
 }
 
 .error {
@@ -94,8 +93,10 @@
   display: block; /* Removes extra space below the image */
 }
 
-/* CSS class to hide the loader when not loading */
-.loader--hidden {
-  opacity: 0;
-  visibility: hidden;
+
+/* Large screen desktops (1025px and up) */
+@media (min-width: 1025px) {
+  .ctaButton {
+    margin: 1rem 0;
+  }
 }

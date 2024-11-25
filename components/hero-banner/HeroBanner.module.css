@@ -1,17 +1,26 @@
+/* Hero Banner Wrapper */
 .heroBannerWrapper {
   display: flex;
   justify-content: center;
-  margin: 0 0.5rem 0 0.5rem; 
-  background-color: #fff;
+  margin: 0 0.2rem 0 0.2rem;
+  background: #fff;
   border-radius: 0 0 8px 8px;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Hero Banner Main Section */
 .heroBanner {
   display: flex;
   flex-direction: column;
   max-width: 1200px;
   gap: 3rem;
   align-items: center;
-  padding: 3rem 0;
+  padding: 5rem 0;
   width: 100%;
+  position: relative;
+  z-index: 1; /* Ensure content is above the particles */
 }
+
+
+

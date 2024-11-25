@@ -1,15 +1,15 @@
 /* Default: Mobile and tablet styles */
-.angelicaSection {
+.businessSection {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #fff;
   padding: 2rem; /* Mobile and tablet padding */
   border-radius: 8px;
-  margin: 0.8rem;
+  margin: 0.2rem;
 }
 
-.angelicaContainer {
+.businessContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,42 +17,43 @@
   width: 100%;
 }
 
-.angelicaText {
+.businessText {
   width: 100%;
   text-align: center;
 }
 
-.angelicaTitle {
-  font-size: 1.5rem;
+.businessTitle {
+  font-size: 25px;
   font-weight: bold;
   margin-bottom: 30px;
-  border-bottom: 2px solid #0d7ec0;
   padding-bottom: 8px;
+  color: #081333;
 }
 
-.angelicaList {
+.businessList {
   margin-top: 30px;
   padding-left: 0;
   list-style-type: none;
 }
 
-.angelicaListItem {
+.businessListItem {
   margin-bottom: 12px;
-  font-size: 1rem;
+  font-size: 1.2rem;
   position: relative;
+  color: #081333;
 }
 
-.angelicaListItem:before {
+.businessListItem:before {
   content: "";
-  color: #0d7ec0;
+  color: #081333;
   position: absolute;
   left: 0;
   top: 0;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .ctaButton {
-  background-color: #0d7ec0;
+  background-color: #081333;
   color: white;
   padding: 8px 16px;
   border: none;
@@ -64,73 +65,73 @@
   transition: background-color 0.3s ease;
   margin-top: 25px;
   border-radius: 50px;
+  cursor: pointer;
 }
 
 .ctaButton:hover {
-  background-color: #0d7ec0;
+  background-color: #265e87; /* Slightly darker on hover */
 }
 
-.angelicaImageWrapper {
+.businessImageWrapper {
   width: 100%;
   position: relative;
   overflow: hidden;
   border-radius: 8px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.angelicaImage {
+.businessImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease-in-out;
 }
 
-.angelicaImageWrapper:hover .angelicaImage {
+.businessImageWrapper:hover .businessImage {
   transform: scale(1.05);
 }
 
 /* Medium to large tablets (600px - 1024px) */
 @media (min-width: 600px) and (max-width: 1024px) {
-  .angelicaSection {
+  .businessSection {
     padding: 3rem;
-    margin: 0.8rem;
+    margin: 0.2rem;
   }
 
-  .angelicaTitle {
-    font-size: 1.6rem;
+  .businessTitle {
+    font-size: 2rem;
   }
 
   .ctaButton {
     padding: 10px 20px;
   }
 
-  .angelicaImageWrapper {
+  .businessImageWrapper {
     max-width: 80%;
   }
 }
 
 /* Desktop and larger screens */
-@media (min-width: 1024px) {
-  .angelicaSection {
+@media (min-width: 1025px) {
+  .businessSection {
     padding: 6rem;
   }
 
-  .angelicaContainer {
+  .businessContainer {
     flex-direction: row; /* Switch to row layout only on larger screens */
     align-items: flex-start;
     max-width: 1200px;
     gap: 1.5rem;
   }
 
-  .angelicaText {
+  .businessText {
     width: 50%;
     text-align: left;
   }
 
-  .angelicaTitle {
+  .businessTitle {
     font-size: 2rem;
   }
 
@@ -139,7 +140,8 @@
     padding: 12px 24px;
   }
 
-  .angelicaImageWrapper {
+  .businessImageWrapper {
     max-width: 50%;
+    margin-top: 6.5rem;
   }
 }

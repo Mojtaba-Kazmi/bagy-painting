@@ -3,7 +3,7 @@
   padding: 0.5rem;
   background-color: #fff;
   border-radius: 8px;
-  margin: 0.5rem; /* Apply margin to the wrapper */
+  margin: 0.2rem; /* Apply margin to the wrapper */
 }
 
 .wrapper {
@@ -24,20 +24,6 @@
   justify-content: center;
   text-align: center;
   width: 100%; /* This ensures it takes the full width of the wrapper */
-}
-
-.award {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  font-size: 1.2rem; /* Adjust font size if needed */
-  color: #0d7ec0;
-  font-weight: bold;
-}
-
-.awardIcon {
-  font-size: 1.5rem;
-  margin-left: 0.5rem;
 }
 
 .textContent {
@@ -64,7 +50,7 @@
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #333;
+  color: #081333;
 }
 
 .description h2,
@@ -74,7 +60,7 @@
 }
 
 .description h3 {
-  color: #0d7ec0;
+  color: #265e87;
 }
 
 .description p {
@@ -105,31 +91,19 @@
 .button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background-color: #0d7ec0;
+  background-color: #081333;
   color: white;
   text-align: center;
   border-radius: 50px;
   transition: background-color 0.3s ease;
   text-decoration: none;
   margin-top: 1rem;
+  cursor: pointer;
+  border: none;
 }
 
 .button:hover {
-  background-color: #2dade2;
-}
-
-/* CSS for visibility animation */
-.visible .textContent,
-.visible .imageContent {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.textContent,
-.imageContent {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  background-color: #265e87;
 }
 
 /* Tablet-specific styles */
@@ -141,21 +115,6 @@
     max-width: 1200px;
   }
 
-  .award {
-    text-align: center;
-    display: flex;
-    align-items: center; /* Centers both text and icon */
-    justify-content: center;
-    font-size: 1.2rem; /* Adjust font size if needed */
-    color: #0d7ec0;
-    font-weight: bold;
-  }
-
-  .awardIcon {
-    margin-top: 0.5rem; /* Adjust spacing between text and icon */
-    margin-left: 0.5rem;
-    font-size: 1.5rem;
-  }
   .imageContent {
     flex: 0 0 600px; /* Set the width of the image container */
   }
@@ -178,7 +137,6 @@
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-    padding: 1rem; /* Optional padding for spacing */
     box-sizing: border-box;
   }
 
@@ -192,23 +150,6 @@
     width: 100%; /* This ensures it takes the full width of the wrapper */
   }
 
-  .award {
-    margin: 1rem 0;
-    font-size: 1.2rem;
-    color: #0d7ec0;
-    font-weight: bold;
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    align-items: center;
-    text-align: start;
-  }
-
-  .awardIcon {
-    margin-left: 0.5rem;
-    font-size: 1.5rem;
-  }
-
   .imageContent {
     flex: 0 0 400px;
   }
@@ -219,5 +160,15 @@
 
   .description h2 {
     font-size: 2.5rem;
+  }
+
+  .description p {
+    font-size: 1.2rem;
+  }
+
+  .textContent {
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    margin-right: 3rem;
   }
 }

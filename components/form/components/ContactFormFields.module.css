@@ -1,0 +1,12 @@
+/* Default (Mobile): Full width */
+.formRow {
+  display: block;
+}
+
+/* Larger screens: Display form fields side by side */
+@media (min-width: 768px) {
+  .formRow {
+    display: flex;
+    gap: 3rem; /* Space between fields */
+  }
+}

@@ -1,0 +1,27 @@
+/* Outer container to hold the iframe and center it */
+.iframeContainer {
+  display: flex;
+  justify-content: center;   /* Horizontally center the inner wrapper */
+  align-items: center;       /* Vertically center the inner wrapper */
+  height: 90vh;             /* Full viewport height */
+  width: 100%;
+  background-color: #fff; 
+  margin: 0.2rem;  
+  border-radius: 8px;            /* Full width */
+}
+
+/* Inner wrapper that will contain the iframe */
+.iframeWrapper {
+  position: relative;
+  width: 100%;                /* Adjust width as needed */
+  max-width: 1200px;         /* Optional: max-width */
+  height: 100%;               /* Adjust height as needed */
+         /* Optional: max-height */
+}
+
+/* Iframe specific styles */
+.iframeWrapper iframe {
+  width: 100%;               /* Ensure iframe takes up the full width of the wrapper */
+  height: 100%;              /* Ensure iframe takes up the full height of the wrapper */
+  border: none;              /* Remove iframe border */
+}

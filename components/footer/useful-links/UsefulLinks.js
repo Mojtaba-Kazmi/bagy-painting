@@ -1,5 +1,5 @@
 import Link from "next/link";
-import usefulLinksData from "../../../content/footer/useful-links/usefulLinks.json";  // Import from JSON file
+import usefulLinksData from "@/content/data/footer/useful-links/usefulLinks.json";  // Import from JSON file
 import styles from "./UsefulLinks.module.css";
 
 const UsefulLinks = () => {

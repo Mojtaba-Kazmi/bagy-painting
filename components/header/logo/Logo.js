@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./Logo.module.css"; // Import your styles
-import logo from "@/content/header/logo";
+import logo from "@/content/data/header/logo";
 
 const Logo = () => {
   return (

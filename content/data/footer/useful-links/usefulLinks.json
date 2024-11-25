@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Home Page",
+    "link": "/"
+  },
+  {
+    "name": "About Page",
+    "link": "/about"
+  },
+  {
+    "name": "Services Page",
+    "link": "/services"
+  },
+  {
+    "name": "Portfolio Page",
+    "link": "/portfolio"
+  },
+  
+  {
+    "name": "Blog Page",
+    "link": "/blog"
+  },
+  {
+    "name": "Contact Page",
+    "link": "/contact-us"
+  },
+  {
+    "name": "Virtual Paint Project Page",
+    "link": "/virtual-paint-project"
+  },
+  {
+    "name": "Sitemap",
+    "link": "/sitemap"
+  }
+]

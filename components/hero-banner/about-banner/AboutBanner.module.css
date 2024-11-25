@@ -13,18 +13,18 @@
 .textContent h1 {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 1rem;
-  color: #000;
-  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  color: #265e87;
 }
 
 /* Heading 2 styling */
 .textContent h2 {
   font-family: var(--font-inter);
   font-weight: 900;
-  color: #e40978;
+  color: #081333;
   text-align: center;
   font-size: 2.5rem;
+  margin-top: 0; /* Ensure no margin on top */
 }
 
 /* Paragraph styling */
@@ -32,7 +32,7 @@
   font-size: 1.2rem;
   line-height: 1.6;
   margin: 0 2rem;
-  color: #000;
+  color: #081333;
 }
 
 /* Tablet and smaller laptops (up to 1024px wide) */
@@ -63,7 +63,7 @@
   }
 
   .textContent p {
-    font-size: 1rem; /* Adjust paragraph font size */
+    font-size: 1.2rem; /* Adjust paragraph font size */
     margin: 0 1.7rem;
   }
 }
@@ -84,7 +84,7 @@
   }
 
   .textContent p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin: 0 1rem;
   }
 }
@@ -108,7 +108,7 @@
 /* Desktops (1024px and above) */
 @media (min-width: 1025px) {
   .container {
-    margin-top: 5%;
+    margin-top: 8.5%;
   }
 
   .textContent h1 {

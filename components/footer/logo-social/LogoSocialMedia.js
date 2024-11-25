@@ -1,8 +1,7 @@
-import Image from "next/image";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 import styles from "./LogoSocialMedia.module.css";
-import logoSocial from "../../../content/footer/logo-social/logoSocial.json";
+import logoSocial from "@/content/data/footer/logo-social/logoSocial.json";
 
 const LogoSocialMedia = () => {
   return (
@@ -40,7 +39,7 @@ const LogoSocialMedia = () => {
       </nav>
 
       <nav className={styles.findUs}>
-        <Link href="/find-us" aria-label="Find Us">
+        <Link href="#" aria-label="Find Us">
           {logoSocial.links.findUs}
         </Link>
       </nav>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
 import MenuItems from "./menu-items/MenuItems";
-import menuItems from "@/content/header/menu-items";
+import menuItems from "@/content/data/header/menu-items";
 
 const Navbar = ({ isMenuOpen, onCloseMenu }) => {
   const [animationKey, setAnimationKey] = useState(Date.now());

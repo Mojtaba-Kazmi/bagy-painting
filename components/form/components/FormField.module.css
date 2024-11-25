@@ -1,0 +1,81 @@
+/* Form Field */
+.formField {
+  position: relative;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+/* Styles for the message textarea */
+.textareaField {
+  width: 100%;
+  min-height: 150px;
+  padding: 1rem;
+  resize: vertical;
+  border: 2px solid #081333;
+  outline: none;
+  font-size: 1rem;
+}
+
+/* Input Field */
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #081333;
+  border-radius: 50px;
+  outline: none;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: #f0f9ff; /* Input background */
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Floating Label */
+.label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #081333;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: 0.2s ease all;
+  padding: 0 5px;
+  z-index: 1;
+  background-color: inherit; /* Dynamically inherits input background */
+}
+
+/* Floating Label - Floats Up */
+.input:focus ~ .label,
+.input:not(:placeholder-shown) ~ .label {
+  top: -12px;
+  font-size: 0.875rem; /* Smaller font size */
+  color: #265e87;
+}
+
+/* Border-Hiding Effect - Pseudo-Element */
+.input:focus ~ .label::before,
+.input:not(:placeholder-shown) ~ .label::before {
+  content: "";
+  position: absolute;
+  top: 50%; /* Matches label's initial position */
+  left: -5px; /* Slight overlap for alignment */
+  right: -5px;
+  height: 50%;
+  background-color: inherit; /* Dynamically matches input background */
+  transform: translateY(-50%);
+  z-index: -1; /* Stacks behind the label but above the input's border */
+  border-radius: inherit; /* Ensures the rounded corners match */
+}
+
+/* Floating Label Border Adjustment */
+.input:focus,
+.input:not(:placeholder-shown) {
+  border: 2px solid #265e87;
+}
+
+/* Error Text */
+.errorText {
+  color: #d32f2f;
+  font-size: 0.9rem;
+}

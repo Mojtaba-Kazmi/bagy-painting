@@ -1,30 +1,23 @@
-/* Video Background */
-.videoBackground {
-  position: absolute; /* Position it within the wrapper */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the video covers the entire area */
-  z-index: -2; /* Keep it behind the gradient and content */
-  pointer-events: none;
-  border-radius: 8px; /* Add border-radius to the video */
+/* Services Container */
+.servicesContainer {
+  position: relative; /* Ensure video and gradient stay within the container */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden; /* Ensures video and gradient don’t overflow */
+  background-color: #f5f4f6;
+  z-index: 0;
+  margin: 0.2rem; /* Apply margin to the wrapper */
+  border-radius: 8px; /* Rounded corners */
 }
 
-/* Gradient Overlay */
-.gradientOverlay {
-  position: absolute; /* Position it within the wrapper */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.8) 0%,
-    rgba(45, 173, 226, 0.8) 100%
-  ); /* Semi-transparent gradient */
-  z-index: -1; /* Keep it above the video but behind the content */
-  border-radius: 8px; /* Add border-radius to the gradient */
+/* Styling for the section heading */
+.servicesContainer h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #081333; /* Dark text for heading */
+  margin-bottom: 40px;
 }
 
 /* Wrapper */
@@ -38,26 +31,11 @@
   overflow: hidden; /* Ensure video and gradient respect the border-radius */
 }
 
-/* Services Container */
-.servicesContainer {
-  position: relative; /* Ensure video and gradient stay within the container */
-  width: 100%;
+.heading {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  overflow: hidden; /* Ensures video and gradient don’t overflow */
-  background-color: #f5f4f6;
-  padding: 0rem 0.8rem 0.8rem;
-  z-index: 0;
-}
-
-/* Styling for the section heading */
-.servicesContainer h2 {
-  font-size: 36px;
-  font-weight: bold;
-  color: #1e2a38; /* Dark text for heading */
-  margin-bottom: 40px;
+  justify-content: center; /* Use justify-content for horizontal centering */
+  align-items: center; /* This centers the items vertically */
+  text-align: center; /* Ensures text within child elements is centered */
 }
 
 /* Services Icon */
@@ -71,6 +49,7 @@
   justify-content: center; /* Center horizontally */
   margin: 0 auto; /* Center the icon horizontally */
   margin-top: -60px; /* Adjust margin to give space above */
+  
 }
 
 /* Adjust the Image component inside the servicesIcon */
@@ -83,9 +62,10 @@
 .servicesGrid {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center; /* Center content */
   gap: 40px 15px; /* Space between service cards */
-  margin-top: 60px; /* Adjust margin to give space above */
+  margin-top: 90px; /* Adjust margin to give space above */
 }
 
 /* Individual service card */
@@ -96,12 +76,12 @@
   text-align: center; /* Center text */
   background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
   backdrop-filter: blur(10px); /* Add a blur effect to the background */
-  padding: 20px;
+  padding: 30px 0 30px 0;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease;
   width: 100%; /* Full width for smaller screens */
-  max-width: 385px; /* Set a max width for each card */
+  max-width: 380px; /* Set a max width for each card */
 }
 
 /* Service card hover effect */
@@ -111,10 +91,10 @@
 }
 
 /* Service title */
-.serviceCard h3 {
-  font-size: 20px;
+.serviceCard h2 {
+  font-size: 25px;
   margin: 20px;
-  color: #2d3e50;
+  color: #081333;
   font-weight: 600;
   line-height: 1.4;
 }
@@ -122,14 +102,14 @@
 /* Service metadata (published date, provider) */
 .serviceCard p {
   margin: 0 20px;
-  font-size: 14px;
-  color: #666;
+  font-size: 1.2rem;
+  color: #081333;
   line-height: 1.6;
 }
 
 /* Read More link styling */
 .readMore {
-  color: #e40978 !important; /* Blue for the link */
+  color: #265e87 !important; /* Blue for the link */
   font-weight: 600;
   margin-top: 15px !important;
   cursor: pointer;
@@ -139,9 +119,11 @@
 }
 
 .readMore:hover {
-  color: #0d7ec0 !important; /* Darker blue on hover */
+  color: #081333 !important; /* Darker blue on hover */
   text-decoration: none;
 }
+
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -162,14 +144,4 @@
   }
 }
 
-/* Two-column layout for medium screens */
-@media (min-width: 1200px) {
-  .serviceCard {
-    width: calc(50% - 20px); /* Two columns */
-  }
-  .wrapper {
-    padding: 6rem; /* Simplified padding */
-    background-color: #fff;
-    border-radius: 8px; /* Rounded corners */
-  }
-}
+

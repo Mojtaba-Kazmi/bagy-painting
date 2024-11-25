@@ -1,39 +1,40 @@
-import styles from "./Welcome.module.css"
-import Image from "next/image";
+import styles from "./Welcome.module.css";
 import Link from "next/link";
 
-const Welcome = ({ angelicaUniformsData }) => (
-  <section className={styles.angelicaSection}>
-    <div className={styles.angelicaContainer}>
-      <div className={styles.angelicaText}>
-        <h3 className={styles.angelicaTitle}>{angelicaUniformsData.title}</h3>
-        <ul className={styles.angelicaList}>
-          {angelicaUniformsData.sections.map((section, index) => (
-            <li key={index} className={styles.angelicaListItem}>
-              <h4 className={styles.angelicaSubTitle}>{section.subtitle}</h4>
-              <p>{section.description}</p>
-            </li>
-          ))}
-        </ul>
-        {angelicaUniformsData.ctaLink && (
-          <Link href={angelicaUniformsData.ctaLink}>
-            <button className={styles.ctaButton}>
-              {angelicaUniformsData.ctaButtonText}
-            </button>
-          </Link>
-        )}
+const Welcome = ({ welcomeData }) => {
+  return (
+    <section className={styles.businessSection}>
+      <div className={styles.businessContainer}>
+        <div className={styles.businessText}>
+          <h2 className={styles.businessTitle}>{welcomeData.title}</h2>
+          <ul className={styles.businessList}>
+            {welcomeData.sections.map((section, index) => (
+              <li key={index} className={styles.businessListItem}>
+                <h4 className={styles.businessSubTitle}>{section.subtitle}</h4>
+                <p>{section.description}</p>
+              </li>
+            ))}
+          </ul>
+          {welcomeData.ctaLink && (
+            <Link href={welcomeData.ctaLink}>
+              <button className={styles.ctaButton}>
+                {welcomeData.ctaButtonText}
+              </button>
+            </Link>
+          )}
+        </div>
+        <div className={styles.businessImageWrapper}>
+          <img
+            src="/assets/images/about/painters-adelaide.webp"
+            alt={`Image representing ${welcomeData.title} services`}
+            width={500}
+            height={300}
+            className={styles.businessImage}
+          />
+        </div>
       </div>
-      <div className={styles.angelicaImageWrapper}>
-        <Image
-          src="/assets/images/angelica-laundry-services.webp"
-          alt="Angelica Uniforms Service"
-          width={500}
-          height={300}
-          className={styles.angelicaImage}
-        />
-      </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default Welcome;

@@ -1,11 +1,11 @@
 /* -------------------------------------------- */
-/* About Company Section (aboutCompanyData) Styles - Mobile First */
+/* Why Choose Section Styles - Mobile First */
 /* -------------------------------------------- */
 
-.aboutCompanySection {
+.whyChooseSection {
   padding: 2rem; /* Mobile default padding */
   background-color: #fff;
-  margin: 0.8rem;
+  margin: 0.2rem;
   border-radius: 8px;
 }
 
@@ -19,11 +19,16 @@
 }
 
 .sectionTitle {
-  font-size: 1.75rem; /* Slightly smaller for mobile */
+  font-size: 25px; /* Slightly smaller for mobile */
   font-weight: bold;
-  color: #252b46;
+  color: #081333;
   margin-bottom: 1.2rem;
   text-align: center;
+}
+
+.companyInfo {
+  color: #081333;
+  font-size: 1.2rem;
 }
 
 /* Remove list bullets */
@@ -43,7 +48,7 @@
   border-radius: 12px;
   text-align: center;
   transition: transform 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.016);
   width: 100%; /* Full width on mobile */
   max-width: 320px; /* Max width to avoid too-wide cards on larger mobiles */
 }
@@ -55,7 +60,7 @@
 .advantageItemIcon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #0d7ec0;
+  color: #081333;
 }
 
 .advantageItemTitle {
@@ -66,13 +71,13 @@
 }
 
 .advantageItemDescription {
-  font-size: 0.95rem;
-  color: #6c728a;
+  font-size: 1rem;
+  color: #081333;
 }
 
 .indexNumber {
   font-weight: bold;
-  color: #f0037b;
+  color: #265e87;
   margin-right: 0.5rem;
 }
 
@@ -80,7 +85,7 @@
 /* Responsive Adjustments for Tablet (Small Tablets, e.g., iPad Mini, iPad) */
 /* -------------------------------------------- */
 @media (min-width: 481px) and (max-width: 1024px) {
-  .aboutCompanySection {
+  .whyChooseSection {
     padding: 4rem; /* Increased padding for tablets */
   }
 
@@ -109,78 +114,79 @@
 /* -------------------------------------------- */
 /* Desktop and Larger Tablet Screens - Restore Original Layout */
 /* -------------------------------------------- */
+/* Desktop and Larger Tablet Screens - Restore Original Layout */
 @media (min-width: 1025px) {
-  @media (min-width: 1025px) {
-    .aboutCompanySection {
-      padding: 6rem;
-      background-color: #fff;
-      margin: 0.8rem; /* Simplified padding */
-      border-radius: 8px; /* Rounded corners */
-    }
+  .whyChooseSection {
+    padding: 6rem;
+    background-color: #fff;
+    margin: 0.2rem; /* Simplified padding */
+    border-radius: 8px; /* Rounded corners */
+  }
 
-    .aboutContainer {
-      max-width: 1200px;
-      margin: 0 auto;
-      gap: 1rem;
-      text-align: center;
-    }
+  .aboutContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 1rem;
+    text-align: center;
+  }
 
-    .advantagesList {
-      display: flex;
-      flex-direction: row; /* Change to row for horizontal layout */
-      flex-wrap: wrap; /* Allow items to wrap */
+  .advantagesList {
+    display: flex;
+    flex-direction: row; /* Change to row for horizontal layout */
+    flex-wrap: wrap; /* Allow items to wrap */
+    gap: 1rem;
+    padding: 0;
+    list-style: none; /* Removes the bullet point */
+  }
 
-      gap: 1rem;
-      padding: 0;
-      list-style: none; /* Removes the bullet point */
-    }
+  .advantageItem {
+    position: relative;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.016);
+    flex: 0 1 calc(28.33% - 1.33rem); /* Adjust to 33.33% for 3 items per row with gap */
+    max-width: 380px; /* Ensures a maximum width for each item */
+  }
 
-    .advantageItem {
-      position: relative;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 12px;
-      text-align: center;
-      transition: transform 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      flex: 0 1 calc(33.33% - 1.33rem); /* Adjust to 33.33% for 3 items per row with gap */
-      max-width: 385px; /* Ensures a maximum width for each item */
-    }
+  .advantageItem:hover {
+    transform: translateY(-10px);
+  }
 
-    .advantageItem:hover {
-      transform: translateY(-10px);
-    }
+  .advantageItemIcon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #081333;
+  }
 
-    .advantageItemIcon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: #0d7ec0;
-    }
+  .advantageItemTitle {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #252b46;
+  }
 
-    .advantageItemTitle {
-      font-size: 1.25rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-      color: #252b46;
-    }
+  .advantageItemDescription {
+    font-size: 1rem;
+    color: #081333;
+  }
 
-    .advantageItemDescription {
-      font-size: 1rem;
-      color: #6c728a;
-    }
+  .sectionTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #081333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
 
-    .sectionTitle {
-      font-size: 2rem;
-      font-weight: bold;
-      color: #252b46;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-
-    .indexNumber {
-      font-weight: bold;
-      color: #f0037b; /* Custom color for the index number */
-      margin-right: 0.5rem;
-    }
+  .indexNumber {
+    font-weight: bold;
+    color: #265e87; /* Custom color for the index number */
+    margin-right: 0.5rem;
+  }
+  .companyInfo {
+    color: #081333;
   }
 }

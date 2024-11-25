@@ -1,4 +1,4 @@
-import { trustedPartners } from "@/content/trusted-partners/trusted-partners";
+import { trustedPartners } from "@/content/data/trusted-partners/trusted-partners";
 import styles from "./TrustedPartners.module.css";
 
 const TrustedPartners = async () => {

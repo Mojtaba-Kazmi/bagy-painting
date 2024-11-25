@@ -1,0 +1,29 @@
+/* Default styles for mobile (default is for screens smaller than 769px) */
+.header h2 {
+  font-weight: bold;
+  font-size: 1.7rem !important; /* Force the font-size */
+  color: #081333;
+}
+
+.header p {
+  max-width: 1200px;
+  margin: 0 auto; /* Center the container */
+  margin-bottom: 2rem;
+  color: #081333;
+  font-size: 1.2rem;
+  padding: 0 2rem;
+}
+
+/* Responsive Design for tablet and larger screens */
+@media (min-width: 769px) {
+  .header h2 {
+    font-size: 2rem !important; /* Slightly bigger font size for tablet */
+  }
+}
+
+/* Responsive Design for large screens */
+@media (min-width: 1024px) {
+  .header h2 {
+    font-size: 2.5rem !important; /* Larger font size for big screens */
+  }
+}
