@@ -15,7 +15,7 @@ export default function Services({ latestServices }) {
           <header className={styles.heading}>
             <SectionHeader
               title="Our Painting Services"
-              description="At Bagy Painting, we offer expert interior and exterior painting for homes and businesses in Adelaide, with quality result."
+              description="At Bagy Painting, we offer expert interior and exterior painting for houses and businesses in Adelaide, with quality result."
             />
           </header>
         </div>
