@@ -3,13 +3,13 @@ import Footer from "../components/footer/Footer";
 import Header from "../components/header/Header";
 import { headers } from "next/headers";
 import Script from "next/script";
-import "./globals.css";
 import ScrollToTop from "@/components/scroll-to/ScrollTo";
 import CTAButton from "@/components/cta-button/CTAButton";
 import { Suspense } from "react";
 import Spinner from "@/components/spinner/Spinner";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
+import "./globals.css";
 
 export const metadata = defaultMetadata;
 
