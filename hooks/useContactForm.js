@@ -62,7 +62,7 @@ const useContactForm = () => {
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      setMessage({ type: "error", text: "Error submitting form." });
+      setMessage({ type: "error", text: "Error submitting form. Please try again." });
     } finally {
       setLoading(false);
     }
