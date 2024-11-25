@@ -9,7 +9,7 @@ export function middleware(request) {
     style-src 'self' 'nonce-${nonce}';
     img-src 'self' blob: data: https://placehold.co;
     font-src 'self' https://fonts.gstatic.com;
-    connect-src 'self';
+    connect-src 'self' https://www.google-analytics.com https://analytics.vercel.com;
     object-src 'none';
     base-uri 'self';
     form-action 'self';
