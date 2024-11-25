@@ -40,9 +40,9 @@ export async function POST(request) {
 
     // Email options
     const mailOptions = {
-      from: "admin@bagypainting.com.au", // Your SiteGround-hosted email address
+      from: "info@bagypainting.com.au", // Your SiteGround-hosted email address
       replyTo: email, // Set the reply-to to the user's email address
-      to: "admin@bagypainting.com.au", // Your receiving email address
+      to: "info@bagypainting.com.au", // Your receiving email address
       subject: `New Quote Request from ${fullName}`,
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #081333; background-color: #f9fafb; padding: 20px; border-radius: 10px; border: 1px solid #e0e6ed;">
