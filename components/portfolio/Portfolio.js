@@ -107,7 +107,7 @@ const Portfolio = React.memo(({ portfolio }) => {
       container.removeEventListener("scroll", handleScroll);
     };
   }, [handleScroll]);
-  console.log(portfolio);
+  
   return (
     <section className={styles.container} aria-labelledby="portfolio-heading">
       {/* Main heading for the portfolio section */}
