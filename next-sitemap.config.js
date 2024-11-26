@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: "https://www.bagypainting.com.au", // Update with your domain
+  siteUrl: "https://www.bagypainting.com.au", // Your domain
   generateRobotsTxt: true, // Automatically generates robots.txt
   exclude: ["/api/*"], // Exclude API routes from the sitemap
   additionalPaths: async (config) => {
@@ -14,10 +14,5 @@ module.exports = {
       await config.transform(config, "/virtual-paint-project"),
       await config.transform(config, "/legal"),
     ];
-  },
-  robotsTxtOptions: {
-    additionalSitemaps: [
-      "https://www.bagypainting.com.au/sitemap.xml", // Update with your sitemap URL
-    ],
   },
 };
