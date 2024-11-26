@@ -1,0 +1,31 @@
+.container {
+  background-color: #f5f4f6;
+  padding: 0rem 0.8rem 0.8rem; /* Simplified padding */
+}
+
+.wrapper {
+  padding: 2rem; /* Simplified padding */
+  background-color: #fff;
+  border-radius: 8px; /* Rounded corners */
+}
+.contactForm {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.heading {
+  display: flex;
+  justify-content: center; /* Use justify-content for horizontal centering */
+  align-items: center; /* This centers the items vertically */
+  text-align: center; /* Ensures text within child elements is centered */
+}
+
+/* Responsive Design */
+@media (min-width: 1200px) {
+  .wrapper{
+    padding: 6rem; /* Simplified padding */
+    background-color: #fff;
+    border-radius: 8px; /* Rounded corners */
+  }
+}
+

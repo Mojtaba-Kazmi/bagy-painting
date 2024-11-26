@@ -33,7 +33,7 @@ export async function POST(request) {
       port: 465, // Use 465 for SSL
       secure: true, // true for SSL
       auth: {
-        user: "info@bagypainting.com.au", 
+        user: "info@bagypainting.com.au",
         pass: process.env.EMAIL_PASSWORD,
       },
     });

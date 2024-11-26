@@ -51,7 +51,9 @@ const useContactForm = () => {
         message: data.message,
         recaptchaToken,
       });
+
       console.log("NEXT_PUBLIC_API_URL:", process.env.NEXT_PUBLIC_API_URL);
+      
       if (res.status === 200) {
         setMessage({ type: "success", text: "Message sent successfully!" });
         reset();
