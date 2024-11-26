@@ -64,6 +64,26 @@
 .errorText {
   color: red;
 }
+
+.mathCaptchaContainer {
+  margin: 20px 0;
+}
+
+.captchaLabel {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #333;
+  display: block;
+}
+
+.captchaInput {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
 /* Responsive Styling for smaller screens */
 @media (max-width: 768px) {
   .wrapper {

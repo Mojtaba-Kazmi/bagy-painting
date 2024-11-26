@@ -1,6 +1,6 @@
 import About from "@/components/about/About";
 import BlogPosts from "@/components/blog/BlogPosts";
-import ContactForms from "@/components/Forms/ContactForm";
+import ContactForm from "@/components/form/ContactForm";
 import HeroBanner from "@/components/hero-banner/HeroBanner";
 import Services from "@/components/services/Services";
 import Testimonials from "@/components/testimonials/Testimonials";
@@ -25,7 +25,7 @@ export default async function Home() {
       <Services latestServices={latestServices} />
       <Testimonials />
       <BlogPosts latestPosts={latestBlogPosts} />
-      <ContactForms />
+      <ContactForm />
     </>
   );
 }

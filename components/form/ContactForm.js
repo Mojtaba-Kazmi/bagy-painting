@@ -3,7 +3,6 @@
 import SuccessModal from "./components/SuccessModal";
 import ContactFormFields from "./components/ContactFormFields";
 import useContactForm from "@/hooks/useContactForm";
-import ReCAPTCHAComponent from "./components/ReCAPTCHAComponent";
 import styles from "./ContactForm.module.css";
 import SectionHeader from "../section-header/SectionHeader";
 
@@ -17,32 +16,31 @@ const ContactForm = () => {
     message,
     modalOpen,
     setModalOpen,
-    recaptchaToken, // Receive recaptchaToken from the hook
-    handleRecaptchaChange,
   } = useContactForm();
+
+  const handleFormSubmit = async (data) => {
+    await onSubmit(data);
+  };
 
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <form onSubmit={handleSubmit(onSubmit)} className={styles.contactForm}>
+        <form
+          onSubmit={handleSubmit(handleFormSubmit)}
+          className={styles.contactForm}
+        >
           <header className={styles.heading}>
             <SectionHeader
               title="Get Your Instant Free Quote!"
               description="Fill in your details, and we'll be in touch soon."
             />
           </header>
-          <ContactFormFields control={control} errors={errors} />{" "}
-          {/* Use the new component */}
-          <div className={styles.recaptchaContainer}>
-            <ReCAPTCHAComponent handleRecaptchaChange={handleRecaptchaChange} />
-            {message?.type === "error" && (
-              <span className={styles.errorText}>
-                {recaptchaToken
-                  ? "Sorry, we couldn't send your email due to a technical issue. Please try again later or contact us directly"
-                  : "Please complete CAPTCHA"}
-              </span>
-            )}
-          </div>
+          <ContactFormFields control={control} errors={errors} />
+
+          {message?.type === "error" && (
+            <span className={styles.errorText}>{message.text}</span>
+          )}
+
           <div className={styles.submitContainer}>
             <button
               type="submit"
@@ -54,7 +52,12 @@ const ContactForm = () => {
           </div>
         </form>
         {modalOpen && (
-          <SuccessModal open={modalOpen} onClose={() => setModalOpen(false)} />
+          <SuccessModal
+            open={modalOpen}
+            onClose={() => {
+              setModalOpen(false);
+            }}
+          />
         )}
       </div>
     </div>

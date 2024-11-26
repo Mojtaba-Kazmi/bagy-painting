@@ -13,57 +13,31 @@ const useContactForm = () => {
       fullName: "",
       email: "",
       contactNumber: "",
-      suburb: "", // Add suburb field
-      services: [], // Ensure it's an array
+      suburb: "",
+      services: [],
       message: "",
     },
   });
 
-  const [recaptchaToken, setRecaptchaToken] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
 
-  const handleRecaptchaChange = (token) => {
-    setRecaptchaToken(token);
-    if (token) {
-      setMessage(null);  // Clear any previous errors
-    }
-  };
-
   const onSubmit = async (data) => {
-    if (!recaptchaToken) {
-      setMessage({ type: "error", text: "Please verify CAPTCHA." });
-      return;
-    }
-
     setLoading(true);
     setMessage(null);
 
     try {
-      // Make sure to send fullName and services
-      const res = await axios.post("/api/send-email", {
-        fullName: data.fullName,  // Ensure fullName is sent
-        email: data.email,
-        contactNumber: data.contactNumber,
-        suburb: data.suburb,  // Send suburb
-        services: data.services,  // Send services as an array
-        message: data.message,
-        recaptchaToken,
-      });
+      const res = await axios.post("/api/send-email", data);
 
-      console.log("NEXT_PUBLIC_API_URL:", process.env.NEXT_PUBLIC_API_URL);
-      
       if (res.status === 200) {
         setMessage({ type: "success", text: "Message sent successfully!" });
-        reset();
-        setRecaptchaToken("");
+        reset(); // Reset form fields
         setModalOpen(true);
       } else {
         setMessage({ type: "error", text: "Failed to send message. Please try again later." });
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
       setMessage({ type: "error", text: "Error submitting form. Please try again." });
     } finally {
       setLoading(false);
@@ -79,9 +53,6 @@ const useContactForm = () => {
     message,
     modalOpen,
     setModalOpen,
-    handleRecaptchaChange,
-    recaptchaToken, // Return recaptchaToken here
-    resetForm: reset, // Expose reset() function
   };
 };
 

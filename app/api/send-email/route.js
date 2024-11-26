@@ -2,31 +2,25 @@ import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 
 export async function POST(request) {
-  const {
-    fullName,
-    email,
-    contactNumber,
-    suburb,
-    message,
-    services, // Assuming services come as an array from the checkbox
-    recaptchaToken,
-  } = await request.json();
-
-  // Validate reCAPTCHA
-  const recaptchaRes = await fetch(
-    `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`,
-    { method: "POST" }
-  );
-  const recaptchaData = await recaptchaRes.json();
-
-  if (!recaptchaData.success) {
-    return NextResponse.json(
-      { message: "reCAPTCHA validation failed" },
-      { status: 400 }
-    );
-  }
-
   try {
+    const {
+      fullName,
+      email,
+      contactNumber,
+      suburb,
+      message,
+      services, // Assuming services come as an array from the checkbox
+    } = await request.json();
+
+    // Validate required fields
+    if (!fullName || !email || !contactNumber || !suburb || !message ) {
+      console.error("Missing fields in request");
+      return NextResponse.json(
+        { message: "All fields are required" },
+        { status: 400 }
+      );
+    }
+
     // Create a transporter using SiteGround SMTP settings
     const transporter = nodemailer.createTransport({
       host: "mail.bagypainting.com.au", // SiteGround SMTP server
@@ -34,7 +28,7 @@ export async function POST(request) {
       secure: true, // true for SSL
       auth: {
         user: "info@bagypainting.com.au",
-        pass: process.env.EMAIL_PASSWORD,
+        pass: process.env.EMAIL_PASSWORD, // Ensure EMAIL_PASSWORD is set
       },
     });
 
