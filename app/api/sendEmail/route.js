@@ -23,12 +23,12 @@ export async function POST(request) {
   );
   const recaptchaData = await recaptchaRes.json();
 
-  if (!recaptchaData.success) {
-    return NextResponse.json(
-      { message: "reCAPTCHA validation failed" },
-      { status: 400 }
-    );
-  }
+  // if (!recaptchaData.success) {
+  //   return NextResponse.json(
+  //     { message: "reCAPTCHA validation failed" },
+  //     { status: 400 }
+  //   );
+  // }
 
   try {
     // Create a transporter using SiteGround SMTP settings
