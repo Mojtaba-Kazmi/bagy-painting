@@ -1,7 +1,7 @@
 // next-sitemap.config.js
 
 module.exports = {
-  siteUrl: "http://localhost:3000", // Make sure this matches your local server URL
+  siteUrl: "https://www.bagypainting.com.au", // Use the preferred canonical version for your live site
   generateRobotsTxt: true, // Automatically generates robots.txt
   exclude: ["/api/*"], // Exclude API routes from the sitemap
   additionalPaths: async (config) => {
@@ -19,7 +19,8 @@ module.exports = {
   },
   robotsTxtOptions: {
     additionalSitemaps: [
-      "http://localhost:3000/sitemap.xml", // Local URL for the sitemap
+      "https://www.bagypainting.com.au/sitemap.xml", // "www" version of sitemap
+      "https://bagypainting.com.au/sitemap.xml", // Non-"www" version of sitemap
     ],
   },
 };
