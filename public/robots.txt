@@ -7,4 +7,3 @@ Host: https://www.bagypainting.com.au
 
 # Sitemaps
 Sitemap: https://www.bagypainting.com.au/sitemap.xml
-Sitemap: https://bagypainting.com.au/sitemap.xml
