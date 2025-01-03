@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { Controller } from "react-hook-form";
 import styles from "./FormField.module.css";
 
@@ -19,17 +20,24 @@ const FormField = ({
   placeholder = "",
   validation = {},
 }) => {
+  const [isFloating, setIsFloating] = useState(false);
   // Set autocomplete value based on the field name
   const autocompleteValue = autocompleteValues[name] || "off";
+
+  const handleFocus = () => {
+    setIsFloating(true);
+  };
+
+  const handleBlur = (e) => {
+    setIsFloating(!!e.target.value); // Keep label floating if the input is filled
+  };
 
   return (
     <div className={styles.formField}>
       <Controller
         name={name}
         control={control}
-        rules={{ required: `${label} is required`,
-        ...validation,
-       }}
+        rules={{ required: `${label} is required`, ...validation }}
         render={({ field }) => (
           <>
             {type === "textarea" ? (
@@ -40,6 +48,11 @@ const FormField = ({
                 id={name}
                 name={name}
                 autoComplete={autocompleteValue}
+                onFocus={handleFocus}
+                onBlur={(e) => {
+                  handleBlur(e);
+                  field.onBlur(e);
+                }}
               />
             ) : (
               <input
@@ -50,9 +63,19 @@ const FormField = ({
                 id={name}
                 name={name}
                 autoComplete={autocompleteValue}
+                onFocus={handleFocus}
+                onBlur={(e) => {
+                  handleBlur(e);
+                  field.onBlur(e);
+                }}
               />
             )}
-            <label htmlFor={name} className={styles.label}>
+            <label
+              htmlFor={name}
+              className={`${styles.label} ${
+                isFloating || field.value ? styles.float : ""
+              }`}
+            >
               {label} *
             </label>
           </>

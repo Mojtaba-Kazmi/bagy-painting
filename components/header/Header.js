@@ -1,18 +1,15 @@
-// components/header/Header.js
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
 import styles from "./Header.module.css";
 import Navbar from "./navbar/Navbar";
-import Logo from "./logo/Logo";
-import Button from "./button/Button";
-import BurgerMenu from "./burger-menu/BurgerMenu";
 
-const Header = () => {
+export default function Header() {
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const [isScrolled, setScrolled] = useState(false);
   const [isHeaderVisible, setHeaderVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isScrolled, setScrolled] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
@@ -21,19 +18,24 @@ const Header = () => {
   const handleScroll = useCallback(() => {
     const currentScrollY = window.scrollY;
 
-    if (currentScrollY > lastScrollY && currentScrollY > 0) {
-      setHeaderVisible(false);
-    } else {
-      setHeaderVisible(true);
+    // Prevent header hiding when the menu is open
+    if (!isMenuOpen) {
+      // Hide the header when scrolling down unless at the top
+      if (currentScrollY > lastScrollY && currentScrollY > 0) {
+        setHeaderVisible(false);
+      } else {
+        setHeaderVisible(true);
+      }
     }
 
     setLastScrollY(currentScrollY);
+
+    // Set isScrolled based on scroll position
     setScrolled(currentScrollY > 0);
-  }, [lastScrollY]);
+  }, [lastScrollY, isMenuOpen]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -47,7 +49,21 @@ const Header = () => {
     >
       <div className={styles.wrapper}>
         {/* Logo */}
-        <Logo />
+        <div className={styles.branding}>
+          <Link href="/" passHref>
+            <div className={styles.logoWrapper}>
+              <img
+                src="/assets/logos/bagypainting-logo.svg"
+                className={styles.logoImage}
+                width={200}
+                height={80}
+                alt="Bagy Painting"
+                sizes="(max-width: 600px) 80px, (max-width: 1024px) 100px, 150px"
+              />
+            </div>
+          </Link>
+        </div>
+
         {/* Fullscreen Navbar */}
         <div
           className={`${styles.navbarMenu} ${
@@ -59,14 +75,24 @@ const Header = () => {
             onCloseMenu={() => setMenuOpen(false)}
           />
         </div>
-        {/* Free Quote Button */}
-        <Button />
+
+        {/* Get in Touch Button */}
+        <Link href="/get-quote">
+          <button className={styles.quoteButton} aria-label="Get Free Quote">
+           Get Free Quote
+          </button>
+        </Link>
+
         {/* Burger Menu */}
-        <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />{" "}
-        {/* Use BurgerMenu */}
+        <div
+          className={`${styles.burgerMenu} ${isMenuOpen ? styles.active : ""}`}
+          onClick={toggleMenu}
+          aria-label="Toggle navigation menu"
+          role="button"
+        >
+          <span></span> {/* Burger icon */}
+        </div>
       </div>
     </header>
   );
-};
-
-export default Header;
+}

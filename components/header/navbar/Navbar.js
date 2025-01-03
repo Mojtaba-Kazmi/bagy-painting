@@ -1,36 +1,66 @@
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import styles from "./Navbar.module.css";
-import MenuItems from "./menu-items/MenuItems";
-import menuItems from "@/content/data/header/menu-items";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
-const Navbar = ({ isMenuOpen, onCloseMenu }) => {
+export default function Navbar({ isMenuOpen, onCloseMenu }) {
   const [animationKey, setAnimationKey] = useState(Date.now());
   const [openSubmenu, setOpenSubmenu] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Set animation key for re-render
     setAnimationKey(Date.now());
 
+    // Check if the window is mobile/tablet size
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 1024);
     };
 
-    checkMobile(); // Initial mobile check
-    window.addEventListener("resize", checkMobile); // Listen for window resize
+    // Initial check
+    checkMobile();
 
+    // Add event listener to detect resize
+    window.addEventListener("resize", checkMobile);
+
+    // Cleanup event listener
     return () => {
       window.removeEventListener("resize", checkMobile);
     };
   }, [isMenuOpen]);
 
+  // Static menu items
+  const menuItems = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/portfolio", label: "Portfolio" },
+    { href: "/services", label: "Services" },
+    { href: "/blog", label: "Blog" },
+    {
+      href: "/pages",
+      label: "Pages",
+      submenu: [
+        { href: "/", label: "Home Page" },
+        { href: "/about", label: "About Page" },
+        { href: "/portfolio", label: "Portfolio Page" },
+        { href: "/services", label: "Services Page" },
+        { href: "/blog", label: "Blog Page" },
+        { href: "/virtual-paint-project", label: "Virtual Paint Project Page" },
+        { href: "/contact-us", label: "Contact Page" },
+      ],
+    },
+  ];
+
   const handleSubmenuToggle = (e, item) => {
-    e.preventDefault();
-    setOpenSubmenu(openSubmenu === item.label ? null : item.label);
+    if (item.submenu) {
+      e.preventDefault();
+      setOpenSubmenu(openSubmenu === item.label ? null : item.label);
+    }
   };
 
   const handleMenuClick = (href) => {
-    onCloseMenu(); // Close the menu after a link is clicked
-    setOpenSubmenu(null); // Reset submenu state
+    onCloseMenu(); // Close the burger menu
+    setOpenSubmenu(null); // Reset the submenu when navigating
   };
 
   return (
@@ -40,20 +70,55 @@ const Navbar = ({ isMenuOpen, onCloseMenu }) => {
         key={animationKey}
       >
         {menuItems.map((item, index) => (
-          <MenuItems
+          <li
             key={item.href}
-            item={item}
-            index={index}
-            isMobile={isMobile}
-            openSubmenu={openSubmenu}
-            setOpenSubmenu={setOpenSubmenu}
-            handleSubmenuToggle={handleSubmenuToggle}
-            handleMenuClick={handleMenuClick}
-          />
+            className={`${styles.listItem} ${
+              item.submenu ? styles.hasSubmenu : ""
+            } ${openSubmenu === item.label ? styles.open : ""}`}
+            style={{ "--index": index }}
+            onMouseEnter={() => !isMobile && setOpenSubmenu(item.label)}
+            onMouseLeave={() => !isMobile && setOpenSubmenu(null)}
+          >
+            <div
+              className={styles.navLink}
+              onClick={(e) => {
+                if (item.submenu) {
+                  handleSubmenuToggle(e, item);
+                } else {
+                  handleMenuClick(item.href); // Close menu and navigate
+                }
+              }}
+            >
+              <Link href={item.submenu ? "#" : item.href}>{item.label}</Link>
+              {item.submenu && (
+                <span
+                  className={`${styles.arrow} ${
+                    openSubmenu === item.label ? styles.arrowUp : ""
+                  }`}
+                >
+                  <MdKeyboardArrowDown />
+                </span>
+              )}
+            </div>
+
+            {item.submenu && openSubmenu === item.label && (
+              <ul className={styles.submenu}>
+                {item.submenu.map((subItem) => (
+                  <li key={subItem.href} className={styles.submenuItem}>
+                    <Link
+                      href={subItem.href}
+                      className={styles.submenuLink}
+                      onClick={() => handleMenuClick(subItem.href)} // Close menu and navigate
+                    >
+                      {subItem.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
         ))}
       </ul>
     </nav>
   );
 }
-
-export default Navbar;

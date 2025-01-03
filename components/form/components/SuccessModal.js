@@ -7,7 +7,13 @@ const SuccessModal = ({ open, onClose }) => {
   return (
     <div className={styles.modalOverlay} onClick={onClose}>
       <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-        <div className={styles.tickIcon}></div>
+        <div className={styles.animationContainer}>
+          <img
+            className={styles.successAnimation}
+            src="/assets/images/home/anim-tick.gif"
+            alt="Success Tick Animation"
+          />
+        </div>
         <h2 className={styles.h}>Thank you for submitting!</h2>
         <p className={styles.p}>Your message has been sent successfully!</p>
       </div>

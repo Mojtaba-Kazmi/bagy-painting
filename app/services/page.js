@@ -1,14 +1,16 @@
 import AllServices from "@/components/services/AllServices";
 import { generatePageMetadata } from "@/metadata/generatePageMetadata";
-import { getAllServicesSchema } from "@/metadata/schemas/getAllServicesSchema";
 
-export async function generateMetadata() {
-  return generatePageMetadata({
+export const metadata = generatePageMetadata({
+  title: "Top Paint Company in Adelaide - Expert Painting by Bagy",
+  description:
+    "Bagy Painting offers expert interior, exterior, and specialty finishes in Adelaide. We focus on quality results and customer satisfaction. Get a free quote!",
+  openGraph: {
     title: "Top Paint Company in Adelaide - Expert Painting by Bagy",
     description:
       "Bagy Painting offers expert interior, exterior, and specialty finishes in Adelaide. We focus on quality results and customer satisfaction. Get a free quote!",
-  });
-}
+  },
+});
 
 async function getPaginatedServices(page = 1) {
   try {
@@ -45,18 +47,13 @@ async function getPaginatedServices(page = 1) {
 }
 
 export default async function ServicesPage({ searchParams }) {
-  const page = parseInt(searchParams.page) || 1;
+  const awaitedSearchParams = await searchParams;
+  const page = parseInt(awaitedSearchParams?.page) || 1;
+  
   const { paginatedServices, pageCount } = await getPaginatedServices(page);
-
-  const servicesSchema = getAllServicesSchema();
 
   return (
     <>
-      {/* Inject JSON-LD Schemas */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
-      />
       <AllServices
         paginatedServices={paginatedServices}
         page={page}

@@ -19,8 +19,52 @@ export async function generateStaticParams() {
   return paths;
 }
 
-export default function ServiceDetailPage({ params }) {
+// Fetch data for the current page dynamically
+export async function generateMetadata(context) {
+  const params = await context.params; // Await the params here
   const { slug } = params;
+
+  const filePath = path.join(
+    process.cwd(),
+    "content/markdown/services",
+    `${slug}.md`
+  );
+
+  if (fs.existsSync(filePath)) {
+    const fileContents = fs.readFileSync(filePath, "utf8");
+    const { data } = matter(fileContents);
+
+    return {
+      title: `${data.title}`,
+      description: data.excerpt,
+      openGraph: {
+        title: `${data.title}`,
+        description: data.excerpt,
+        url: `https://www.bagypainting.com.au/services/${slug}`,
+        images: [
+          {
+            url: data.thumbnail
+              ? `${data.thumbnail}`
+              : "https://cdn-ilabcdh.nitrocdn.com/VMExtHjSOgwlYoVxRcJmxhEOXjOSEEKd/assets/images/optimized/rev-d9d5e4c/bagypainting.com.au/wp-content/uploads/2024/02/Bagy_Logo-1536x238.png",
+            width: 1200,
+            height: 630,
+            alt: `Thumbnail for the service: ${data.title}`,
+          },
+        ],
+      },
+    };
+  }
+
+  return { title: "Service Not Found" };
+}
+
+export default async function ServiceDetailPage({ params }) {
+  const awaitedParams = await params;
+  const { slug } = awaitedParams;
+
+  if (!slug) {
+    return <p>Service not found.</p>;
+  }
 
   // Dynamically get the list of markdown files from the services folder
   const servicesDirectory = path.join(

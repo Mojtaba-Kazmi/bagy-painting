@@ -3,6 +3,7 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import styles from "./PrivacyPolicy.module.css";
+import PageHeader from "../page-header/PageHeader";
 
 const PrivacyPolicy = ({ privacyPolicyData }) => {
   // Define the order of sections
@@ -20,15 +21,22 @@ const PrivacyPolicy = ({ privacyPolicyData }) => {
   ];
 
   return (
-    <div className={styles.privacyPolicyContainer}>
-      <div className={styles.privacyPolicyContent}>
-        {sections.map((section) => (
-          <ReactMarkdown key={section}>
-            {privacyPolicyData[section] || ""}
-          </ReactMarkdown>
-        ))}
+    <>
+      <PageHeader
+        title="Privacy Policy & Terms"
+        description="Review Bagy Painting's Privacy Policy and Terms & Conditions to understand how we handle your data and the terms for using our services."
+        breadcrumb="Privacy Policy & Terms"
+      />
+      <div className={styles.privacyPolicyContainer}>
+        <div className={styles.privacyPolicyContent}>
+          {sections.map((section) => (
+            <ReactMarkdown key={section}>
+              {privacyPolicyData[section] || ""}
+            </ReactMarkdown>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

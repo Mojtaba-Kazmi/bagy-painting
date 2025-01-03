@@ -11,7 +11,7 @@
   min-height: 150px;
   padding: 1rem;
   resize: vertical;
-  border: 2px solid #081333;
+  border: 1px solid #cbcbcb;
   outline: none;
   font-size: 1rem;
 }
@@ -19,13 +19,13 @@
 /* Input Field */
 .input {
   width: 100%;
-  padding: 0.75rem 1rem;
-  border: 2px solid #081333;
-  border-radius: 50px;
+  padding: 1rem 1rem;
+  border: 0.5px solid #cbcbcb;
+  border-radius: 6px;
   outline: none;
   font-size: 1rem;
   line-height: 1.5;
-  background-color: #f0f9ff; /* Input background */
+  background-color: #ffffff; /* Input background */
   box-sizing: border-box;
   position: relative;
 }
@@ -36,42 +36,37 @@
   top: 50%;
   left: 15px;
   transform: translateY(-50%);
-  color: #081333;
-  font-size: 1rem;
+  color: #777676;
+  font-size: 1.2rem;
   pointer-events: none;
   transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all; /* Safari */
   padding: 0 5px;
   z-index: 1;
-  background-color: inherit; /* Dynamically inherits input background */
+  background-color: transparent; /* Dynamically inherits input background */
 }
 
-/* Floating Label - Floats Up */
-.input:focus ~ .label,
-.input:not(:placeholder-shown) ~ .label {
+/* Add fallback class for floating label */
+.label.float {
   top: -12px;
-  font-size: 0.875rem; /* Smaller font size */
-  color: #265e87;
+  font-size: 1rem;
+  color: #081333;
+  transform: translateY(-50%) translateZ(0);
 }
 
-/* Border-Hiding Effect - Pseudo-Element */
-.input:focus ~ .label::before,
-.input:not(:placeholder-shown) ~ .label::before {
-  content: "";
-  position: absolute;
-  top: 50%; /* Matches label's initial position */
-  left: -5px; /* Slight overlap for alignment */
-  right: -5px;
-  height: 50%;
-  background-color: inherit; /* Dynamically matches input background */
-  transform: translateY(-50%);
-  z-index: -1; /* Stacks behind the label but above the input's border */
-  border-radius: inherit; /* Ensures the rounded corners match */
+
+/* Input Focus or Value - Float Label */
+.input:focus ~ .label,
+.input.filled ~ .label {
+  top: -12px;
+  font-size: 1rem;
+  color: #081333;
 }
 
 /* Floating Label Border Adjustment */
 .input:focus,
 .input:not(:placeholder-shown) {
-  border: 2px solid #265e87;
+  border: 2px solid #081333;
 }
 
 /* Error Text */

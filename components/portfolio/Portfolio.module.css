@@ -8,8 +8,9 @@
 }
 
 .title {
-  font-size: 2rem; /* Smaller font size for mobile */
-  margin-left: 1rem; /* Adjusted margin for smaller screens */
+  font-size: 1.5rem; /* Smaller font size for mobile */
+  margin-left: 1.5rem; /* Adjusted margin for smaller screens */
+  padding-top: 1.5rem;
   color: rgb(8, 19, 51);
 }
 
@@ -30,7 +31,7 @@
 
 /* Card styles */
 .card {
-  flex: 0 0 80%; /* Cards take up more space on mobile */
+  flex: 0 0 63%; /* Cards take up more space on mobile */
   position: relative;
   border-radius: 30px;
   overflow: hidden;
@@ -89,15 +90,15 @@
 }
 
 .imageTitle {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 200;
   z-index: 3;
 }
 
 .imageDescription {
-  font-size: 2rem;
+  font-size: 1.2rem;
   margin: 0;
-  margin-right: 3rem;
+  margin-right: 1rem;
   z-index: 3;
 }
 
@@ -225,7 +226,7 @@
 }
 
 .modalDetails p {
-  font-size: 1.8rem;
+  font-size: 1rem;
   font-weight: 600; /* More emphasis on titles */
   margin: 0;
   line-height: 1.5; /* Improves readability */
@@ -233,21 +234,18 @@
 }
 
 .modalDetails figcaption {
-  font-size: 1.5rem !important;
+  font-size: 1rem !important;
   font-weight: 400;
   color: #666; /* Slightly lighter text for captions */
-  margin-top: 10px;
+  margin: 30px 0px 30px 0;
 }
 
 .imageGallery {
-  display: grid; /* Use grid for better image alignment */
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(250px, 1fr)
-  ); /* Responsive grid */
+  display: flex; /* Use grid for better image alignment */
+  flex-direction: column;
   gap: 20px; /* Increase gap for better spacing between images */
-  padding: 20px;
   justify-items: center; /* Center items within each grid cell */
+  align-items: center;
 }
 
 .modalImage {
@@ -273,6 +271,9 @@
 
   .modalDetails h2 {
     font-size: 0.9rem;
+
+
+
   }
 
   .modalDetails p {
@@ -328,8 +329,8 @@
     flex-direction: column;
   }
   .title {
-    font-size: 3rem;
-    margin-left: 10.5rem;
+    font-size: 2.5rem;
+    margin-left: 9.7rem;
   }
 
   .carousel {
@@ -338,6 +339,7 @@
   }
 
   .card {
+    flex: 0 0 18%;
     max-width: 400px;
   }
 
@@ -358,17 +360,17 @@
   }
 
   .modalContent {
-    max-width: 60rem;
+    max-width: 35rem;
   }
 
   .modalDetails h2 {
-    font-size: 1.5rem; /* Slightly larger for titles */
+    font-size: 1rem; /* Slightly larger for titles */
     font-weight: 200;
     margin-bottom: 10px;
   }
 
   .modalDetails p {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 600; /* More emphasis on titles */
     margin: 0;
     line-height: 1.5; /* Improves readability */
@@ -376,9 +378,9 @@
   }
 
   .modalDetails figcaption {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 400;
     color: #666; /* Slightly lighter text for captions */
-    margin-top: 10px;
+    margin: 30px 0px 30px 0;
   }
 }

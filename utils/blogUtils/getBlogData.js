@@ -21,7 +21,7 @@ async function fetchAllBlogs() {
       author: data.author || "Unknown",
       category: data.category || "General",
       thumbnail: data.thumbnail || null,
-      description: data.description || null,
+      excerpt: data.excerpt || "No excerpt available",
       content,
     };
   });
@@ -36,25 +36,6 @@ export async function generateStaticParams() {
   return blogs.map((blog) => ({
     slug: blog.slug,
   }));
-}
-
-// Fetch metadata for SEO
-export async function generateMetadata({ params }) {
-  const blogs = await fetchAllBlogs(); // Await the async function
-  const blog = blogs.find((post) => post.slug === params.slug);
-
-  if (!blog) {
-    throw new Error(`Blog with slug "${params.slug}" not found.`);
-  }
-
-  return {
-    title: blog.title,
-    description: blog.description || `Learn more about ${blog.title}.`,
-    openGraph: {
-      title: blog.title,
-      description: blog.description || `Learn more about ${blog.title}.`,
-    },
-  };
 }
 
 // Fetch blog data and related articles

@@ -5,7 +5,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,55 +17,66 @@
 
 /* Modal content box */
 .modalContent {
-  background: linear-gradient(135deg, #e0f7fa, #80deea);
+  background: linear-gradient(135deg, #e0f7fa, #fff);
   border-radius: 12px;
   padding: 2.5rem;
   text-align: center;
-  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   max-width: 400px;
-  width: 90%;
-  color: #004d40;
+  color: #081333;
   transform: scale(0.9);
   animation: popUp 0.5s forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Tick icon animation container */
-.tickIcon {
-  position: relative;
-  width: 50px;
-  height: 50px;
-  display: inline-block;
-  margin-bottom: 1rem;
-  animation: rotateTick 2s ease-in-out forwards;
+/* Responsive styles */
+@media (max-width: 600px) { /* Mobile */
+  .modalContent {
+    margin: 2rem;
+    padding: 1.5rem;
+    max-width: 90%;
+    border-radius: 8px;
+  }
+  .h {
+    font-size: 1.5rem;
+  }
+  .p {
+    font-size: 0.875rem;
+  }
 }
 
-/* Draw the checkmark like it's being hand-drawn */
-.tickIcon::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-bottom: 5px solid transparent;
-  border-right: 5px solid transparent;
-  transform: rotate(45deg);
-  top: 5px;
-  left: 13px;
-  transform-origin: bottom left;
-  animation: drawCheck 1s ease-out forwards;
+@media (min-width: 601px) and (max-width: 1024px) { /* Tablets */
+  .modalContent {
+    padding: 2rem;
+    max-width: 80%;
+    border-radius: 10px;
+  }
+  .h {
+    font-size: 1.6rem;
+  }
+  .p {
+    font-size: 0.95rem;
+  }
 }
 
-/* Circle animation around the checkmark */
-.tickIcon::after {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  width: 70px;
-  height: 70px;
-  border: 3px solid transparent;
-  border-radius: 50%;
-  opacity: 0.5;
-  animation: drawCircle 1.5s ease-out forwards;
+
+
+/* Animation container to center the video */
+.animationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Success animation */
+.successAnimation {
+  width: 80px; /* Adjust size as needed */
+  height: 80px;
+  background-color: transparent !important; /* Force transparent */
 }
 
 /* Heading text */
@@ -73,7 +85,6 @@
   margin: 0;
 }
 
-/* Paragraph text */
 .p {
   font-size: 1rem;
   margin-top: 0.5rem;
@@ -90,59 +101,5 @@
 @keyframes popUp {
   to {
     transform: scale(1);
-  }
-}
-
-/* Animation for drawing the checkmark like a hand-drawn stroke */
-@keyframes drawCheck {
-  0% {
-    width: 0;
-    height: 0;
-    opacity: 0;
-    border-color: transparent;
-  }
-  30% {
-    width: 5px;
-    height: 0;
-    opacity: 1;
-    border-color: transparent;
-  }
-  70% {
-    width: 10px;
-    height: 10px;
-    opacity: 1;
-    border-color: transparent;
-  }
-  100% {
-    width: 10px;
-    height: 25px;
-    opacity: 1;
-    border-color: #4caf50; /* Green color for the checkmark */
-  }
-}
-
-/* Circle rotation animation while drawing */
-@keyframes rotateCircle {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Animation for drawing the circle */
-@keyframes drawCircle {
-  0% {
-    border-color: transparent;
-    transform: rotate(0deg);
-  }
-  50% {
-    border-color: #4caf50; /* Green color for the circle */
-    transform: rotate(180deg);
-  }
-  100% {
-    border-color: #4caf50;
-    transform: rotate(360deg);
   }
 }

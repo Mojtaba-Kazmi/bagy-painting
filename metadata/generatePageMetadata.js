@@ -2,11 +2,11 @@ import { defaultMetadata } from "./metadata";
 
 export const generatePageMetadata = ({ title, description }) => ({
   ...defaultMetadata,
-  title,
-  description,
+  title: title || defaultMetadata.title,
+  description: description || defaultMetadata.description,
   openGraph: {
     ...defaultMetadata.openGraph,
-    title,
-    description,
+    title: title || defaultMetadata.openGraph.title,
+    description: description || defaultMetadata.openGraph.description,
   },
 });

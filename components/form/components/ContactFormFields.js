@@ -54,7 +54,8 @@ const ContactFormFields = ({ control, errors }) => {
           className={styles.formField}
           validation={{
             pattern: {
-              value: /^(?:\+61\s?|0)[2-478](?:[ -]?[0-9]){8}$|^(?:\+61\s?)?4[0-9]{2}(?:[ -]?[0-9]){6}$|^(?:13\s?[0-9]{2}\s?[0-9]{2})$|^(?:1300\s?[0-9]{3}\s?[0-9]{3})$|^(?:1800\s?[0-9]{3}\s?[0-9]{3})$/,
+              value:
+                /^(?:\+61\s?|0)[2-478](?:[ -]?[0-9]){8}$|^(?:\+61\s?)?4[0-9]{2}(?:[ -]?[0-9]){6}$|^(?:13\s?[0-9]{2}\s?[0-9]{2})$|^(?:1300\s?[0-9]{3}\s?[0-9]{3})$|^(?:1800\s?[0-9]{3}\s?[0-9]{3})$/,
               message:
                 "Please enter a valid Australian number, such as mobile, local, or business.",
             },
@@ -67,13 +68,15 @@ const ContactFormFields = ({ control, errors }) => {
         control={control}
         servicesList={servicesList}
       />
-      <FormField
-        name="message"
-        label="Message"
-        control={control}
-        errors={errors}
-        type="textarea"
-      />
+      <div className={styles.message}>
+        <FormField
+          name="message"
+          label="Message"
+          control={control}
+          errors={errors}
+          type="textarea"
+        />
+      </div>
     </>
   );
 };
