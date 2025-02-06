@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   padding: 1rem;
   background: linear-gradient(
     135deg,
@@ -16,6 +16,8 @@
   border-radius: 10px;
   color: white;
   animation: borderShine 5s linear infinite;
+  text-align: center; /* Centers text on mobile */
+  width: 40%;
 }
 
 @keyframes borderShine {
@@ -25,42 +27,49 @@
 }
 
 .projectInfo {
-  max-width: 100%;
+  max-width: 50%;
   padding-bottom: 1rem;
 }
 
 .navigation {
   margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Ensures buttons wrap properly on smaller screens */
+  gap: 10px;
 }
 
 .navButton {
-  margin: 0 5px;
-  padding: 10px 20px;
+  padding: 12px 20px;
   background: #081333;
   border: none;
   cursor: pointer;
   color: white;
   font-size: 1rem;
   border-radius: 8px;
+  transition: background 0.3s;
 }
 
 .navButton:hover {
-  background: #081333;
+  background: #122a68;
 }
 
-/* Image Transition Effect */
+/* Responsive Image Container */
 .imageContainer {
-  max-width: 10%;
+  width: 100%;
+  max-width: 400px; /* Limits image size on large screens */
   position: relative;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  margin-top: 1rem;
 }
 
 .projectImage {
-  width: 1000px;
+  width: 100%;
+  height: auto;
   border-radius: 10px;
   opacity: 0;
   transform: scale(1.1);
@@ -73,8 +82,56 @@
   transform: scale(1);
 }
 
-@media (min-width: 1440px) {
+/* Mobile & Tablet Adjustments */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 1.5rem;
+  }
+
+  .projectInfo {
+    max-width: 100%;
+  }
+
+  .navButton {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+
   .imageContainer {
-    max-width: 900px;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    margin: 0.2rem;
+  }
+
+  .projectInfo p {
+    padding: 2rem;
+  }
+
+  .navigation {
+    display: flex;
+    justify-content: center; /* Centers the buttons horizontally */
+    flex-wrap: wrap; /* Ensures buttons wrap properly on smaller screens */
+    gap: 10px; /* Adds space between buttons */
+    width: 100%;
+  }
+  
+  .navButton {
+    width: 50%;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center; /* Centers text inside the button */
+    align-items: center;
+    text-align: center; /* Ensures text stays centered */
+  }
+
+  .imageContainer {
+    max-width: 90%;
   }
 }
