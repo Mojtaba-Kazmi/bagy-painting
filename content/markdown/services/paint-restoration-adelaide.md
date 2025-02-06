@@ -1,7 +1,7 @@
 ---
 title: "Professional Paint Restoration in Adelaide"
 excerpt: "Revive your property with expert paint restoration in Adelaide. We restore exteriors and interiors with expert craftsmanship."
-thumbnail: "/assets/svg/resto.svg"
+thumbnail: "restoration-painting_m81apg"
 ---
 
 ## Expert Restoration Painting in Adelaide

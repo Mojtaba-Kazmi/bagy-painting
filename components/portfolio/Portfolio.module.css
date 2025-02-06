@@ -11,7 +11,7 @@
   font-size: 1.5rem; /* Smaller font size for mobile */
   margin-left: 1.5rem; /* Adjusted margin for smaller screens */
   padding-top: 1.5rem;
-  color: rgb(8, 19, 51);
+  color: #081333;
 }
 
 /* Carousel Styling */
@@ -33,7 +33,7 @@
 .card {
   flex: 0 0 63%; /* Cards take up more space on mobile */
   position: relative;
-  border-radius: 30px;
+  border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
   max-width: 400px; /* Adjust size for mobile */
@@ -54,7 +54,7 @@
   position: relative;
   width: 100%;
   padding-top: 180%; /* iPhone-like 2:3 aspect ratio */
-  border-radius: 30px;
+  border-radius: 10px;
   overflow: hidden;
 }
 
@@ -65,8 +65,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(8, 19, 51, 0.525); /* Semi-transparent black */
-  border-radius: 30px; /* Match the border radius of the image */
+  background: #0813335e; /* Semi-transparent black */
+  border-radius: 10px; /* Match the border radius of the image */
   z-index: 1; /* Ensure it appears above the image */
 }
 
@@ -77,7 +77,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover; /* Keeps image proportional and fills the container */
-  border-radius: 30px; /* Ensures the image respects rounded corners */
+  border-radius: 10px; /* Ensures the image respects rounded corners */
 }
 
 /* Text overlay styling */
@@ -124,7 +124,7 @@
 }
 
 .navButton {
-  background: rgb(8, 19, 51);
+  background: #081333;
   color: white;
   border: none;
   border-radius: 50%;
@@ -148,7 +148,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(8, 19, 51, 0.531); /* Semi-transparent overlay */
+  background: #081333; /* Semi-transparent overlay */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -210,7 +210,7 @@
   border: none;
   font-size: 2rem;
   cursor: pointer;
-  color: rgb(8, 19, 51);
+  color: #081333;
   z-index: 11; /* Higher than the wrapper for clickability */
 }
 
@@ -271,9 +271,6 @@
 
   .modalDetails h2 {
     font-size: 0.9rem;
-
-
-
   }
 
   .modalDetails p {
@@ -322,7 +319,7 @@
 @media (min-width: 1025px) {
   /* General container styles */
   .container {
-    padding: 60px 0;
+    padding: 30px 0;
     position: relative;
     overflow-x: hidden; /* Prevent horizontal scrolling */
     display: flex;

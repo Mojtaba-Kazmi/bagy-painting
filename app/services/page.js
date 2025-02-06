@@ -17,7 +17,7 @@ async function getPaginatedServices(page = 1) {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/api/services/`,
       {
-        next: { revalidate: 2592000 }, // Revalidate every 30 days (2592000 seconds)
+        next: { revalidate: 3600 }, // Revalidate every 30 days (2592000 seconds)
       }
     );
 

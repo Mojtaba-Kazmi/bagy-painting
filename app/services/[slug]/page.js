@@ -4,6 +4,8 @@ import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
 import Link from "next/link";
 import styles from "./page.module.css";
+import { CldImage } from "next-cloudinary";
+import CloudinaryImage from "@/components/services/CloudinaryImage";
 
 export async function generateStaticParams() {
   const servicesDirectory = path.join(
@@ -138,13 +140,9 @@ export default async function ServiceDetailPage({ params }) {
 
             {data.thumbnail && (
               <div className={styles.imageContainer}>
-                <img
-                  src={data.thumbnail}
+                <CloudinaryImage
+                  publicId={data.thumbnail} // Pass Cloudinary Public ID
                   alt={`Thumbnail for ${data.title}`}
-                  width={80}
-                  height={80}
-                  className={styles.thumbnail}
-                  itemProp="image"
                 />
               </div>
             )}

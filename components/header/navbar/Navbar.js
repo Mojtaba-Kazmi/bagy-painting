@@ -33,16 +33,16 @@ export default function Navbar({ isMenuOpen, onCloseMenu }) {
   const menuItems = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
-    { href: "/portfolio", label: "Portfolio" },
+    { href: "/projects", label: "Projects" },
     { href: "/services", label: "Services" },
     { href: "/blog", label: "Blog" },
     {
-      href: "/pages",
+      href: "/#",
       label: "Pages",
       submenu: [
         { href: "/", label: "Home Page" },
         { href: "/about", label: "About Page" },
-        { href: "/portfolio", label: "Portfolio Page" },
+        { href: "/projects", label: "Projects Page" },
         { href: "/services", label: "Services Page" },
         { href: "/blog", label: "Blog Page" },
         { href: "/virtual-paint-project", label: "Virtual Paint Project Page" },

@@ -1,7 +1,8 @@
-import Spinner from "@/components/spinner/Spinner";
 import { getHomePageData } from "@/utils/getHomePageData";
 import dynamic from "next/dynamic";
 import { generatePageMetadata } from "@/metadata/generatePageMetadata";
+import Loading from "@/components/loader/loading/loading";
+import PageHeader from "@/components/page-header/PageHeader";
 
 export const metadata = generatePageMetadata({
   title: "Bagy Painting Portfolio - Successful Painting Projects in Adelaide",
@@ -25,13 +26,22 @@ export const metadata = generatePageMetadata({
 
 // Dynamically import Portfolio with a loading state (optional)
 const Portfolio = dynamic(() => import("@/components/portfolio/Portfolio"), {
-  loading: () => <Spinner />
+  loading: () => <Loading />,
 });
 
 const PortfolioPage = async () => {
-  const { getPortfolio} = await getHomePageData();
+  const { getPortfolio } = await getHomePageData();
 
-  return <Portfolio portfolio= {getPortfolio} />;
-}
+  return (
+    <>
+      <PageHeader
+        title="Our Successful Projects"
+        description="Explore our portfolio of high-quality painting projects completed across Adelaide, SA. From residential to commercial spaces, Bagy Painting delivers expert craftsmanship and flawless finishes."
+        breadcrumb="Projects Page"
+      />
+      <Portfolio portfolio={getPortfolio} />;
+    </>
+  );
+};
 
 export default PortfolioPage;

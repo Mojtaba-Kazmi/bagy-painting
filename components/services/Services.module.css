@@ -1,34 +1,20 @@
-/* Services Container */
-.servicesContainer {
-  position: relative; /* Ensure video and gradient stay within the container */
+/* Default (Mobile-first) styles */
+.servicesGrid {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  overflow: hidden; /* Ensures video and gradient don’t overflow */
-  background-color: #f5f4f6;
-  z-index: 0;
-  margin: 0.2rem; /* Apply margin to the wrapper */
-  border-radius: 8px; /* Rounded corners */
+  flex-wrap: wrap; /* Allow wrapping to the next row */
+  justify-content: center; /* Center content in the grid */
+  background-color: #ffffff; /* Background color for the grid */
+  box-sizing: border-box; /* Include padding in calculations */
+  gap: 25px; /* Reduced gap for mobile */
 }
 
-/* Styling for the section heading */
-.servicesContainer h2 {
-  font-size: 36px;
-  font-weight: bold;
-  color: #081333; /* Dark text for heading */
-  margin-bottom: 40px;
-}
-
-/* Wrapper */
+/* Wrapper container */
 .wrapper {
   position: relative; /* Ensures video and gradient are positioned inside */
-  padding: 2rem;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.9); /* Fallback background */
-  border-radius: 8px; /* Rounded corners for the wrapper */
-  z-index: 1; /* Keep content above the video and gradient */
-  overflow: hidden; /* Ensure video and gradient respect the border-radius */
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin: 0.2rem; /* Apply margin to the wrapper */
+  padding: 0.5rem;
 }
 
 .heading {
@@ -38,110 +24,144 @@
   text-align: center; /* Ensures text within child elements is centered */
 }
 
-/* Services Icon */
-.servicesIcon {
-  width: 150px; /* Fixed width */
-  height: 150px; /* Fixed height to match width */
-  border-radius: 50%; /* Makes it circular */
-  overflow: hidden; /* Hides any overflow */
-  display: flex; /* Use flex to center the image */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
-  margin: 0 auto; /* Center the icon horizontally */
-  margin-top: -60px; /* Adjust margin to give space above */
-  
-}
-
-/* Adjust the Image component inside the servicesIcon */
-.icon {
-  width: 100%; /* Fill the parent container */
-  height: 100%; /* Ensure it fills height */
-}
-
-/* Grid layout for the services */
-.servicesGrid {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center; /* Center content */
-  gap: 40px 15px; /* Space between service cards */
-  margin-top: 90px; /* Adjust margin to give space above */
-}
-
 /* Individual service card */
 .serviceCard {
+  background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
   display: flex;
   flex-direction: column; /* Stack icon and text vertically */
   align-items: center; /* Center items */
-  text-align: center; /* Center text */
-  background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
-  backdrop-filter: blur(10px); /* Add a blur effect to the background */
-  padding: 30px 0 30px 0;
-  border-radius: 8px;
+  padding: 0px 0 30px 0;
+  text-align: center;
+  flex: 1 1 100%; /* Single card per row by default */
+  max-width: 100%; /* Full width on mobile */
+  box-sizing: border-box;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease;
-  width: 100%; /* Full width for smaller screens */
-  max-width: 380px; /* Set a max width for each card */
 }
 
-/* Service card hover effect */
 .serviceCard:hover {
   transform: translateY(-10px); /* Lift on hover */
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* Elevated shadow */
+  cursor: pointer;
 }
 
-/* Service title */
+/* Service icon */
+.servicesIcon {
+  width: 450px; /* Default size for mobile */
+  height: 250px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  margin: 0 auto; /* Center the icon horizontally */
+}
+
+.servicesIcon img {
+  width: 100%; /* Fill the parent container */
+  height: 100%; /* Ensure it fills height */
+  object-fit: cover; /* Prevent image distortion */
+  border-radius: 8px;
+}
+
+/* Title */
 .serviceCard h2 {
-  font-size: 25px;
-  margin: 20px;
+  font-size: 1.3rem; /* Smaller heading for mobile */
+  margin: 1rem 6rem;
   color: #081333;
   font-weight: 600;
   line-height: 1.4;
 }
 
-/* Service metadata (published date, provider) */
+/* Paragraph */
 .serviceCard p {
-  margin: 0 20px;
-  font-size: 1.2rem;
-  color: #081333;
+  margin: 0 1rem;
+  font-size: 1rem; /* Standard readable size for mobile */
+  color: #333;
   line-height: 1.6;
 }
 
-/* Read More link styling */
+/* Read More link */
 .readMore {
-  color: #265e87 !important; /* Blue for the link */
+  color: #081333 !important;
   font-weight: 600;
   margin-top: 15px !important;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 10px;
   display: inline-block;
   transition: color 0.3s ease;
 }
 
 .readMore:hover {
-  color: #081333 !important; /* Darker blue on hover */
+  color: #081333 !important;
   text-decoration: none;
 }
 
-
-
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Tablet-specific adjustments */
+@media (min-width: 600px) and (max-width: 1024px) {
   .servicesGrid {
-    flex-direction: column; /* Stack the cards vertically on small screens */
-    justify-content: center; /* Center children vertically */
-    align-items: center; /* Center children horizontally */
+    gap: 20px; /* Adjusted gap for tablets */
+    max-width: 90%; /* Restrict grid width for tablets */
+    margin: 0 auto; /* Center the grid */
   }
 
   .serviceCard {
-    margin-bottom: 20px; /* Space between service cards */
+    flex: 1 1 calc(50% - 20px); /* Two cards per row on tablet */
+    max-width: calc(50% - 20px);
+    padding: 0px 0 20px 0; /* Adjusted padding for better spacing */
   }
 
-  /* You can adjust the icon size for mobile if needed */
   .servicesIcon {
-    width: 100px; /* Smaller width for mobile */
-    height: 100px; /* Smaller height for mobile */
+    width: 450px; /* Slightly smaller for tablets */
+    height: 250px;
+  }
+
+  .serviceCard h2 {
+    font-size: 1.4rem; /* Adjusted heading size for tablets */
+    margin: 1rem 5rem; /* Adjusted margin for better spacing */
+  }
+
+  .serviceCard p {
+    font-size: 1rem; /* Slightly smaller text for tablets */
+  }
+
+  .readMore {
+    font-size: 12px; /* Slightly larger link text */
   }
 }
 
+/* For larger screens (desktops) */
+@media (min-width: 1025px) {
+  .servicesGrid {
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 15px; /* Space between items */
+  }
 
+  .serviceCard {
+    flex: 1 1 calc(33.333% - 20px); /* Three cards per row */
+    max-width: calc(33.333% - 20px);
+  }
+
+  .servicesIcon {
+    width: 400px; /* Default size for mobile */
+    height: 250px;
+  }
+
+  /* Title */
+  .serviceCard h2 {
+    font-size: 1.4rem; /* Smaller heading for mobile */
+    margin: 1rem 2rem;
+    color: #081333;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  /* Paragraph */
+  .serviceCard p {
+    margin: 0 2rem;
+    font-size: 1.2rem; /* Standard readable size for mobile */
+    color: #333;
+    line-height: 1.6;
+  }
+}

@@ -13,8 +13,14 @@ const Sitemap = ({ menuItems }) => {
       <section className={styles.sitemap}>
         <ul className={styles.sitemapList}>
           {menuItems.map((item) => (
-            <li key={item.href}>
-              <Link href={item.href}>{item.label}</Link>
+            <li key={item.label}>
+              {/* Only use <Link> if href is available */}
+              {item.href ? (
+                <Link href={item.href}>{item.label}</Link>
+              ) : (
+                <span className={styles.nonClickable}>{item.label}</span> // Just a label
+              )}
+
               {/* Check if the item has submenus */}
               {item.submenu && (
                 <ul className={styles.subMenu}>

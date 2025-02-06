@@ -1,7 +1,7 @@
 ---
 title: "Professional Commercial Painters in Adelaide"
 excerpt: "Expert commercial and industrial painting services in Adelaide. Trusted by businesses for quality and reliability."
-thumbnail: "/assets/svg/com.svg"
+thumbnail: "commercial-painting_h5gbv0"
 ---
 
 ## Adelaide’s Preferred Commercial Painting Specialists

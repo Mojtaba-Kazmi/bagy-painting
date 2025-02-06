@@ -1,7 +1,7 @@
 ---
 title: "Professional Residential Painters in Adelaide"
 excerpt: "Professional residential painting in Adelaide, transforming homes with quality finishes tailored to your needs."
-thumbnail: "/assets/svg/res.svg"
+thumbnail: "residential-painting_gdy98t"
 ---
 
 ## Expert Home Painting Services in Adelaide

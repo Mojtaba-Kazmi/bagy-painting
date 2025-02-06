@@ -1,0 +1,80 @@
+.hero {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  background: linear-gradient(
+    135deg,
+    #081333,
+    #265e87,
+    #081333,
+    #265e87,
+    #265e87
+  );
+  background-size: 300% 300%;
+  border-radius: 10px;
+  color: white;
+  animation: borderShine 5s linear infinite;
+}
+
+@keyframes borderShine {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.projectInfo {
+  max-width: 100%;
+  padding-bottom: 1rem;
+}
+
+.navigation {
+  margin-top: 1rem;
+}
+
+.navButton {
+  margin: 0 5px;
+  padding: 10px 20px;
+  background: #081333;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+.navButton:hover {
+  background: #081333;
+}
+
+/* Image Transition Effect */
+.imageContainer {
+  max-width: 10%;
+  position: relative;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.projectImage {
+  width: 1000px;
+  border-radius: 10px;
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Active image will smoothly fade in */
+.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (min-width: 1440px) {
+  .imageContainer {
+    max-width: 900px;
+  }
+}

@@ -1,4 +1,7 @@
+"use client"
+
 import Link from "next/link";
+import { CldImage } from "next-cloudinary";
 import styles from "./Services.module.css";
 import SectionHeader from "../section-header/SectionHeader";
 
@@ -15,7 +18,7 @@ export default function Services({ latestServices }) {
           <header className={styles.heading}>
             <SectionHeader
               title="Our Painting Services"
-              description="At Bagy Painting, we offer expert interior and exterior painting for houses and businesses in Adelaide, with quality result."
+              description="At Bagy Painting, we offer expert interior and exterior painting for houses and businesses in Adelaide, with quality results."
             />
           </header>
         </div>
@@ -30,12 +33,12 @@ export default function Services({ latestServices }) {
             >
               <header>
                 <div className={styles.servicesIcon}>
-                  <img
-                    src={service.thumbnail}
+                  <CldImage
+                    src={service.thumbnail} // Assuming this is a Cloudinary public ID
+                    width={500}
+                    height={500}
                     alt={`Thumbnail for ${service.title}`}
                     className={styles.icon}
-                    width={80}
-                    height={80}
                     itemProp="image"
                   />
                 </div>

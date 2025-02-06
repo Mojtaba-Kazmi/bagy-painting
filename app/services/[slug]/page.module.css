@@ -1,33 +1,33 @@
-/* Main page layout */
+/* Main page layout - Mobile first */
 .servicesPage {
   display: flex;
-  flex-direction: column; /* Default to column for mobile */
-  margin-top: 100px; /* Added margin to push the header down */
-  background-color: white; /* Set background color to white */
+  flex-direction: column;
+  margin-top: 20px; /* Adjusted for mobile */
+  background-color: white;
   border-radius: 8px;
-  margin-left: 0.8rem;
-  margin-right: 0.8rem;
+  margin: 0.2rem;
+  padding: 6rem 1rem 1rem 1rem;
 }
 
 /* Wrapper to center content */
 .wrapper {
   display: flex;
-  flex-direction: column; /* Default to column for mobile */
-  max-width: 1200px;
+  flex-direction: column;
+  max-width: 100%; /* Full width for mobile */
   margin: 0 auto;
   text-align: left;
 }
 
 /* Sidebar styles */
 .sidebar {
-  order: 2; /* Sidebar at the bottom by default */
-  width: 100%; /* Full width on mobile */
-  margin-top: 1rem; /* Add some space from main content */
+  order: 2;
+  width: 100%;
+  margin-top: 1rem;
 }
 
 .sidebar a {
-  text-decoration: none; /* Remove underline from links */
-  color: #081333; /* Ensure link color is defined */
+  text-decoration: none;
+  color: #081333;
 }
 
 /* Service list styling */
@@ -35,147 +35,253 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  
 }
 
-/* Service list link styles */
 .servicesList ul li p {
   margin: 0 0 5px 0;
-  color: #081333;
+  color: #0a6a56;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1.1rem; /* Slightly smaller for mobile */
   padding: 10px;
   display: block;
   border-radius: 8px;
-  transition: background-color 0.2s ease-in-out, transform 0.2s ease; /* Added transition for hover effect */
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease;
   background-color: rgb(245, 244, 246);
 }
 
 .servicesList ul li p:hover,
 .servicesList ul li p.active {
-  background-color: rgb(8, 19, 51);
+  background-color: #081333;
   color: #fff;
-  transform: scale(1.05); /* Zoom effect on hover */
 }
 
 /* Contact section styling */
 .contactSection {
   margin-top: 10px;
-  padding: 20px;
-  background-color: #265e87;
+  padding: 15px;
+  background-color: #081333;
   text-align: center;
   color: #fff;
   border-radius: 8px;
 }
 
-.contactSection h2 {
+.contactSection h3 {
+  font-size: 1.4rem; /* Smaller for mobile */
   margin-bottom: 10px;
 }
 
 .contactSection button {
-  background-color: #081333;
+  background-color: #a82b11;
   color: white;
   padding: 10px 20px;
+  font-size: 1.1rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 10px;
 }
 
 .contactSection button:hover {
-  background-color: #265e87;
+  background-color: #c2290a;
 }
 
 /* Main content styles */
 .mainContent {
-  order: 1; /* Main content displayed first by default */
-  width: 100%; /* Full width on mobile */
+  order: 1;
+  width: 100%;
 }
 
 /* Service details styling */
 .serviceDetail {
-  max-width: 800px;
+  max-width: 100%; /* Full width for mobile */
   margin: 0 auto;
-  padding: 20px;
+  padding: 15px;
   line-height: 1.6;
 }
 
 .serviceHeader h1 {
   text-align: left;
-  margin-bottom: 30px;
-  font-size: 2rem;
-}
-
-.serviceTitle {
-  font-size: 28px; /* Smaller font size on mobile */
+  margin-bottom: 20px;
+  font-size: 1.5rem; /* Adjusted for mobile */
   font-weight: bold;
   color: #081333;
-  margin-bottom: 10px;
 }
 
-.serviceMeta {
-  font-size: 14px;
-  color: #081333;
-}
-
-/* Image styles */
 .imageContainer {
-  text-align: left;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .thumbnail {
-  border-radius: 8px;
-  width: 100%; /* Ensure the image takes the full width */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Cover to fill the container */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-width: 100%;
 }
 
 /* Service content styles */
 .serviceContent {
-  font-size: 18px;
-  line-height: 1.8;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
 }
 
 .serviceContent ul {
-  font-size: 17px;
-  line-height: 1.8;
+  font-size: 1rem;
+  line-height: 1.6;
   list-style-type: none;
-  padding-left: 10px; /* Reduce overall left spacing */
+  padding-left: 10px;
+ 
 }
 
 .serviceContent h2 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  color: #081333;
 }
 
-/* Responsive design for larger screens */
-@media (min-width: 769px) {
+.serviceContent h3 {
+  font-size: 1.1rem;
+  color: #081333;
+}
+
+/* Tablet styles */
+@media (min-width: 576px) and (max-width: 1024px) {
   .servicesPage {
-    flex-direction: row; /* Change to row for larger screens */
-    padding: 6rem; /* 6rem for larger screens */
+    padding: 6rem 2rem 2rem 2rem; /* Adjust padding for tablets */
+    margin: 0.2rem;
+    border-radius: 8px; /* Keep consistent with mobile */
+  }
+
+  .wrapper {
+    max-width: 90%; /* Slightly wider than mobile but not full width */
+    margin: 0 auto;
+    text-align: left; /* Ensure left-alignment remains */
   }
 
   .sidebar {
-    order: 1; /* Sidebar on the left for larger screens */
-    width: 25%; /* Sidebar takes up 25% on larger screens */
-    border-right: solid 1px #f5f4f6;
-    padding: 0rem 0.5rem;
-    margin-top: 3.5rem;
+    order: 2; /* Sidebar remains at the bottom */
+    width: 100%; /* Full width for consistency */
+    margin-top: 1rem;
+  }
+
+  .sidebar a {
+    font-size: 1.2rem; /* Slightly larger font for better visibility */
+  }
+
+  .servicesList ul li p {
+    font-size: 1.2rem; /* Adjust font size for tablet readability */
+    padding: 12px;
+    line-height: 1.5; /* Ensure spacing for readability */
+  }
+
+  .contactSection {
+    margin-top: 10px;
+    padding: 20px; /* Slightly larger padding */
+    font-size: 1.2rem; /* Adjust font size */
+    border-radius: 8px;
+  }
+
+  .contactSection h2 {
+    font-size: 1.4rem; /* Adjust header size */
+    margin-bottom: 10px;
+  }
+
+  .contactSection button {
+    padding: 12px 24px; /* Slightly larger buttons for tablets */
+    font-size: 1.2rem;
   }
 
   .mainContent {
-    order: 2; /* Main content displayed second */
-    width: 75%; /* Main content takes up 75% on larger screens */
+    order: 1; /* Main content remains first */
+    width: 100%; /* Full width for main content */
+  }
+
+  .serviceDetail {
+    max-width: 90%; /* Adjusted for slightly wider screens */
+    padding: 20px;
+    line-height: 1.6;
+  }
+
+  .serviceHeader h1 {
+    font-size: 1.8rem; /* Slightly larger font size */
+    margin-bottom: 20px;
+  }
+
+  .thumbnail {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin: 1rem 0;
+  }
+
+  .serviceContent {
+    font-size: 1.1rem; /* Adjust font size */
+    line-height: 1.7;
+    color: #333;
+  }
+
+  .serviceContent ul {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    padding-left: 10px; /* Keep consistent with mobile */
+  }
+
+  .serviceContent h2 {
+    font-size: 1.3rem; /* Adjust subheader size */
+  }
+  .serviceContent h3 {
+    font-size: 1.2rem;
+    color: #081333;
+  }
+
+  .contactSection h3 {
+    font-size: 1.6rem; /* Adjust header size */
+    margin-bottom: 10px;
+  }
+
+}
+
+/* Desktop styles */
+@media (min-width: 1025px) {
+  .servicesPage {
+    flex-direction: row; /* Change to row for larger screens */
+    padding: 12rem 0; /* Desktop padding remains as is */
   }
 
   .wrapper {
     flex-direction: row; /* Change to row for larger screens */
+    max-width: 1200px;
     text-align: left;
   }
 
+  .sidebar {
+    order: 1;
+    width: 25%; /* Sidebar on the left for larger screens */
+    border-right: solid 1px #f5f4f6;
+    padding: 0rem 1.5rem;
+    margin-top: 3.5rem;
+  }
+
+  .mainContent {
+    order: 2;
+    width: 75%; /* Main content takes up 75% on larger screens */
+  }
+
   .serviceHeader h1 {
-    text-align: left;
-    margin-bottom: 30px;
-    font-size: 2.5rem;
+    font-size: 2rem;
+  }
+
+  .serviceContent h2 {
+    font-size: 1.6rem;
+    color: #081333;
+  }
+
+  .serviceContent h3 {
+    font-size: 1.4rem;
+    color: #081333;
   }
 
   .contactSection {
@@ -187,10 +293,24 @@
     text-align: center;
   }
 
-  /* Image styles */
+  .contactSection h3 {
+    font-size: 1.6rem; /* Adjust header size */
+    margin-bottom: 10px;
+  }
+
   .imageContainer {
-    text-align: left;
     margin: 20px 0;
-    width: 300px;
+  }
+  .serviceContent {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  .serviceContent ul {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    list-style-type: none;
+    padding-left: 10px;
   }
 }

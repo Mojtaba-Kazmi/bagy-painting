@@ -27,9 +27,8 @@
 
 .testimonialsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr); /* 2 per row */
   gap: 2rem;
-  
 }
 
 .testimonialCard {
@@ -89,6 +88,10 @@
   font-size: 1.5rem; /* Adjust the size of the stars */
   color: #ffd700 !important; /* Gold color for filled stars */
 }
+
+.viewMore {
+  padding: 6rem 0 0 0;
+}
 /* Responsive */
 @media (min-width: 1200px) {
   .wrapper {
@@ -103,7 +106,7 @@
     grid-template-columns: 1fr; /* Stack cards vertically */
     gap: 1rem;
   }
-  
+
   .testimonialCard {
     padding: 1rem; /* Reduced padding on smaller screens */
   }
@@ -120,4 +123,3 @@
     font-size: 1rem; /* Adjusted font size */
   }
 }
-

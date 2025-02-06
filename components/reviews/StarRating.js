@@ -1,5 +1,5 @@
 // components/StarRating.js
-import styles from "./Testimonials.module.css";
+import styles from "./GoogleReviews.module.css";
 
 const StarRating = ({ rating }) => {
   const totalStars = 5;

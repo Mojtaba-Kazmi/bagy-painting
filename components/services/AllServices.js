@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { CldImage } from "next-cloudinary";
 import styles from "./AllServices.module.css";
 import PageHeader from "../page-header/PageHeader";
 
@@ -30,43 +31,46 @@ export default function AllServices({
       <section aria-labelledby="services-list">
         <div className={styles.servicesGrid}>
           {paginatedServices.length > 0 ? (
-            paginatedServices.map((service) => (
-              <article
-                key={service.filename}
-                itemScope
-                itemType="https://schema.org/Service"
-                className={styles.article}
-              >
-                <header>
-                  <Link href={`/services/${service.filename}`}>
-                    <img
-                      src={service.thumbnail}
-                      alt={`Thumbnail for ${service.title}`}
-                      width={800}
-                      height={500}
-                      itemProp="image"
-                      loading="lazy" // Ensure images are lazy-loaded for performance
-                    />
-                  </Link>
-                  <h2 itemProp="name">
-                    <Link
-                      href={`/services/${service.filename}`}
-                      className={styles.serviceTitle}
-                    >
-                      {service.title}
-                    </Link>
-                  </h2>
-                </header>
-                <p itemProp="description">{service.excerpt}</p>
-                <Link
-                  href={`/services/${service.filename}`}
-                  aria-label={`Read more about ${service.title}`}
-                  className={styles.continueReading}
+            <div className={styles.wrapper}>
+              {paginatedServices.map((service) => (
+                <article
+                  key={service.filename}
+                  itemScope
+                  itemType="https://schema.org/Service"
+                  className={styles.article}
                 >
-                  Continue Reading
-                </Link>
-              </article>
-            ))
+                  <header>
+                    <Link href={`/services/${service.filename}`}>
+                      <CldImage
+                        src={service.thumbnail}
+                        alt={`Thumbnail for ${service.title}`}
+                        width={800}
+                        height={500}
+                        itemProp="image"
+                        loading="lazy"
+                        className={styles.thumbnail}
+                      />
+                    </Link>
+                    <h2 itemProp="name">
+                      <Link
+                        href={`/services/${service.filename}`}
+                        className={styles.serviceTitle}
+                      >
+                        {service.title}
+                      </Link>
+                    </h2>
+                  </header>
+                  <p itemProp="description">{service.excerpt}</p>
+                  <Link
+                    href={`/services/${service.filename}`}
+                    aria-label={`Read more about ${service.title}`}
+                    className={styles.continueReading}
+                  >
+                    Continue Reading
+                  </Link>
+                </article>
+              ))}
+            </div>
           ) : (
             <p>No services available at the moment.</p>
           )}

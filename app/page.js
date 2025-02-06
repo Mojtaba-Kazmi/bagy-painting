@@ -2,8 +2,8 @@ import About from "@/components/about/About";
 import BlogPosts from "@/components/blog/BlogPosts";
 import ContactForm from "@/components/form/ContactForm";
 import HeroBanner from "@/components/hero-banner/HeroBanner";
+import GoogleReviews from "@/components/reviews/GoogleReviews";
 import Services from "@/components/services/Services";
-import Testimonials from "@/components/testimonials/Testimonials";
 import { getHomePageData } from "@/utils/getHomePageData";
 
 export default async function Home() {
@@ -15,7 +15,7 @@ export default async function Home() {
       <HeroBanner />
       <About homeAboutInfo={homeAboutData} />
       <Services latestServices={latestServices} />
-      <Testimonials />
+      <GoogleReviews />
       <BlogPosts latestPosts={latestBlogPosts} />
       <ContactForm />
     </>

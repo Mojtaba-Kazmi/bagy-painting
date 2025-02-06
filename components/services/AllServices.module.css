@@ -1,112 +1,86 @@
-/* ServicesList.module.css */
-
 /* Container for the services grid */
 .servicesGrid {
   display: flex;
-  justify-content: center;
-  flex-direction: column; /* Default to column for mobile and tablet */
-  gap: 20px;
-  padding: 6rem; /* Padding for mobile */
-  background-color: #ffffff; /* Full-width background color */
-  margin: 0.2rem 0.2rem 0 0.2rem;
-  border-radius: 8px;
+  flex-wrap: wrap; /* Allow wrapping to the next row */
+  justify-content: center; /* Center content in the grid */
+  background-color: #ffffff; /* Background color for the grid */
+  box-sizing: border-box; /* Include padding in calculations */
+  gap: 15px; /* Default gap for mobile */
+  padding: 1rem; /* Default padding for mobile */
 }
 
-/* Individual service article styling */
+/* Wrapper for each row of articles */
+.wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Ensure items wrap onto new rows */
+  justify-content: space-between; /* Add even spacing between items */
+  gap: 15px; /* Default space between articles */
+  max-width: 100%; /* Full width by default */
+  margin: 0 auto; /* Center container */
+}
+
+/* Individual article styling (default: mobile) */
 .article {
-  background-color: #ffffff;
-  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  text-align: center; /* Center content */
-  align-items: center; /* Center content horizontally */
-  padding: 30px; /* Added padding for content */
-  width: 100%; /* Full width for smaller screens */
-  max-width: 18rem; /* Set a max width for each card */
+  align-items: center;
+  padding: 0px 0 30px 0;
+  text-align: center;
+  flex: 1 1 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.06);
 }
 
-/* Hover effect for the service card */
 .article:hover {
-  transform: translateY(-5px); /* Slight lift on hover */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
 
-/* Service header image */
+/* Image styling */
 .article header img {
-  width: 100%;
-  height: 220px; /* Adjusted height for larger displays */
+  width: 450px;
+  height: 250px;
+  border-radius: 8px;
   object-fit: cover;
 }
 
-/* Service title */
+/* Title */
 .article h2 {
-  color: #081333;
-  font-weight: 600;
-  text-decoration: none;
+  font-size: 1.3rem;
+  margin: 1rem 6rem;
+  color: #015F56;
+  font-weight: bold;
+  line-height: 1.4;
 }
 
-/* Service link styling */
 .article h2 a {
   color: inherit;
-  cursor: pointer;
-  font-size: 20px;
+  font-weight: bold;
 }
 
-.article h2 a:hover {
-  color: #265e87; /* Accent color on hover */
-  text-decoration: none;
-}
-
-/* Metadata (published date, provider) */
+/* Article description */
 .article p {
-  margin: 0;
-  font-size: 1.2rem; /* Responsive font size */
-  color: #5f6b7a;
-  line-height: 1.5; /* Improved line height */
+  margin: 0 1rem;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
 }
 
-/* Date styling */
-.article time {
-  color: #999;
-  font-size: 0.8rem; /* Responsive font size */
-  margin-left: 5px;
-}
-
-/* Learn more link */
+/* Continue reading link */
 .article a {
-  margin-top: 15px; /* Slightly reduced margins */
-  font-size: 0.875rem; /* Responsive font size */
-  font-weight: 600;
-  color: #081333;
-  text-transform: uppercase;
-  display: inline-block;
-  transition: color 0.3s ease;
-}
-
-.article a:hover {
-  color: #265e87;
-}
-
-.serviceTitle {
-  text-decoration: none;
-}
-
-.continueReading {
-  margin-top: 15px;
+  margin-top: 10px;
   font-size: 0.875rem;
-  font-weight: 600;
-  color: #081333;
+  font-weight: bold;
+  color: #333;
   text-transform: uppercase;
-  display: inline-block;
-  text-decoration: none; /* Ensure no underline initially */
+  text-decoration: none;
   transition: color 0.3s ease;
-}
-
-.continueReading:hover {
-  color: #265e87;
-  text-decoration: none; /* Add underline on hover */
 }
 
 /* Pagination styling */
@@ -116,12 +90,12 @@
   gap: 10px;
   background-color: #fff;
   border-radius: 8px;
-  padding: 4rem;
+  padding: 2rem; /* Adjusted padding for small screens */
 }
 
 /* Pagination button */
 .pagination button {
-  background-color: #081333;
+  background-color: #015F56;
   color: white;
   font-size: 0.875rem; /* Responsive font size */
   font-weight: bold;
@@ -133,7 +107,7 @@
 }
 
 .pagination button:hover {
-  background-color: #265e87;
+  background-color: #078679;
 }
 
 /* Disabled pagination button */
@@ -142,49 +116,96 @@
   cursor: not-allowed;
 }
 
-/* Responsive Design */
+/* Read More link */
+.continueReading {
+  color: #015F56 !important;
+  font-weight: 600;
+  margin-top: 15px !important;
+  cursor: pointer;
+  font-size: 20px;
+  display: inline-block;
+  transition: color 0.3s ease;
+  text-transform: capitalize !important;
 
-/* On smaller screens (up to 768px), maintain vertical layout */
-@media (max-width: 768px) {
+}
+
+.continueReading:hover {
+  color: #078679 !important;
+  text-decoration: none;
+}
+
+/* Tablet-specific adjustments */
+@media (min-width: 600px) and (max-width: 1024px) {
   .servicesGrid {
-    padding: 2rem; /* Padding for mobile */
+    gap: 20px; /* Moderate gap for better spacing on tablets */
+    padding: 1.5rem; /* Adjusted padding for tablets */
+    max-width: 100%; /* Restrict width slightly for better alignment */
+    margin: 0 auto; /* Center the grid */
   }
 
-  .article header img {
-    height: auto; /* Remove fixed height */
-    max-height: 180px; /* Optional: Set a max height */
-    object-fit: contain; /* Ensure the full image is visible */
+  .wrapper {
+    gap: 20px; /* Adjust spacing between rows for tablets */
+    max-width: 100%; /* Allow full width on tablets */
   }
 
-  .article h2 {
-    font-size: 1.25rem; /* Smaller title size for mobile */
+  .article {
+    flex: 1 1 calc(50% - 20px); /* Two articles per row on tablets */
+    max-width: calc(50% - 10px); /* Maintain spacing between items */
+    padding: 0;
+  }
+
+  .article h2 a {
+    font-size: 1.15rem; /* Adjusted font size for readability */
   }
 
   .article p {
-    font-size: 0.8rem; /* Smaller metadata size for mobile */
+    font-size: 1.1rem; /* Slightly smaller paragraph text */
+    line-height: 1.4; /* Adjust line-height for tighter layout */
   }
 
-  .article a {
-    font-size: 0.8rem; /* Smaller link size for mobile */
+  .pagination {
+    gap: 15px; /* Adjust gap between pagination buttons */
+    padding: 1.5rem; /* Slightly reduced padding for tablets */
+  }
+
+  .pagination button {
+    font-size: 0.875rem; /* Keep buttons compact */
+    padding: 8px 12px; /* Adjust button size for tablets */
+  }
+
+  /* Read More link */
+  .continueReading {
+    color: #015F56 !important;
+    font-weight: 600;
+    padding: 2rem;
+    cursor: pointer;
+    font-size: 20px;
+    display: inline-block;
+    transition: color 0.3s ease;
+    text-transform: capitalize !important;
+  }
+
+  .continueReading:hover {
+    color: #078679 !important;
+    text-decoration: none;
   }
 }
 
-/* On tablets (up to 1024px), maintain vertical layout */
-@media (max-width: 1024px) {
-  .servicesGrid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; /* Default to column for mobile and tablet */
-    padding: 2rem; /* Padding for mobile */
-    background-color: #ffffff; /* Full-width background color */
-  }
-}
-
-/* For larger screens, switch to horizontal layout */
+/* For desktops (large screens) */
 @media (min-width: 1025px) {
+  .article {
+    flex: 1 1 calc(33.33% - 20px); /* Three articles per row */
+    max-width: calc(33.33% - 20px);
+  }
+
   .servicesGrid {
-    flex-direction: row; /* Switch to row layout */
-    flex-wrap: wrap; /* Allow wrapping */
+    gap: 25px; /* Larger gap for desktops */
+    padding: 2rem; /* Additional padding */
+  }
+
+  .wrapper {
+    max-width: 1200px; /* Restrict maximum width */
+    margin: 0 auto; /* Center the grid */
+    gap: 30px; /* Wider gaps between articles */
   }
 }

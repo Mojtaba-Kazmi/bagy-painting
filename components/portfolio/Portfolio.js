@@ -13,7 +13,7 @@ import {
   MdOutlineArrowForwardIos,
 } from "react-icons/md";
 import { AiFillCloseCircle } from "react-icons/ai";
-import { FaCirclePlus } from "react-icons/fa6";
+import { FaPlus } from "react-icons/fa";
 
 const Portfolio = React.memo(({ portfolio }) => {
   // State to track whether the carousel is at the start or end
@@ -38,11 +38,11 @@ const Portfolio = React.memo(({ portfolio }) => {
     const { scrollLeft, scrollWidth, clientWidth } = container;
 
     // Update state: `atStart` is true if we're scrolled to the very start
-    setAtStart(scrollLeft === 0);
+    setAtStart(scrollLeft <= 0);
 
     // `atEnd` is true if we've scrolled to the very end
-    setAtEnd(scrollLeft + clientWidth >= scrollWidth - 1);
-  }, []);
+    setAtEnd(scrollLeft + clientWidth >= scrollWidth - 10);
+  }, [setAtStart, setAtEnd]);
 
   /**
    * Scrolls the carousel to the left by 300px.
@@ -107,14 +107,9 @@ const Portfolio = React.memo(({ portfolio }) => {
       container.removeEventListener("scroll", handleScroll);
     };
   }, [handleScroll]);
-  
+
   return (
     <section className={styles.container} aria-labelledby="portfolio-heading">
-      {/* Main heading for the portfolio section */}
-      <h1 id="portfolio-heading" className={styles.title}>
-        Successful Projects
-      </h1>
-
       {/* Carousel container */}
       <div ref={scrollRef} className={styles.carousel}>
         <div className={styles.spacer}></div> {/* Spacer for aesthetics */}
@@ -138,7 +133,7 @@ const Portfolio = React.memo(({ portfolio }) => {
               aria-label="Open Details"
               onClick={() => openModal(item)}
             >
-              <FaCirclePlus />
+              <FaPlus />
             </div>
           </div>
         ))}

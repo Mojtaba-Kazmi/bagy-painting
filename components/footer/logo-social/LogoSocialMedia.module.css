@@ -64,7 +64,7 @@
 /* Find Us link */
 .findUs {
   margin-top: 1rem;
-  align-self: flex-start; /* Align to the start of the container */
+  align-self: center; /* Align to the start of the container */
 }
 
 .findUs a {
