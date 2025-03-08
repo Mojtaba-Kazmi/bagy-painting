@@ -97,30 +97,32 @@
   padding: 0 1rem;
 }
 
-.logoImage {
-  width: 250px;
-  height: auto;
-  margin: 1rem 0 0 0;
-}
 
-/* Ensure mobile styles apply first */
-@media (max-width: 768px) {
+/* Mobile & Tablets (default 95%) */
+@media (max-width: 667px) {
   .container {
-    width: 95%; /* Ensures mobile gets 95% width */
+    width: 95%; /* Apply same behavior as mobile */
   }
 }
 
-/* 13-inch & 15-inch laptops (Apply only if screen is larger than mobile) */
-@media (min-width: 1024px) and (max-width: 1600px) {
+/* Mini tablets & iPads (7-inch to 11-inch screens) */
+@media (min-width: 768px) and (max-width: 1366px) {
+  .container {
+    width: 50%; /* Adjust for better spacing on tablets */
+  }
+}
+
+/* Laptops (13-inch & 15-inch screens) */
+@media (min-width: 1025px) and (max-width: 1600px) {
   .container {
     max-width: 40%;
   }
 }
 
-/* Large screens (Desktop 17-inch and beyond) */
+/* Large screens (17-inch and beyond) */
 @media (min-width: 1600px) {
   .container {
-    max-width: 70%;
+    width: 100%;
   }
 
   .description {
