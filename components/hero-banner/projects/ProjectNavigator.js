@@ -3,86 +3,64 @@
 import { useState } from "react";
 import styles from "./ProjectNavigator.module.css";
 import { CldImage } from "next-cloudinary";
-
-const projects = [
-  {
-    id: 1,
-    title: "Our Latest Work",
-    description:
-      "Successfully completed painting project in Adelaide, SA, delivering a smooth and durable finish with attention to detail.",
-    image: "recent_h9qjq3",
-  },
-  {
-    id: 2,
-    title: "Our Latest Work",
-    description:
-      "Our team provided professional painting services, ensuring a high-quality result that enhances the overall appearance.",
-    image: "recent_pro_xelbm0",
-  },
-  {
-    id: 3,
-    title: "Our Latest Work",
-    description:
-      "Bagy Painting completed another successful project in Adelaide, SA, focusing on precision, durability, and a flawless finish.",
-    image: "recent_project_bagy_painting_v0o6de",
-  },
-  {
-    id: 4,
-    title: "Our Latest Work",
-    description:
-      "Expert painting services delivered with a commitment to excellence, bringing long-lasting results to our clients in Adelaide, SA.",
-    image: "recent_projects_c8n0df",
-  },
-];
+import { projects } from "@/content/data/hero-banner/projects";
 
 export default function ProjectNavigator() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isFading, setIsFading] = useState(false);
 
   const changeProject = (direction) => {
-    setIsFading(true);
-    setTimeout(() => {
-      setCurrentIndex((prevIndex) =>
-        direction === "next"
-          ? (prevIndex + 1) % projects.length
-          : (prevIndex - 1 + projects.length) % projects.length
-      );
-      setIsFading(false);
-    }, 300); // Delay before changing image
+    setCurrentIndex((prevIndex) =>
+      direction === "next"
+        ? Math.min(prevIndex + 1, projects.length - 1)
+        : Math.max(prevIndex - 1, 0)
+    );
   };
 
-  const { title, description, image } = projects[currentIndex];
+  const { title, description } = projects[currentIndex];
 
   return (
-    <div className={styles.hero}>
-      <div className={styles.projectInfo}>
-        <h1>{title}</h1>
-        <p>{description}</p>
-        <div className={styles.navigation}>
+    <>
+      <div className={styles.textContainer}>
+        <h2 className={styles.title}>{title}</h2>
+        <p className={styles.description}>{description}</p>
+      </div>
+      <div className={styles.container}>
+        <div className={styles.wrapper}>
+          <div
+            className={styles.slider}
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {projects.map((project) => (
+              <CldImage
+                key={project.id}
+                src={project.image}
+                alt={project.title}
+                className={styles.image}
+                width={500}
+                height={300}
+              />
+            ))}
+          </div>
+
+          {/* Previous Button */}
           <button
-            className={styles.navButton}
             onClick={() => changeProject("prev")}
+            disabled={currentIndex === 0}
+            className={`${styles.button} ${styles.buttonLeft}`}
           >
-            Previous
+            &#8592;
           </button>
+
+          {/* Next Button */}
           <button
-            className={styles.navButton}
             onClick={() => changeProject("next")}
+            disabled={currentIndex === projects.length - 1}
+            className={`${styles.button} ${styles.buttonRight}`}
           >
-            Next
+            &#8594;
           </button>
         </div>
       </div>
-      <div className={styles.imageContainer}>
-        <CldImage
-          key={currentIndex} // Forces re-render on change
-          src={image}
-          width={300}
-          height={300}
-          alt={title}
-          className={`${styles.projectImage} ${!isFading ? styles.active : ""}`}
-        />
-      </div>
-    </div>
+    </>
   );
 }

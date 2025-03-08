@@ -1,137 +1,130 @@
-.hero {
+/* ProjectNavigator.module.css */
+
+.container {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  padding: 1rem;
-  background: linear-gradient(
-    135deg,
-    #081333,
-    #265e87,
-    #081333,
-    #265e87,
-    #265e87
-  );
-  background-size: 300% 300%;
+  width: 95%; /* Default: Good for mobile */
+  color: white;
   border-radius: 10px;
-  color: white;
-  animation: borderShine 5s linear infinite;
-  text-align: center; /* Centers text on mobile */
-  width: 40%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 1rem;
 }
 
-@keyframes borderShine {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.projectInfo {
-  max-width: 50%;
-  padding-bottom: 1rem;
-}
-
-.navigation {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* Ensures buttons wrap properly on smaller screens */
-  gap: 10px;
-}
-
-.navButton {
-  padding: 12px 20px;
-  background: #081333;
-  border: none;
-  cursor: pointer;
-  color: white;
-  font-size: 1rem;
-  border-radius: 8px;
-  transition: background 0.3s;
-}
-
-.navButton:hover {
-  background: #122a68;
-}
-
-/* Responsive Image Container */
-.imageContainer {
+.wrapper {
   width: 100%;
-  max-width: 400px; /* Limits image size on large screens */
+  max-width: 1200px;
   position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+.image {
+  width: 100%;
   height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  background-color: #0770b5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.buttonLeft {
+  left: 16px;
+}
+
+.buttonRight {
+  right: 16px;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button:hover {
+  background-color: #06a3d7;
+}
+
+.textContainer {
   margin-top: 1rem;
+  text-align: center;
+  color: #000;
 }
 
-.projectImage {
-  width: 100%;
+.title {
+  font-size: 2rem;
+  padding: 0 1rem;
+  font-weight: bold;
+  color: #0770b5;
+}
+
+.description {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  padding: 0 1rem;
+}
+
+.logoImage {
+  width: 250px;
   height: auto;
-  border-radius: 10px;
-  opacity: 0;
-  transform: scale(1.1);
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  margin: 1rem 0 0 0;
 }
 
-/* Active image will smoothly fade in */
-.active {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Mobile & Tablet Adjustments */
-@media (max-width: 1024px) {
-  .hero {
-    padding: 1.5rem;
-  }
-
-  .projectInfo {
-    max-width: 100%;
-  }
-
-  .navButton {
-    padding: 10px 16px;
-    font-size: 0.9rem;
-  }
-
-  .imageContainer {
-    max-width: 600px;
-  }
-}
-
+/* Ensure mobile styles apply first */
 @media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-    margin: 0.2rem;
+  .container {
+    width: 95%; /* Ensures mobile gets 95% width */
+  }
+}
+
+/* 13-inch & 15-inch laptops (Apply only if screen is larger than mobile) */
+@media (min-width: 1024px) and (max-width: 1600px) {
+  .container {
+    max-width: 40%;
+  }
+}
+
+/* Large screens (Desktop 17-inch and beyond) */
+@media (min-width: 1600px) {
+  .container {
+    max-width: 70%;
   }
 
-  .projectInfo p {
-    padding: 2rem;
-  }
-
-  .navigation {
-    display: flex;
-    justify-content: center; /* Centers the buttons horizontally */
-    flex-wrap: wrap; /* Ensures buttons wrap properly on smaller screens */
-    gap: 10px; /* Adds space between buttons */
-    width: 100%;
-  }
-  
-  .navButton {
-    width: 50%;
-    font-size: 1rem;
-    display: flex;
-    justify-content: center; /* Centers text inside the button */
-    align-items: center;
-    text-align: center; /* Ensures text stays centered */
-  }
-
-  .imageContainer {
-    max-width: 90%;
+  .description {
+    margin-top: 0.5rem;
+    font-size: 1.4rem;
   }
 }
