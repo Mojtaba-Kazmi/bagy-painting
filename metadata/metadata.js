@@ -1,5 +1,5 @@
 export const defaultMetadata = {
-  title: "Painters Adelaide | House & Commercial Painting Services - Free Quote",
+  title: "#1 Painters in Adelaide | Trusted Painting Services",
   description:
     "Bagy Painting: Trusted painters in Adelaide. Dulux-accredited experts for premium interior, house & commercial painting. Get your free quote!",
   openGraph: {
