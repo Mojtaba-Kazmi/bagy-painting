@@ -5,7 +5,7 @@ const HeroSlider = dynamic(() => import("./HeroSlider"));
 const Hero = () => {
   return (
     <section className={styles.hero}>
-      <h1 className={styles.srOnly}>Experienced Painters in Adelaide - Offering High-Quality Residential and Commercial Painting Services</h1>
+      <h1 className={styles.srOnly}>Professional Painters in Adelaide</h1>
       <Suspense fallback={<div>Loading...</div>}>
         <HeroSlider />
       </Suspense>
