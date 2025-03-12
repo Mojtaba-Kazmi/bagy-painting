@@ -1,6 +1,6 @@
 
 export const homeAboutFetched = {
-  buttonText: "Contact Us",
+  buttonText: "Contact us",
   buttonLink: "/contact-us",
   images: [
     {

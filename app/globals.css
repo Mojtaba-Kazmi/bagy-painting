@@ -1,5 +1,5 @@
 
-/* globals.css */
+
 body {
   background-color: rgb(245, 244, 246);
   margin: 0; /* Reset default margin */
@@ -17,22 +17,4 @@ a {
   text-decoration: none;
 }
 
-/* Apply box-sizing border-box globally 
-* {
-  box-sizing: border-box;
-}
-*/
 
-/* CSS for visibility animation */
-.visible .fadeInContent,
-.visible .animatedContent {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-
-.fadeInContent,
-.animatedContent {
-  opacity: 0 !important;
-  transform: translateY(20px) !important;
-  transition: opacity 0.5s ease, transform 0.5s ease !important;
-}

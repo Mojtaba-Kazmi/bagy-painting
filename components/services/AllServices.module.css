@@ -54,7 +54,7 @@
 .article h2 {
   font-size: 1.3rem;
   margin: 1rem 6rem;
-  color: #015F56;
+  color: #081333;
   font-weight: bold;
   line-height: 1.4;
 }
@@ -107,7 +107,7 @@
 }
 
 .pagination button:hover {
-  background-color: #078679;
+  background-color: #081333;
 }
 
 /* Disabled pagination button */
@@ -118,7 +118,7 @@
 
 /* Read More link */
 .continueReading {
-  color: #015F56 !important;
+  color: #081333 !important;
   font-weight: 600;
   margin-top: 15px !important;
   cursor: pointer;
@@ -130,7 +130,7 @@
 }
 
 .continueReading:hover {
-  color: #078679 !important;
+  color: #081333 !important;
   text-decoration: none;
 }
 
@@ -175,7 +175,7 @@
 
   /* Read More link */
   .continueReading {
-    color: #015F56 !important;
+    color: #081333 !important;
     font-weight: 600;
     padding: 2rem;
     cursor: pointer;
@@ -186,7 +186,7 @@
   }
 
   .continueReading:hover {
-    color: #078679 !important;
+    color: #081333 !important;
     text-decoration: none;
   }
 }

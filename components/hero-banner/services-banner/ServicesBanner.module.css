@@ -29,14 +29,20 @@
 }
 
 .serviceItem::before {
-  content: ''; /* Necessary for pseudo-elements */
+  content: ""; /* Necessary for pseudo-elements */
   position: absolute;
   top: -6px; /* Adjust for border width */
   left: -6px; /* Adjust for border width */
   width: calc(100% + 12px); /* Adjust for border width */
   height: calc(100% + 12px); /* Adjust for border width */
   border-radius: 50%; /* Makes the element circular */
-  background: linear-gradient(135deg, #265e87, #265e87,#081333 , #265e87 ); /* Gradient colors */
+  background: linear-gradient(
+    135deg,
+    #265e87,
+    #265e87,
+    #081333,
+    #265e87
+  ); /* Gradient colors */
   background-size: 300% 300%;
   animation: borderShine 5s linear infinite;
   z-index: 0; /* Stays behind the content */
@@ -90,13 +96,14 @@
   transition: background-color 0.3s ease;
 }
 
-.btnGetQuote:focus, .btnGetQuote:active {
+.btnGetQuote:focus,
+.btnGetQuote:active {
   outline: 3px solid #ffffff; /* Or any color with good contrast */
-  background-color: #161E32;
+  background-color: #161e32;
 }
 
 .btnGetQuote:hover {
-  background-color: #161E32; /* Hover color with sufficient contrast */
+  background-color: #161e32; /* Hover color with sufficient contrast */
 }
 
 /* Responsive Adjustments */
@@ -104,7 +111,7 @@
 /* Small tablets and large mobile devices (max-width: 768px) */
 @media (max-width: 768px) {
   .serviceItemsWrapper {
-    gap: 1rem; /* Reduce gap between items */
+    gap: 0.5rem; /* Reduce gap between items */
   }
 
   .serviceItem {
@@ -126,7 +133,7 @@
 @media (max-width: 480px) {
   .serviceContainer {
     gap: 1rem;
-    margin: 1rem 0;
+    margin: 0;
   }
 
   .serviceItem {

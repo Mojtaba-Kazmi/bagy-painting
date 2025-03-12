@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { servicesBanner } from "@/content/data/hero-banner/services-banner";
 import styles from "./ServicesBanner.module.css";
 
@@ -38,19 +37,6 @@ const ServicesBanner = () => {
           />
           <p>Restoration</p>
         </div>
-      </div>
-
-      <div className={styles.buttonContainer}>
-        <Link href={servicesBanner.ctaHref} passHref>
-          <span
-            className={styles.btnGetQuote}
-            role="link" // Use "link" role to make it clear it's a link
-            tabIndex="0"
-            aria-label="Get a Quote" // Provide an accessible name
-          >
-            {servicesBanner.ctaText}
-          </span>
-        </Link>
       </div>
     </section>
   );

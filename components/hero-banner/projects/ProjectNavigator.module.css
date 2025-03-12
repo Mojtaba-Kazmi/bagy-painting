@@ -12,7 +12,6 @@
   background-color: rgba(255, 255, 255, 0.01);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  padding: 1rem;
 }
 
 .wrapper {
@@ -85,18 +84,16 @@
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 0 1rem;
   font-weight: bold;
-  color: #0770b5;
+  color: #081333;
 }
 
 .description {
-  margin-top: 0.5rem;
   font-size: 1rem;
   padding: 0 1rem;
 }
-
 
 /* Mobile & Tablets (default 95%) */
 @media (max-width: 667px) {
@@ -110,6 +107,11 @@
   .container {
     width: 50%; /* Adjust for better spacing on tablets */
   }
+
+  .description {
+    font-size: 1.4rem;
+    padding: 0 5rem;
+  }
 }
 
 /* Laptops (13-inch & 15-inch screens) */
@@ -117,16 +119,21 @@
   .container {
     max-width: 40%;
   }
+
+  .description {
+    font-size: 1.2rem;
+    padding: 0 20rem;
+  }
 }
 
 /* Large screens (17-inch and beyond) */
 @media (min-width: 1600px) {
   .container {
-    width: 100%;
+    width: 50%;
   }
 
   .description {
-    margin-top: 0.5rem;
     font-size: 1.4rem;
+    padding: 0 20rem;
   }
 }

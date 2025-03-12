@@ -9,7 +9,7 @@
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 1px;
+  gap: 30px;
   align-items: center;
   justify-content: space-between; /* Space out items evenly */
   transition: transform 0.3s ease-in-out;
@@ -36,7 +36,9 @@
 }
 
 .navLink:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* Subtle hover effect */
+  background-color: #265e873a;
+  border-radius: 8px;
+  color: #265e87;
 }
 
 .arrowUp {
@@ -140,8 +142,14 @@
   .navLink {
     font-weight: 600;
     padding: 10px 20px;
-    color: #081333; /* Dark text for desktop */
+    color: #081333;
     background-color: transparent;
+  }
+
+  .navLink:hover {
+    background-color: #265e873a;
+    border-radius: 8px;
+    color: white;
   }
 
   /* Hover effect for large screens */

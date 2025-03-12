@@ -38,6 +38,7 @@ export default function ProjectNavigator() {
                 className={styles.image}
                 width={500}
                 height={300}
+                loading="lazy"
               />
             ))}
           </div>

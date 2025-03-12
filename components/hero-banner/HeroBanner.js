@@ -1,17 +1,18 @@
-// components/MainBanner.js
-import AboutBanner from "./about-banner/AboutBanner";
+import dynamic from "next/dynamic";
 import ServicesBanner from "./services-banner/ServicesBanner";
 import TrustedPartners from "../trusted-partners/TrustedPartners";
 import styles from "./HeroBanner.module.css";
-import ProjectNavigator from "./projects/ProjectNavigator";
+const ProjectNavigator = dynamic(() => import("./projects/ProjectNavigator"));
+import { Suspense } from "react";
 
 const HeroBanner = () => {
   return (
     <div className={styles.heroBannerWrapper}>
       <div className={styles.heroBanner}>
-        <AboutBanner />
         <ServicesBanner />
-        <ProjectNavigator />
+        <Suspense fallback={<div>Loading...</div>}>
+          <ProjectNavigator />
+        </Suspense>
         <TrustedPartners />
       </div>
     </div>
