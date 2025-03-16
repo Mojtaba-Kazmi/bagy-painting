@@ -7,7 +7,7 @@ import { Suspense } from "react";
 
 const HeroBanner = () => {
   return (
-    <div className={styles.heroBannerWrapper}>
+    <section className={styles.heroBannerWrapper}>
       <div className={styles.heroBanner}>
         <ServicesBanner />
         <Suspense fallback={<div>Loading...</div>}>
@@ -15,7 +15,7 @@ const HeroBanner = () => {
         </Suspense>
         <TrustedPartners />
       </div>
-    </div>
+    </section>
   );
 };
 

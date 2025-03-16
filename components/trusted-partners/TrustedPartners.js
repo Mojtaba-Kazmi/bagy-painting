@@ -5,7 +5,7 @@ const TrustedPartners = async () => {
   const logos = await trustedPartners();
 
   return (
-    <section className={styles.container} aria-labelledby="trusted-partners">
+    <div className={styles.container} aria-labelledby="trusted-partners">
       <h2 id="trusted-partners" className={styles.heading}>
         Brands Who Trust Us
       </h2>
@@ -27,7 +27,7 @@ const TrustedPartners = async () => {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

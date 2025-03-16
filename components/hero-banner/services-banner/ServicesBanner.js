@@ -3,7 +3,7 @@ import styles from "./ServicesBanner.module.css";
 
 const ServicesBanner = () => {
   return (
-    <section className={styles.serviceContainer} aria-label="Our Services">
+    <div className={styles.serviceContainer} aria-label="Our Services">
       <div className={styles.serviceItemsWrapper}>
         <div className={styles.serviceItem}>
           <img
@@ -38,7 +38,7 @@ const ServicesBanner = () => {
           <p>Restoration</p>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

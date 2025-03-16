@@ -23,7 +23,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <div className={styles.wrapper}>
         <form
           onSubmit={handleSubmit(handleFormSubmit)}
@@ -60,7 +60,7 @@ const ContactForm = () => {
           />
         )}
       </div>
-    </div>
+    </section>
   );
 };
 
