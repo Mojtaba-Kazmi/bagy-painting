@@ -20,11 +20,11 @@ export default function ProjectNavigator() {
 
   return (
     <>
-      <section className={styles.textContainer}>
+      <div className={styles.textContainer}>
         <h2 className={styles.title}>{title}</h2>
         <p className={styles.description}>{description}</p>
-      </section>
-      <section className={styles.container}>
+      </div>
+      <div className={styles.container}>
         <div className={styles.wrapper}>
           <div
             className={styles.slider}
@@ -61,7 +61,7 @@ export default function ProjectNavigator() {
             &#8594;
           </button>
         </div>
-      </section>
+      </div>
     </>
   );
 }

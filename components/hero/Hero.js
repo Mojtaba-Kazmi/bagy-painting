@@ -4,11 +4,11 @@ import styles from "./Hero.module.css";
 const HeroSlider = dynamic(() => import("./HeroSlider"));
 const Hero = () => {
   return (
-    <div className={styles.hero}>
+    <section className={styles.hero}>
       <Suspense fallback={<div>Loading...</div>}>
         <HeroSlider />
       </Suspense>
-    </div>
+    </section>
   );
 };
 

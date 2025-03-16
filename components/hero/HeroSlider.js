@@ -16,7 +16,7 @@ const images = [
 
 const HeroSlider = () => {
   return (
-    <section className={styles.hero}>
+    <div className={styles.hero}>
       <Swiper
         spaceBetween={0}
         slidesPerView={1}
@@ -55,7 +55,7 @@ const HeroSlider = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </section>
+    </div>
   );
 };
 
