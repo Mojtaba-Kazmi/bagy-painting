@@ -40,6 +40,7 @@ export default function Services({ latestServices }) {
                     alt={`Thumbnail for ${service.title}`}
                     className={styles.icon}
                     itemProp="image"
+                    loading="lazy"
                   />
                 </div>
                 <h2 itemProp="name">{service.title}</h2>

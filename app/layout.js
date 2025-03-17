@@ -11,7 +11,7 @@ export const metadata = defaultMetadata;
 
 export default async function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en-AU">
       <body>
         <Header />
         <main>{children}</main>

@@ -31,7 +31,7 @@ const HeroSlider = () => {
           <SwiperSlide key={index} className={styles.slide}>
             {/* Background Image */}
             <div className={styles.imageWrapper}>
-              <img src={item.src} alt="Showcase" className={styles.image} />
+              <img src={item.src} alt="Showcase" className={styles.image} loading="lazy"/>
               <div className={styles.overlay}></div>
             </div>
 

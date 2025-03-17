@@ -47,6 +47,7 @@ const GoogleReviews = () => {
                       className={styles.clientImage}
                       width={50}
                       height={50}
+                      loading="lazy"
                     />
                     <div>
                       <p className={styles.clientName}>{review.author_name}</p>
