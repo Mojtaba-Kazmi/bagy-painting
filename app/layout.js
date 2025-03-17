@@ -6,7 +6,6 @@ import CTAButton from "@/components/cta-button/CTAButton";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
-import PageLoader from "@/components/loader/PageLoader";
 
 export const metadata = defaultMetadata;
 
@@ -14,13 +13,11 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <PageLoader>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <CTAButton />
-          <ScrollToTop />
-        </PageLoader>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+        <CTAButton />
+        <ScrollToTop />
         <Analytics />
         <SpeedInsights />
       </body>
