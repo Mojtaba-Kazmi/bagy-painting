@@ -1,9 +1,6 @@
-/* General styles for the nav */
-.nav {
-  position: relative;
-}
+.nav { position: relative; }
 
-/* Menu list */
+/* Base list */
 .list {
   list-style: none;
   margin: 0;
@@ -11,17 +8,23 @@
   display: flex;
   gap: 30px;
   align-items: center;
-  justify-content: space-between; /* Space out items evenly */
+  justify-content: space-between;
   transition: transform 0.3s ease-in-out;
 }
 
-/* Menu item styling */
+/* Items */
 .listItem {
   position: relative;
-  width: 100%; /* Full width for mobile menu */
+  width: 100%;
   cursor: pointer;
+
+  /* enter animation */
+  opacity: 0;
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: calc(0.1s * var(--index, 0));
 }
 
+/* Trigger */
 .navLink {
   display: flex;
   justify-content: space-between;
@@ -29,72 +32,65 @@
   padding: 15px 20px;
   text-decoration: none;
   font-size: 20px;
-  color: #081333; /* White text on mobile menu */
+  color: #081333;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
   width: 100%;
+  border-radius: 8px;
 }
-
 .navLink:hover {
   background-color: #265e873a;
-  border-radius: 8px;
   color: #265e87;
 }
 
-.arrowUp {
-  transform: rotate(180deg);
-}
+.arrow { transition: transform 0.3s ease; font-size: 1.5rem; }
+.arrowUp { transform: rotate(180deg); }
 
-/* Submenu styles */
+/* Submenu (hidden by default, shown by .open on the li) */
 .submenu {
-  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  padding: 0.75rem 0;
   margin: 0;
-  padding: 0;
-  display: none; /* Hidden by default */
-  flex-direction: column;
+  z-index: 20;
+  min-width: 220px;
+  border-radius: 8px;
+  list-style: none;
+  transform: translateY(-8px);
+  transition: opacity .2s ease, transform .2s ease, visibility .2s;
+  pointer-events: none;
 }
-
 .open .submenu {
-  display: flex; /* Show submenu when open */
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
-.submenuItem {
-  padding-left: 30px;
-  padding-bottom: 30px;
-  padding-top: 25px;
-}
-
+/* Submenu items */
+.submenuItem { padding: 0; }
 .submenuLink {
-  text-decoration: none;
+  display: block;
+  padding: 10px 16px;
   font-size: 16px;
   color: #081333;
-  transition: color 0.2s ease;
+  text-decoration: none;
+  transition: background-color .2s ease, color .2s ease;
 }
+.submenuLink:hover { background: #265e873a; color: #265e87; }
 
-.submenuLink:hover {
-  color: #fff;
-}
-
+/* Anim */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* List Item Styles */
-.listItem {
-  opacity: 0; /* Start hidden */
-  animation: fadeInUp 0.5s ease forwards;
-  /* Stagger animation start time */
-  animation-delay: calc(0.2s * var(--index, 0));
-}
-
-/* Mobile menu hidden by default */
+/* Mobile */
 @media (max-width: 1024px) {
   .list {
     flex-direction: column;
@@ -102,105 +98,45 @@
     top: 0;
     left: -220%;
     width: 100%;
-    background-color: #fff; /* Navy background for mobile menu */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: left 0.3s ease-in-out;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     justify-content: flex-start;
-    padding: 20px; /* Create space from top */
+    padding: 20px;
     margin-top: 0;
     margin-left: 4rem;
-    min-width: 500px; /* Set minimum width for submenu */
-    max-height: 500px; /* Limit height for submenu */
-    overflow-y: auto; /* Allow scrolling vertically */
-    overflow-x: hidden; /* Allow scrolling vertically */
+    min-width: 500px;
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
     transition: all 0.3s ease-in-out;
-    border-radius: 0rem 0rem 0rem 0.5rem;
+    border-radius: 0 0 0 0.5rem;
   }
+  .show { left: 0; }
 
-  .show {
-    left: 0;
-  }
+  .arrow { font-size: 1.5rem; }
 
-  /* Arrow for dropdowns */
-  .arrow {
-    transition: transform 0.3s ease;
-    font-size: 1.5rem;
-    margin-right: 60rem;
+  /* Submenu inline on mobile */
+  .submenu {
+    position: static;
+    box-shadow: none;
+    padding: 0;
+    margin-left: 10px;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 }
 
-/* Desktop full screen menu */
+/* Desktop */
 @media (min-width: 1025px) {
   .list {
     flex-direction: row;
     justify-content: space-between;
     position: relative;
     height: auto;
-    background-color: transparent; /* Transparent background */
-  }
-
-  .navLink {
-    font-weight: 600;
-    padding: 10px 20px;
-    color: #081333;
     background-color: transparent;
   }
-
-  .navLink:hover {
-    background-color: #265e873a;
-    border-radius: 8px;
-    color: white;
-  }
-
-  /* Hover effect for large screens */
-  .hasSubmenu:hover .submenu {
-    opacity: 1; /* Make submenu fully visible */
-    visibility: visible; /* Ensure submenu is interactable */
-    transform: translateY(0); /* Reset position offset */
-    transition: all 0.3s ease; /* Smooth transition for visibility and position */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff; /* White background for dropdown */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    padding: 1rem 2rem;
-    margin: 0;
-    z-index: 20;
-    min-width: 200px;
-    border-radius: 8px;
-    font-weight: 400;
-    list-style: none;
-  }
-
-  .submenu {
-    opacity: 0; /* Hidden by default */
-    visibility: hidden; /* Not interactable */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 50px 0;
-    transform: translateY(-10px); /* Initial offset for animation */
-    transition: all 0.3s ease; /* Smooth transition for opacity and position */
-  }
-
-  .submenuItem {
-    padding: 10px;
-  }
-
-  .submenuLink {
-    font-size: 16px;
-    color: #081333;
-  }
-
-  .submenuLink:hover {
-    color: #265e87; /* Dark hover color */
-  }
-
-  /* Arrow for dropdowns */
-  .arrow {
-    transition: transform 0.3s ease;
-    font-size: 1.5rem;
-  }
+  .navLink { font-weight: 600; padding: 10px 5px; background: transparent; }
+  .navLink:hover { background-color: #265e873a; color: #fff; }
 }

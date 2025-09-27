@@ -20,6 +20,11 @@ export default function BlogPosts({ latestPosts }) {
               description="Stay updated with the latest painting trends and tips."
             />
           </header>
+          <p className={styles.moreLink}>
+            <a href="/blog">
+            Read more tips on our <strong>Blog</strong>
+            </a>
+          </p>
 
           <div className={styles.postsGrid}>
             {latestPosts.map((post) => (

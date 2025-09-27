@@ -3,20 +3,18 @@ import menuItems from "@/content/data/header/menu-items";
 import { generatePageMetadata } from "@/metadata/generatePageMetadata";
 
 export const metadata = generatePageMetadata({
-  title: "Sitemap - Navigate Bagy Painting's Website | Bagy Painting",
+  title: "Sitemap | Bagy Painting",
   description:
-    "Explore Bagy Painting's website with our sitemap. Find pages for expert painting services, portfolio, free quotes, and contact details easily.",
+    "Browse the Bagy Painting sitemap to find services, projects, blog posts, contact details, and quote requests in one place.",
+  pathname: "/sitemap",
+  // Optional: only override OG image if you want a specific visual here.
   openGraph: {
-    title: "Sitemap - Navigate Bagy Painting's Website | Bagy Painting",
-    description:
-      "Easily navigate Bagy Painting's website using our sitemap. Access information about our services, portfolio, free quote options, and contact us effortlessly.",
-    url: "https://www.bagypainting.com.au/sitemap",
     images: [
       {
-        url: "https://cdn-ilabcdh.nitrocdn.com/VMExtHjSOgwlYoVxRcJmxhEOXjOSEEKd/assets/images/optimized/rev-d9d5e4c/bagypainting.com.au/wp-content/uploads/2024/02/Bagy_Logo-1536x238.png", // Replace with your actual image URL
+        url: "https://res.cloudinary.com/djnoxzm2v/image/upload/v1741749368/Bagy_Logo_copy_fxzgx3.png",
         width: 1200,
         height: 630,
-        alt: "Bagy Painting - Sitemap Overview",
+        alt: "Bagy Painting — Sitemap",
       },
     ],
   },

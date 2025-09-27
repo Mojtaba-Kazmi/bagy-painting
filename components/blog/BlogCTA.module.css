@@ -1,0 +1,59 @@
+.cta {
+    margin-top: 2rem;
+    padding: 1.25rem;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+  }
+  
+  .title {
+    margin: 0;
+    color: #081333;
+    font-weight: 700;
+  }
+  
+  .meta {
+    margin: 0.5rem 0 0;
+    color: #1f2937; /* neutral-800 */
+    line-height: 1.5;
+  }
+  
+  /* Actions: mobile = vertical stack */
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 0.75rem;
+  }
+  
+  /* Each action link */
+  .action {
+    text-decoration: none;
+    color: #081333;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  /* Hover/focus states */
+  .action:hover,
+  .action:focus {
+    text-decoration: underline;
+    outline: none;
+  }
+  
+  /* ≥640px: inline row with separators (but still wraps if needed) */
+  @media (min-width: 640px) {
+    .actions {
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+    }
+  
+    /* dot separators between items, desktop only */
+    .action + .action::before {
+      content: "•";
+      margin: 0 0.5rem 0 0;
+      color: #6b7280; /* neutral-500 */
+    }
+  }

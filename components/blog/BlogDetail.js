@@ -2,6 +2,8 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import Link from "next/link";
 import styles from "./BlogDetail.module.css";
+import BlogCTA from "@/components/blog/BlogCTA";
+
 
 export default function BlogDetail({ blog, relatedBlogs }) {
   return (
@@ -46,7 +48,9 @@ export default function BlogDetail({ blog, relatedBlogs }) {
 
       <article className={styles.blogContent}>
         <ReactMarkdown>{blog.content}</ReactMarkdown>
+        <BlogCTA />
       </article>
+     
 
       <section className={styles.relatedSection}>
         <h2>Related Articles</h2>

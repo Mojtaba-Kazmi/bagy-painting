@@ -1,18 +1,24 @@
+/* Full-bleed hero, no side-by-side children */
 .hero {
   position: relative;
   width: 100%;
-  min-height: 80vh; /* Default height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: 80vh;
   overflow: hidden;
 }
 
+/* Mobile first: taller hero */
 @media (max-width: 768px) {
   .hero {
     min-height: 100vh;
   }
-
+  .title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  .subtitle {
+    font-size: 1rem;
+    max-width: 90%;
+  }
   .callButton {
     font-size: 1.1rem !important;
   }
@@ -29,16 +35,22 @@
   height: 100%;
 }
 
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 .image {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;        /* fill viewport height */
   object-fit: cover;
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35); /* Slightly darker overlay */
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .textOverlay {
@@ -46,22 +58,41 @@
   inset: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: center;   /* center horizontally */
+  justify-content: center; /* center vertically */
   text-align: center;
   color: white;
-  padding: 20px;
+  padding: 24px;
 }
 
 .title {
-  font-size: 2.5rem;
-  font-weight: bold;
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin: 0;
 }
 
 .subtitle {
-  margin-top: 10px;
-  font-size: 1.2rem;
-  max-width: 600px;
+  margin-top: 12px;
+  font-size: 1.125rem;
+  max-width: 720px;
+}
+
+.trustList {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  font-size: 0.95rem;
+  opacity: 0.95;
+  align-items: center;
+  justify-content: center; /* centers under the hero text */
+}
+
+/* Add the dot between items (desktop by default) */
+.trustList li + li::before {
+  content: "•";
+  margin: 0 8px;
 }
 
 .callButton {
@@ -69,28 +100,40 @@
   padding: 12px 24px;
   background-color: #ff2a2a;
   color: white;
-  font-size: 1.5rem;
-  border-radius: 8px;
+  font-size: 1.25rem;
+  border-radius: 10px;
   text-decoration: none;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.15s ease-out;
 }
 
 .callButton:hover {
   background-color: #081333;
 }
 
-/* Smaller height on big screens */
+/* Desktop refinements */
 @media (min-width: 1024px) {
   .hero {
-    min-height: 100vh !important; /* Ensure it applies */
-  }
-
-  .image {
-    height: 100vh !important;
     min-height: 100vh !important;
   }
-
+  .image {
+    height: 100vh !important;
+  }
   .title {
-    font-size: 5rem !important;
+    font-size: 3.5rem !important;  /* less extreme than 5rem */
+  }
+  .subtitle {
+    font-size: 1.125rem;
+  }
+}
+
+/* Mobile: stack vertically, remove the dot separators */
+@media (max-width: 768px) {
+  .trustList {
+    flex-direction: column;   /* vertical on mobile */
+    gap: 6px;
+  }
+  .trustList li + li::before {
+    content: none;
+    margin: 0;
   }
 }

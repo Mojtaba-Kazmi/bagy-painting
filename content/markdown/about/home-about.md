@@ -1,11 +1,13 @@
-## Reliable House Painters in Adelaide
+## Professional Painters for Homes & Businesses in Adelaide
 
-### Our Purpose
+For over 12 years, Bagy Painting has been helping Adelaide property owners protect and refresh their spaces with long-lasting, clean finishes.  
+Our team has completed **major commercial projects**, detailed **interior and exterior repaints**, and careful **restoration work** across suburbs including **Glenelg, Unley, Salisbury, Norwood, and greater Adelaide**.
 
-At **Bagy Painting**, we provide professional **house painting services** across **Adelaide, South Australia**. From **interior** to **exterior painting**, we deliver top-quality finishes for **residential** and **commercial properties**. Proudly serving areas like **Salisbury**, **Glenelg**, and **Adelaide CBD**, we guarantee lasting results for every project.
+What sets us apart:
 
-### Our Commitment to Quality
+**Commercial expertise:** offices, retail, and industrial projects delivered on schedule  
+**Premium products:** Dulux, Wattyl and specialist coatings selected for each surface  
+**Attention to prep:** surface repairs, sealing, and dust control for lasting results  
+**Residential care:** tidy crews, clear communication, and respect for your home  
 
-We use premium materials and expert techniques to ensure a flawless finish. Whether it's updating your **interior** or enhancing your **exterior**, we’re dedicated to providing dependable, high-quality results that last.
-
-**Get in touch with Bagy Painting today** for a free quote and experience why we're the top choice for **house painters in Adelaide**.
+Whether you need a modern office refresh or a full exterior repaint, we provide **itemised quotes, insured workmanship, and a 5-year warranty** on all jobs.

@@ -4,44 +4,47 @@ import AllBlogPosts from "@/components/blog/AllBlogPosts";
 import { generatePageMetadata } from "@/metadata/generatePageMetadata";
 
 export const metadata = generatePageMetadata({
-  title: "Painters in Adelaide South Australia - House & Commercial",
+  title: "Adelaide Painting Blog | Tips and Guides | Bagy Painting",
   description:
-    "Bagy Painting provides house, commercial, and specialty finishes across Adelaide. Our skilled team delivers top-quality results. Get your free quote today!",
-  openGraph: {
-    title: "Painters in Adelaide South Australia - House & Commercial",
-    description:
-      "Bagy Painting provides house, commercial, and specialty finishes across Adelaide. Our skilled team delivers top-quality results. Get your free quote today!",
-    url: "https://www.bagypainting.com.au/blog",
-  },
+    "Practical painting tips, project ideas, and guides from Bagy Painting in Adelaide — commercial, interior, exterior, and restoration insights.",
+  pathname: "/blog",
 });
 
 export default async function BlogPage({ searchParams }) {
-  const category = searchParams.category || "All"; // Default category is "All"
-  const page = parseInt(searchParams.page) || 1; // Default page is 1
-  const POSTS_PER_PAGE = 3;
+  // ✅ Must await searchParams in async Server Components (Next.js App Router)
+  const sp = await searchParams;
+  const rawCategory = sp?.category ?? "All";
+  const category = typeof rawCategory === "string" && rawCategory.trim() !== "" ? rawCategory : "All";
 
-  // Fetch all posts for category filtering
-  const allPosts = await getPostsByCategory(); // Get all posts first
-  const categories = getUniqueCategories(allPosts); // Extract unique categories
-  const posts = await getPostsByCategory(category); // Get filtered posts for the selected category
+  const pageParam = sp?.page;
+  const page = Number.isInteger(Number(pageParam)) ? parseInt(pageParam, 10) : 1;
 
-  // Pagination logic
-  const totalPosts = posts.length;
-  const pageCount = Math.ceil(totalPosts / POSTS_PER_PAGE);
-  const paginatedPosts = posts.slice(
-    (page - 1) * POSTS_PER_PAGE,
-    page * POSTS_PER_PAGE
+  const POSTS_PER_PAGE = 9;
+
+  // Fetch posts
+  const allPosts = await getPostsByCategory(); // unfiltered for categories list
+  const categories = getUniqueCategories(allPosts);
+
+  const filteredPosts = await getPostsByCategory(category); // filtered for chosen category
+
+  // Pagination (guard against out-of-range pages)
+  const totalPosts = filteredPosts.length;
+  const pageCount = Math.max(1, Math.ceil(totalPosts / POSTS_PER_PAGE));
+  const safePage = Math.min(Math.max(page, 1), pageCount);
+
+  const paginatedPosts = filteredPosts.slice(
+    (safePage - 1) * POSTS_PER_PAGE,
+    safePage * POSTS_PER_PAGE
   );
 
   return (
     <section>
-      {/* Pass data to AllBlogPosts */}
       <AllBlogPosts
         paginatedPosts={paginatedPosts}
-        page={page}
+        page={safePage}
         pageCount={pageCount}
-        allPosts={posts} // Filtered posts
-        categories={categories} // Unique categories
+        allPosts={filteredPosts}
+        categories={categories}
         category={category}
       />
     </section>

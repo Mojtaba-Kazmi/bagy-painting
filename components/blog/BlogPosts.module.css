@@ -147,6 +147,14 @@
   text-decoration: none;
 }
 
+.moreLink {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.moreLink a {
+  text-decoration: underline;
+}
+
 /* Responsive Design */
 @media (min-width: 1200px) {
   .wrapper {

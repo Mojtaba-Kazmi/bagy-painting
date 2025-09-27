@@ -14,16 +14,22 @@
   -webkit-backdrop-filter: blur(10px);
 }
 
+
+/* Remove any residual inline whitespace from children inside wrapper */
 .wrapper {
   width: 100%;
   max-width: 1200px;
   position: relative;
   margin: 0 auto;
   overflow: hidden;
+  line-height: 0;      /* prevents stray whitespace from affecting height */
 }
 
+/* Make each image act like a full-width flex item (1 slide = 100%) */
 .slider {
   display: flex;
+  gap: 0;
+  align-items: stretch;
   transition: transform 0.5s ease-in-out;
   width: 100%;
 }
@@ -34,11 +40,14 @@
 }
 
 .image {
+  display: block;      /* kills baseline gap under images */
+  flex: 0 0 100%;      /* each slide is exactly 100% of the slider width */
   width: 100%;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   object-fit: cover;
+  margin: 0;           /* no stray margins */
 }
 
 .button {
@@ -93,6 +102,32 @@
 .description {
   font-size: 1rem;
   padding: 0 1rem;
+}
+
+/* Visually hide but keep for screen readers */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Kill the baseline gap under images so no extra space appears */
+.image {
+  display: block;
+}
+
+.moreLink {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.moreLink a {
+  text-decoration: underline;
 }
 
 /* Mobile & Tablets (default 95%) */

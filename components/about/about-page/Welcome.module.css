@@ -93,6 +93,14 @@
   transform: scale(1.05);
 }
 
+.businessDescription a {
+  text-decoration: underline;
+}
+
+.businessDescription a:hover {
+  text-decoration: none;
+}
+
 /* Medium to large tablets (600px - 1024px) */
 @media (min-width: 600px) and (max-width: 1024px) {
   .businessSection {

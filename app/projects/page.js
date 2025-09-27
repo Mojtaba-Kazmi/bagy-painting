@@ -5,26 +5,23 @@ import Loading from "@/components/loader/loading/loading";
 import PageHeader from "@/components/page-header/PageHeader";
 
 export const metadata = generatePageMetadata({
-  title: "Bagy Painting Portfolio - Successful Painting Projects in Adelaide",
+  title: "Painting Portfolio in Adelaide | Bagy Painting",
   description:
-    "Explore Bagy Painting's portfolio showcasing successful painting projects in Adelaide. From vibrant interiors to weather-resistant exteriors, witness our craftsmanship and request a free quote today!",
+    "Explore our Adelaide painting portfolio: commercial, interior, exterior and restoration projects. 12 years of experience. View examples and request a free quote.",
+  pathname: "/projects",
   openGraph: {
-    title: "Bagy Painting Portfolio - Successful Painting Projects in Adelaide",
-    description:
-      "Discover Bagy Painting's gallery of completed painting projects in Adelaide. See our expert finishes, attention to detail, and commitment to quality. View our portfolio and contact us for your next project!",
     images: [
       {
-        url: "https://cdn-ilabcdh.nitrocdn.com/VMExtHjSOgwlYoVxRcJmxhEOXjOSEEKd/assets/images/optimized/rev-d9d5e4c/bagypainting.com.au/wp-content/uploads/2024/02/Bagy_Logo-1536x238.png",
+        url: "https://res.cloudinary.com/djnoxzm2v/image/upload/v1741749368/Bagy_Logo_copy_fxzgx3.png",
         width: 1200,
         height: 630,
-        alt: "Portfolio showcasing Bagy Painting's successful projects in Adelaide",
+        alt: "Bagy Painting portfolio in Adelaide",
       },
     ],
-    url: "https://www.bagypainting.com.au/portfolio",
   },
 });
 
-// Dynamically import Portfolio with a loading state (optional)
+// Dynamically import Portfolio with a loading state
 const Portfolio = dynamic(() => import("@/components/portfolio/Portfolio"), {
   loading: () => <Loading />,
 });
@@ -35,11 +32,11 @@ const PortfolioPage = async () => {
   return (
     <>
       <PageHeader
-        title="Our Successful Projects"
-        description="Explore our portfolio of high-quality painting projects completed across Adelaide, SA. From residential to commercial spaces, Bagy Painting delivers expert craftsmanship and flawless finishes."
+        title="Painting Portfolio in Adelaide"
+        description="See recent commercial, interior, exterior and restoration projects completed across Adelaide."
         breadcrumb="Projects Page"
       />
-      <Portfolio portfolio={getPortfolio} />;
+      <Portfolio portfolio={getPortfolio} />
     </>
   );
 };

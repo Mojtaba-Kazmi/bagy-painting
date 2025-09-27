@@ -1,35 +1,42 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
 export default function Navbar({ isMenuOpen, onCloseMenu }) {
-  const [animationKey, setAnimationKey] = useState(Date.now());
   const [openSubmenu, setOpenSubmenu] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
 
+  // Detect mobile/tablet once and on resize
   useEffect(() => {
-    // Set animation key for re-render
-    setAnimationKey(Date.now());
-
-    // Check if the window is mobile/tablet size
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 1024);
-    };
-
-    // Initial check
+    const checkMobile = () => setIsMobile(window.innerWidth <= 1024);
     checkMobile();
-
-    // Add event listener to detect resize
     window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
-    // Cleanup event listener
-    return () => {
-      window.removeEventListener("resize", checkMobile);
+  // Close submenu on outside click / Escape (desktop only)
+  useEffect(() => {
+    if (isMobile) return;
+
+    const onDocClick = (e) => {
+      const navEl = document.querySelector(`.${styles.nav}`);
+      if (navEl && !navEl.contains(e.target)) setOpenSubmenu(null);
     };
-  }, [isMenuOpen]);
+    const onEsc = (e) => {
+      if (e.key === "Escape") setOpenSubmenu(null);
+    };
 
-  // Static menu items
+    document.addEventListener("click", onDocClick);
+    document.addEventListener("keydown", onEsc);
+    return () => {
+      document.removeEventListener("click", onDocClick);
+      document.removeEventListener("keydown", onEsc);
+    };
+  }, [isMobile]);
+
   const menuItems = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
@@ -52,72 +59,94 @@ export default function Navbar({ isMenuOpen, onCloseMenu }) {
   ];
 
   const handleSubmenuToggle = (e, item) => {
-    if (item.submenu) {
-      e.preventDefault();
-      setOpenSubmenu(openSubmenu === item.label ? null : item.label);
-    }
+    e.preventDefault();
+    setOpenSubmenu((cur) => (cur === item.label ? null : item.label));
   };
 
-  const handleMenuClick = (href) => {
-    onCloseMenu(); // Close the burger menu
-    setOpenSubmenu(null); // Reset the submenu when navigating
+  const handleMenuClick = () => {
+    setOpenSubmenu(null);
+    if (typeof onCloseMenu === "function") onCloseMenu();
   };
 
   return (
     <nav aria-label="Main navigation" className={styles.nav}>
-      <ul
-        className={`${styles.list} ${isMenuOpen ? styles.show : ""}`}
-        key={animationKey}
-      >
-        {menuItems.map((item, index) => (
-          <li
-            key={item.href}
-            className={`${styles.listItem} ${
-              item.submenu ? styles.hasSubmenu : ""
-            } ${openSubmenu === item.label ? styles.open : ""}`}
-            style={{ "--index": index }}
-            onMouseEnter={() => !isMobile && setOpenSubmenu(item.label)}
-            onMouseLeave={() => !isMobile && setOpenSubmenu(null)}
-          >
-            <div
-              className={styles.navLink}
-              onClick={(e) => {
-                if (item.submenu) {
-                  handleSubmenuToggle(e, item);
-                } else {
-                  handleMenuClick(item.href); // Close menu and navigate
-                }
-              }}
-            >
-              <Link href={item.submenu ? "#" : item.href}>{item.label}</Link>
-              {item.submenu && (
-                <span
-                  className={`${styles.arrow} ${
-                    openSubmenu === item.label ? styles.arrowUp : ""
-                  }`}
-                >
-                  <MdKeyboardArrowDown />
-                </span>
-              )}
-            </div>
+      <ul className={`${styles.list} ${isMenuOpen ? styles.show : ""}`}>
+        {menuItems.map((item, index) => {
+          const isOpen = openSubmenu === item.label;
+          const hasSub = Boolean(item.submenu);
 
-            {item.submenu && openSubmenu === item.label && (
-              <ul className={styles.submenu}>
-                {item.submenu.map((subItem) => (
-                  <li key={subItem.href} className={styles.submenuItem}>
-                    <Link
-                      href={subItem.href}
-                      className={styles.submenuLink}
-                      onClick={() => handleMenuClick(subItem.href)} // Close menu and navigate
-                    >
-                      {subItem.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
-        ))}
+          return (
+            <li
+              key={item.label}
+              className={`${styles.listItem} ${hasSub ? styles.hasSubmenu : ""} ${
+                isOpen ? styles.open : ""
+              }`}
+              style={{ "--index": index }}
+              onMouseEnter={() => !isMobile && hasSub && setOpenSubmenu(item.label)}
+              onMouseLeave={() => !isMobile && hasSub && setOpenSubmenu(null)}
+            >
+              <div
+                className={styles.navLink}
+                role={hasSub ? "button" : undefined}
+                tabIndex={hasSub ? 0 : undefined}
+                aria-haspopup={hasSub ? "true" : undefined}
+                aria-expanded={hasSub ? isOpen : undefined}
+                aria-controls={hasSub ? `submenu-${index}` : undefined}
+                onClick={(e) => {
+                  if (hasSub) handleSubmenuToggle(e, item);
+                  else handleMenuClick();
+                }}
+                onKeyDown={(e) => {
+                  if (!hasSub) return;
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    handleSubmenuToggle(e, item);
+                  }
+                  if (e.key === "Escape") setOpenSubmenu(null);
+                }}
+              >
+                <Link
+                  href={hasSub ? "#" : item.href}
+                  onClick={(e) => {
+                    if (hasSub) e.preventDefault();
+                  }}
+                >
+                  {item.label}
+                </Link>
+                {hasSub && (
+                  <span
+                    className={`${styles.arrow} ${isOpen ? styles.arrowUp : ""}`}
+                    aria-hidden="true"
+                  >
+                    <MdKeyboardArrowDown />
+                  </span>
+                )}
+              </div>
+
+              {hasSub && (
+                <ul
+                  id={`submenu-${index}`}
+                  className={styles.submenu}
+                  role="menu"
+                  aria-label={`${item.label} submenu`}
+                >
+                  {item.submenu.map((subItem) => (
+                    <li key={subItem.href} className={styles.submenuItem} role="none">
+                      <Link
+                        href={subItem.href}
+                        className={styles.submenuLink}
+                        role="menuitem"
+                        onClick={handleMenuClick}
+                      >
+                        {subItem.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );

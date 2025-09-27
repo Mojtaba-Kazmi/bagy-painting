@@ -23,8 +23,8 @@ export default function AllServices({
   return (
     <>
       <PageHeader
-        title="Top Paint Company in Adelaide - Expert Painting Services"
-        description="Bagy Painting offers premium interior, exterior, and specialty finishes across Adelaide. We focus on quality, customer satisfaction, and on-time completion."
+        title="Painting Services in Adelaide, Commercial & Residential"
+        description="Professional commercial, interior, exterior and restoration painting in Adelaide. 12 years of experience, fully insured. Free quotes."
         breadcrumb="Services Page"
       />
 

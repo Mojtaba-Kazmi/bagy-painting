@@ -1,27 +1,42 @@
-export async function GET() {
+// app/api/reviews/route.js
+
+export const dynamic = "force-dynamic";
+
+function fetchInit() {
+  if (process.env.NODE_ENV !== "production") {
+    return { cache: "no-store" }; // no cache in dev to make testing easy
+  }
+  return { next: { revalidate: 60 * 60 * 24 * 30 } }; // 30 days in prod
+}
+
+export async function GET(request) {
   const placeId = process.env.GOOGLE_PLACE_ID;
-  const apiKey = process.env.GOOGLE_API_KEY;
+  const apiKey  = process.env.GOOGLE_API_KEY;
 
   if (!placeId || !apiKey) {
-    return Response.json({ error: "Missing API key or Place ID" }, { status: 500 });
+    return Response.json([], { status: 200 });
   }
 
-  const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&key=${apiKey}`;
+  const url =
+    `https://maps.googleapis.com/maps/api/place/details/json` +
+    `?place_id=${encodeURIComponent(placeId)}` +
+    `&fields=reviews,user_ratings_total,rating` +
+    `&reviews_sort=newest` +
+    `&reviews_no_translations=true` +
+    `&language=en` +
+    `&region=AU` +
+    `&key=${encodeURIComponent(apiKey)}`;
 
   try {
-    // Cache response for 30 days (2592000 seconds)
-    const response = await fetch(url, {
-      next: { revalidate: 60 * 60 * 24 * 30 }, // 30 days cache
-    });
+    const resp = await fetch(url, fetchInit());
+    const data = await resp.json();
 
-    const data = await response.json();
+    const reviews = Array.isArray(data?.result?.reviews)
+      ? data.result.reviews
+      : [];
 
-    if (data.result && data.result.reviews) {
-      return Response.json(data.result.reviews, { status: 200 });
-    } else {
-      return Response.json({ error: "No reviews found." }, { status: 500 });
-    }
-  } catch (error) {
-    return Response.json({ error: "Failed to fetch reviews." }, { status: 500 });
+    return Response.json(reviews, { status: 200 });
+  } catch {
+    return Response.json([], { status: 200 });
   }
 }

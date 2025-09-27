@@ -107,6 +107,13 @@
   background-color: #265e87;
 }
 
+.moreLink {
+  margin-top: 0.5rem;
+}
+.moreLink a {
+  text-decoration: underline;
+}
+
 /* Tablet-specific styles */
 @media (min-width: 768px) and (max-width: 1024px) {
   .homeContainer {

@@ -98,6 +98,14 @@
   text-decoration: none;
 }
 
+.moreLink {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.moreLink a {
+  text-decoration: underline;
+}
+
 /* Tablet-specific adjustments */
 @media (min-width: 600px) and (max-width: 1024px) {
   .servicesGrid {

@@ -2,14 +2,21 @@ import AllServices from "@/components/services/AllServices";
 import { generatePageMetadata } from "@/metadata/generatePageMetadata";
 
 export const metadata = generatePageMetadata({
-  title: "Top Paint Company in Adelaide - Expert Painting by Bagy",
+  title: "Painting Services in Adelaide | Commercial and Residential | Bagy Painting",
   description:
-    "Bagy Painting offers expert interior, exterior, and specialty finishes in Adelaide. We focus on quality results and customer satisfaction. Get a free quote!",
-  openGraph: {
-    title: "Top Paint Company in Adelaide - Expert Painting by Bagy",
-    description:
-      "Bagy Painting offers expert interior, exterior, and specialty finishes in Adelaide. We focus on quality results and customer satisfaction. Get a free quote!",
-  },
+    "Professional painting services in Adelaide with 12 years of experience. Commercial, interior, exterior and restoration. Fully insured. Free quotes.",
+  pathname: "/services",
+  // Optional: add a custom share image if you have one
+  // openGraph: {
+  //   images: [
+  //     {
+  //       url: "https://res.cloudinary.com/djnoxzm2v/image/upload/v1741749368/Bagy_Logo_copy_fxzgx3.png",
+  //       width: 1200,
+  //       height: 630,
+  //       alt: "Bagy Painting services in Adelaide",
+  //     },
+  //   ],
+  // },
 });
 
 async function getPaginatedServices(page = 1) {
@@ -17,7 +24,7 @@ async function getPaginatedServices(page = 1) {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/api/services/`,
       {
-        next: { revalidate: 3600 }, // Revalidate every 30 days (2592000 seconds)
+        next: { revalidate: 86400 }, // Revalidate every 1 day
       }
     );
 

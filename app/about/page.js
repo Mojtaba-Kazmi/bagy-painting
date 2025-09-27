@@ -6,23 +6,19 @@ import { whyChooseData } from "@/content/data/about/why-choose";
 import { generatePageMetadata } from "@/metadata/generatePageMetadata";
 
 export const metadata = generatePageMetadata({
-  title: "Local Painters Adelaide | Top Interior & Exterior Experts - Call Now",
+  title: "About Bagy Painting | Adelaide Painters with 12 years of experience",
   description:
-    "Dulux-accredited local painters in Adelaide offering premium interior and exterior painting. Fully insured team. Get free quote today!",
-  openGraph: {
-    title: "Local Painters Adelaide | Top Interior & Exterior Experts - Call Now",
-    description:
-      "Dulux-accredited local painters in Adelaide offering premium interior and exterior painting. Fully insured team. Get free quote today!",
-  },
+    "Learn about Bagy Painting, Adelaide painters with 12 years of experience. Commercial, interior, exterior and restoration. Fully insured. Serving Adelaide metro.",
+  pathname: "/about",
 });
 
 export default function AboutPage() {
   return (
     <>
       <PageHeader
-        title="Expert Local Exterior and Interior Painters in Adelaide"
-        description="Reliable and skilled painters for all your exterior and interior projects in Adelaide."
-        breadcrumb="About Page"
+        title="About Bagy Painting"
+        description="Local Adelaide painters with 12 years of experience in commercial, interior, exterior and restoration. Fully insured and serving Adelaide metro."
+        breadcrumb="About Us"
       />
       <About welcomeData={welcomeData} whyChooseData={whyChooseData} />
       <FAQ />

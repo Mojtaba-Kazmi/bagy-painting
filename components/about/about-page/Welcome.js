@@ -1,5 +1,5 @@
-import styles from "./Welcome.module.css";
 import Link from "next/link";
+import styles from "./Welcome.module.css";
 
 const Welcome = ({ welcomeData }) => {
   return (
@@ -7,22 +7,30 @@ const Welcome = ({ welcomeData }) => {
       <div className={styles.businessContainer}>
         <div className={styles.businessText}>
           <h2 className={styles.businessTitle}>{welcomeData.title}</h2>
+
           <ul className={styles.businessList}>
             {welcomeData.sections.map((section, index) => (
               <li key={index} className={styles.businessListItem}>
                 <h4 className={styles.businessSubTitle}>{section.subtitle}</h4>
-                <p>{section.description}</p>
+
+                {/* Render HTML so <a href="/..."> links inside description work */}
+                <p
+                  className={styles.businessDescription}
+                  dangerouslySetInnerHTML={{ __html: section.description }}
+                />
               </li>
             ))}
           </ul>
+
           {welcomeData.ctaLink && (
-            <Link href={welcomeData.ctaLink}>
+            <Link href={welcomeData.ctaLink} className={styles.ctaLink}>
               <button className={styles.ctaButton}>
                 {welcomeData.ctaButtonText}
               </button>
             </Link>
           )}
         </div>
+
         <div className={styles.businessImageWrapper}>
           <img
             src="/assets/images/about/painters-adelaide.webp"
@@ -30,6 +38,7 @@ const Welcome = ({ welcomeData }) => {
             width={500}
             height={300}
             className={styles.businessImage}
+            loading="lazy"
           />
         </div>
       </div>

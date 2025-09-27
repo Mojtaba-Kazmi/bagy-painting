@@ -81,6 +81,13 @@
   margin-right: 0.5rem;
 }
 
+.advantageItemDescription a {
+  text-decoration: underline;
+}
+.advantageItemDescription a:hover {
+  text-decoration: none;
+}
+
 /* -------------------------------------------- */
 /* Responsive Adjustments for Tablet (Small Tablets, e.g., iPad Mini, iPad) */
 /* -------------------------------------------- */

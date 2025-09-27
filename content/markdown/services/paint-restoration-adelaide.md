@@ -1,27 +1,58 @@
 ---
-title: "Professional Paint Restoration in Adelaide"
-excerpt: "Revive your property with expert paint restoration in Adelaide. We restore exteriors and interiors with expert craftsmanship."
+title: "Paint Restoration Adelaide | Bagy Painting"
+excerpt: "Adelaide’s trusted paint restoration specialists with 12 years of experience. Reviving interiors, exteriors and heritage properties with expert care."
 thumbnail: "restoration-painting_m81apg"
 ---
 
-## Expert Restoration Painting in Adelaide
+## Paint Restoration Adelaide — Revive and Protect Your Property
 
-Over time, paint can fade, peel, or deteriorate, leaving your property looking worn and tired. At **Bagy Painting**, we specialize in **paint restoration services** across Adelaide, restoring the beauty of your home, office, or heritage property. Whether you're dealing with faded walls, damaged exteriors, or weathered details, our team is equipped to bring your surfaces back to life.
+Over time, paint can fade, peel and deteriorate, leaving your property looking tired. At **Bagy Painting**, we provide expert paint restoration across **Adelaide**, restoring homes, businesses and heritage properties with durable, high quality finishes. See recent outcomes in our **[project gallery](/projects)** or view our full **[painting services](/services)**.
 
-## Why Choose Our Paint Restoration Services?
+With **12 years of experience**, our team combines careful preparation, premium materials and precise workmanship to bring surfaces back to life while protecting them for years to come.
 
-Our **restoration painting services** are designed to breathe new life into your property. From stripping old paint to expertly preparing walls for a flawless finish, we employ advanced techniques and use only the best materials. Whether it's interior spaces, exterior facades, or intricate woodwork, our team handles every detail with precision and care.
+---
 
-## Our Restoration Process
+## Why Choose Bagy Painting for Paint Restoration?
 
-- **Detailed Assessment**: We start by carefully inspecting your property, identifying areas in need of repair such as cracks, peeling paint, or discoloration.
-- **Surface Preparation**: We remove old, worn paint, repair any damage, and prime surfaces for a smooth and long-lasting coat.
-- **Quality Application**: Using top-grade paints and professional tools, we restore your property’s vibrant colors and smooth finish, giving it a fresh, revitalized look.
+- **Experience you can trust** — 12 years restoring Adelaide homes, commercial spaces and heritage sites  
+- **Premium materials** — Dulux, Wattyl and specialist restoration coatings  
+- **Warranty and insurance** — fully insured with a five year workmanship warranty  
+- **Detail focused** — from woodwork and trims to walls and facades, we restore every detail  
+- **Eco friendly options** — low or zero VOC paints available on request  
+- **Respectful service** — tidy, careful crews who minimise disruption  
 
-## Transform Your Space
+Looking for related services? We also offer **[interior painting](/services/interior-painting-adelaide)**, **[exterior painting](/services/exterior-painting-adelaide)**, **[commercial painting](/services/commercial-painters-adelaide)** and **[residential painting](/services/residential-painters-adelaide)**.
 
-Whether you’re renovating a home, updating a commercial space, or preserving the unique charm of a heritage property, our **paint restoration services in Adelaide** are designed to meet your needs. We've worked with clients in suburbs like **Golden Grove**, **Paradise**, **Blackwood**, and the **Adelaide CBD**, providing expert restoration to enhance their properties.
+---
 
-## Contact Us Today
+## Our Paint Restoration Process
 
-Ready to revamp your property? Reach out to **Bagy Painting** for professional **paint restoration services in Adelaide**. Let us help you breathe new life into your interior and exterior spaces with high-quality, lasting results.
+1. **Detailed assessment** — inspection of cracks, peeling paint and damaged surfaces  
+2. **Surface preparation** — stripping old paint, repairing damage, sanding and priming  
+3. **Professional application** — premium products applied with precision for lasting results  
+4. **Final detailing and cleanup** — even finishes, restored vibrancy and a spotless handover  
+
+See how this process looks on real jobs in our **[projects](/projects)**.
+
+---
+
+## Adelaide Suburbs We Service
+
+We provide paint restoration throughout **Adelaide**, including:  
+- Adelaide CBD  
+- Golden Grove  
+- Paradise  
+- Blackwood  
+- Glenelg  
+- Unley  
+
+Learn more **[about us](/about)** or explore all **[services](/services)**.
+
+---
+
+## Request Your Free Quote
+
+Ready to restore your property with Adelaide’s trusted paint restoration specialists? **[Request a free quote](/get-quote)** or **[contact us](/contact-us)** to book a site visit.
+
+📞 **Call:** +61 422 00 876  
+📧 **Email:** info@bagypainting.com.au

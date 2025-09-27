@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import { CldImage } from "next-cloudinary";
@@ -21,6 +21,13 @@ export default function Services({ latestServices }) {
               description="At Bagy Painting, we offer expert interior and exterior painting for houses and businesses in Adelaide, with quality results."
             />
           </header>
+
+          {/* Soft internal link to the full services index */}
+          <p className={styles.moreLink}>
+            <a href="/services">
+              Explore all our <strong>painting services in Adelaide</strong>
+            </a>
+          </p>
         </div>
 
         <div className={styles.servicesGrid}>

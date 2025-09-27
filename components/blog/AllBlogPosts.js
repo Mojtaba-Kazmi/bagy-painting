@@ -37,9 +37,9 @@ export default function AllBlogPosts({
     <>
       {/* Page Header with Breadcrumb */}
       <PageHeader
-        title="Painters in Adelaide South Australia"
-        description="At Bagy Painting, we provide expert painting services throughout Adelaide. Specializing in residential, commercial, and unique finishes, our skilled team delivers top-quality results with a focus on precision, care, and customer satisfaction."
-        breadcrumb="Blog Page"
+        title="Painting Blog Adelaide | Tips, Projects & Expert Advice"
+        description="Explore painting tips, guides, and project insights from Bagy Painting in Adelaide. Learn about residential, commercial, interior, exterior, and restoration painting from our experienced team."
+       breadcrumb="Blog Page"
       />
 
       <section aria-labelledby="blog-posts" className={styles.container}>

@@ -1,42 +1,52 @@
 export const faqData = [
   {
-    question: "How do we conduct our inspection process?",
-    answer: "At Bagy Painting, we conduct a thorough inspection of every aspect of your building. Our detailed evaluation identifies potential issues, allowing us to provide a tailored quote that meets your specific needs. We pride ourselves on precision and personalized service, ensuring that you receive a comprehensive and accurate solution for your painting project."
+    question: "How does your inspection process work?",
+    answer:
+      'We begin with a thorough site inspection to review surfaces, repairs and any special requirements. This lets us provide a clear, itemised quote tailored to your project. You can book an inspection on our <a href="/get-quote">free quote page</a>.'
   },
   {
-    question: "Are our painting services available across all regions within Adelaide?",
-    answer: "Yes, Bagy Painting proudly serves all regions across Adelaide, providing high-quality painting services wherever you are."
+    question: "Do you service all areas of Adelaide?",
+    answer:
+      'Yes. Bagy Painting works across the Adelaide metro area including Glenelg, Unley, Salisbury, Norwood and surrounding suburbs. View our full range of <a href="/services">painting services in Adelaide</a>.'
   },
   {
-    question: "Can we match or beat a competitor's price?",
-    answer: "Absolutely! At Bagy Painting, we strive to offer the best value for your money. If you’ve received a quote from a competitor, bring it to us, and we’ll work to not only match it but exceed expectations with our superior quality and service. Your satisfaction is our priority, and we’ll ensure you receive the best possible deal without compromising on excellence."
+    question: "Can you match a competitor’s quote?",
+    answer:
+      'We focus on fair, transparent pricing and quality workmanship. If you have another quote, share it with us and we will review it alongside our detailed proposal. Start by requesting a <a href="/get-quote">free quote</a>.'
   },
   {
-    question: "What types of painting services do you offer?",
-    answer: "Bagy Painting offers a wide variety of services, including interior painting, exterior painting, commercial and residential painting, and specialty services such as texture painting and decorative finishes."
+    question: "What types of painting do you offer?",
+    answer:
+      'We handle interior and exterior work, residential and commercial projects, and restoration. Learn more about our services: <a href="/services/interior-painting-adelaide">interior painting</a>, <a href="/services/exterior-painting-adelaide">exterior painting</a>, <a href="/services/commercial-painters-adelaide">commercial painting</a>, <a href="/services/residential-painters-adelaide">residential painting</a> and <a href="/services/paint-restoration-adelaide">paint restoration</a>.'
   },
   {
-    question: "Do you provide free estimates?",
-    answer: "Yes, we provide complimentary estimates for all our services. Simply reach out to schedule a consultation, and we'll assess your project and provide a detailed quote at no cost."
+    question: "Do you provide free quotes?",
+    answer:
+      'Yes, all quotes are free and without obligation. You can <a href="/get-quote">request a free quote</a> or <a href="/contact-us">contact us</a> to book an inspection.'
   },
   {
-    question: "How long does a typical painting project take?",
-    answer: "The duration of a project depends on several factors such as size, complexity, and paint type. During the consultation, we will provide an estimated timeline based on the specifics of your project."
+    question: "How long will my painting project take?",
+    answer:
+      'Timeframes depend on the size and scope of the work. We provide a clear schedule with your quote and give regular updates during the job. You can browse recent results in our <a href="/projects">project gallery</a>.'
   },
   {
     question: "Are your painters licensed and insured?",
-    answer: "Yes, all of our painters are fully licensed and insured professionals. We also carry insurance for added peace of mind, ensuring protection for both you and our team."
+    answer:
+      'Yes. Our team is fully licensed and insured, with public liability cover for your peace of mind. Learn more about our team on the <a href="/about">About page</a>.'
   },
   {
-    question: "Do you offer environmentally friendly painting options?",
-    answer: "Yes, we offer eco-friendly painting solutions, including low-VOC and sustainable paint options. Let us know your preferences, and we'll recommend the best environmentally conscious products for your project."
+    question: "Do you offer eco-friendly painting options?",
+    answer:
+      'Yes. We can use low or zero VOC and environmentally friendly paints on request, which suit homes, offices and sensitive environments. For advice and ideas, read our latest articles on the <a href="/blog">blog</a>.'
   },
   {
-    question: "How do I prepare my space for painting?",
-    answer: "We recommend removing furniture and personal items from the area to be painted. Our team will take care of covering floors and protecting surfaces to prevent any mess or damage."
+    question: "How should I prepare my space for painting?",
+    answer:
+      'Please move small items and valuables where possible. Our team will cover and protect floors, furniture and fittings before work begins. For more preparation tips, see the <a href="/blog">blog</a>.'
   },
   {
-    question: "What sets Bagy Painting apart from other painting companies?",
-    answer: "At Bagy Painting, our commitment to quality craftsmanship, attention to detail, and exceptional customer service sets us apart. We go above and beyond to ensure every project is completed to the highest standards, ensuring our clients are always thrilled with the results."
+    question: "What makes Bagy Painting different?",
+    answer:
+      'We combine 12 years of local experience with careful preparation, premium paints and a five year workmanship warranty. See the results in our <a href="/projects">project gallery</a> or explore our <a href="/services">services</a>.'
   }
 ];

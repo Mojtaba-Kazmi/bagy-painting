@@ -1,30 +1,56 @@
 export const defaultMetadata = {
-  title: "#1 Painters in Adelaide | Trusted Painting Services",
+  // Use the public site URL, not your API URL
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://www.bagypainting.com.au"),
+
+  title: "Commercial & Residential Painters in Adelaide | Bagy Painting",
   description:
-    "Bagy Painting: Trusted painters in Adelaide. Dulux-accredited experts for premium interior, house & commercial painting. Get your free quote!",
+    "Trusted Adelaide painters with 12 years of experience. Commercial, interior, exterior & restoration. Serving Glenelg, Unley, Salisbury & Norwood.",
+
+  alternates: {
+    canonical: "https://www.bagypainting.com.au",
+  },
+
   openGraph: {
-    title: "Top Adelaide House Painters | Commercial Experts - Free Quote Today!",
+    title: "Commercial & Residential Painters in Adelaide | Bagy Painting",
     description:
-      "Bagy Painting: Adelaide's trusted house painters and commercial painting experts. Dulux-accredited, serving Adelaide's suburbs with premium interior & exterior painting services. Get your free quote now!",
+      "Bagy Painting: trusted Adelaide painters for commercial, interior, exterior and restoration projects. Premium Dulux, Wattyl and specialist coatings.",
     url: "https://www.bagypainting.com.au",
+    siteName: "Bagy Painting",
     images: [
       {
         url: "https://res.cloudinary.com/djnoxzm2v/image/upload/v1741749368/Bagy_Logo_copy_fxzgx3.png",
         width: 1200,
         height: 630,
-        alt: "Bagy Painting Logo - Adelaide's Trusted Painters",
+        alt: "Bagy Painting — Adelaide painters",
       },
     ],
     type: "website",
     locale: "en_AU",
   },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Commercial & Residential Painters in Adelaide | Bagy Painting",
+    description:
+      "Adelaide painters with 12 years of experience. Commercial, interior, exterior & restoration. Free quotes.",
+    images: [
+      "https://res.cloudinary.com/djnoxzm2v/image/upload/v1741749368/Bagy_Logo_copy_fxzgx3.png",
+    ],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    // You can add per-bot rules if needed:
+    // googleBot: { index: true, follow: true }
+  },
+
+  // Optional: icons & verification
+  // icons: { icon: "/favicon.ico", apple: "/apple-touch-icon.png" },
+  // verification: { google: "YOUR_SEARCH_CONSOLE_CODE" },
+
   additionalMeta: {
     cityFocus: "Adelaide, Australia",
-    areasServed: [
-      "Eastern Suburbs",
-      "Northern Suburbs",
-      "Southern Suburbs",
-      "Western Suburbs",
-    ],
+    areasServed: ["Eastern Suburbs", "Northern Suburbs", "Southern Suburbs", "Western Suburbs"],
   },
 };

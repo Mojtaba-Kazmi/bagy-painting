@@ -1,40 +1,56 @@
 ---
-title: "Premium Exterior Painting Services in Adelaide"
-excerpt: "Enhance your property's curb appeal with expert exterior painting services in Adelaide. Durable finishes for long-lasting protection."
+title: "Exterior Painting Adelaide | Bagy Painting"
+excerpt: "Adelaide’s trusted exterior painters with 12 years of experience. Durable, weather resistant finishes for homes and businesses."
 thumbnail: "exterior-painting_jtiwkw"
 ---
 
-## Transform Your Home with Professional Exterior Painting
+## Exterior Painting Adelaide — Durable, Weather Resistant Finishes
 
-At **Bagy Painting**, we specialize in **exterior painting** services across **Adelaide**, providing high-quality, weather-resistant finishes that enhance both aesthetics and durability. Whether you're refreshing your home's facade or updating a commercial property, we deliver stunning results that stand the test of time.
+At **Bagy Painting**, we provide professional exterior painting across **Adelaide**, helping homeowners and businesses refresh facades, protect surfaces and improve curb appeal. With **12 years of local experience**, we deliver finishes that stand up to South Australia’s climate. Explore our full **[painting services](/services)** or see recent results in the **[project gallery](/projects)**.
 
-### Why Choose Bagy Painting for Exterior Painting?
-- 🖌️ **Weather-Resistant Paints** – We use premium exterior-grade paints that withstand harsh Australian weather conditions.
-- 🎯 **Expert Color Consultation** – Get professional advice on the best shades to complement your property and surroundings.
-- ⏳ **Efficient & Clean Work** – Our team ensures minimal disruption while maintaining a tidy workspace.
-- 🌱 **Eco-Friendly Options** – Choose from low-VOC and non-toxic paints for a healthier environment.
+---
 
-### Our Exterior Painting Process
-1. **Surface Preparation** – Cleaning, sanding, and priming to ensure a long-lasting finish.
-2. **Professional Painting** – Application of high-quality, weather-resistant paint with expert precision.
-3. **Detailing & Final Touches** – Crisp edges, even coats, and a flawless look.
-4. **Final Inspection & Cleanup** – We ensure perfection and leave your space spotless.
+## Why Choose Bagy Painting for Exterior Painting?
 
-### Serving All Adelaide Suburbs
-We offer **exterior painting services** throughout **Adelaide**, including:
-- Adelaide CBD
-- Glenelg
-- Norwood
-- Prospect
-- Henley Beach
-- Unley
+- **Experience you can trust** — 12 years serving Adelaide homes and businesses  
+- **Weather resistant coatings** — Dulux, Wattyl and specialist exterior paints  
+- **Warranty and insurance** — fully insured with a five year workmanship warranty  
+- **Colour consultation** — advice on shades and finishes to complement your property  
+- **Eco friendly options** — low or zero VOC paints available  
+- **Efficient and tidy work** — minimal disruption, daily clean ups and respectful crews  
 
+Looking for related services? We also offer **[interior painting](/services/interior-painting-adelaide)**, **[residential painting](/services/residential-painters-adelaide)**, **[commercial painting](/services/commercial-painters-adelaide)** and **[paint restoration](/services/paint-restoration-adelaide)** where surfaces need remediation.
 
-### Get Your Free Quote Today!
-Enhance your property's exterior with **Bagy Painting** – Adelaide’s trusted exterior painting specialists. Contact us now for a free consultation and quote.
+---
 
-📞 **Call us:** +61 422 00 876  
-📧 **Email:** info@bagypainting.com.au  
+## Our Exterior Painting Process
 
+1. **Surface preparation** — cleaning, repairs, sanding and priming for long lasting results  
+2. **Professional application** — premium paints applied with attention to detail  
+3. **Detailing and finish** — crisp edges, even coats and a consistent presentation  
+4. **Final inspection and cleanup** — we check every detail and leave your property spotless  
 
+See how we work in practice in our **[projects](/projects)**.
 
+---
+
+## Adelaide Suburbs We Service
+
+We provide exterior painting throughout **Adelaide**, including:  
+- Adelaide CBD  
+- Glenelg  
+- Unley  
+- Norwood  
+- Prospect  
+- Henley Beach  
+
+Learn more **[about us](/about)** or view all **[services](/services)**.
+
+---
+
+## Request Your Free Quote
+
+Protect and refresh your property with Adelaide’s trusted exterior painters. **[Request a free quote](/get-quote)** or **[contact us](/contact-us)** to book a site visit.
+
+📞 **Call:** +61 422 00 876  
+📧 **Email:** info@bagypainting.com.au

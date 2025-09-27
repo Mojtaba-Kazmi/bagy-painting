@@ -12,6 +12,11 @@ const HomeAbout = ({ homeAboutInfo }) => {
               <div className={styles.description}>
                 <ReactMarkdown>{homeAboutInfo.description}</ReactMarkdown>
               </div>
+              <p className={styles.moreLink}>
+                <a href="/about">
+                 Learn more about us in our <strong>about page</strong>
+                </a>
+              </p>
 
               {homeAboutInfo.buttonLink && (
                 <Link href={homeAboutInfo.buttonLink} passHref>

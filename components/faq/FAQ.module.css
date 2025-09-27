@@ -58,6 +58,9 @@
   border-top: 1px solid #081333;
 }
 
+.faqAnswer a { text-decoration: underline; }
+.faqAnswer a:hover { text-decoration: none; }
+
 @media (min-width: 1025px) {
   .faqTitle {
     font-size: 2rem;
