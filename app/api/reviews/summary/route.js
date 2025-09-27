@@ -20,7 +20,7 @@ export async function GET() {
     `&fields=rating,user_ratings_total` +
     `&language=en&region=AU` +
     `&key=${encodeURIComponent(apiKey)}`;
-
+    
   try {
     const resp = await fetch(url, fetchInit());
     const data = await resp.json();
