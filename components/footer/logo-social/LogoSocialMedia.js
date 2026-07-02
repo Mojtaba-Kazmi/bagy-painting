@@ -8,7 +8,7 @@ const LogoSocialMedia = () => {
     <section className={styles.section}>
       <div className={styles.logo}>
         <img
-          src={logoSocial.logo.image} // Use the logo object from JSON
+          src={logoSocial.logo.image}
           width={parseInt(logoSocial.logo.width)}
           height={parseInt(logoSocial.logo.height)}
           alt={logoSocial.logo.alt}
@@ -17,18 +17,26 @@ const LogoSocialMedia = () => {
 
         <div className={styles.contactDetails}>
           <address>
-            {logoSocial.contact.address}
+            <p>{logoSocial.contact.address}</p>
+
             <p>
               <a href={`mailto:${logoSocial.contact.email}`}>
                 {logoSocial.contact.email}
               </a>
             </p>
+
+            <p className={styles.licenceNumber}>
+              SA Building Work Contractor Licence:{" "}
+              {logoSocial.contact.licenceNumber}
+            </p>
           </address>
-          <button className={styles.contactNumber}>
-            <a href={`tel:${logoSocial.contact.number}`}>
-              {logoSocial.contact.number}
-            </a>
-          </button>
+
+          <a
+            className={styles.contactNumber}
+            href={`tel:${logoSocial.contact.number}`}
+          >
+            {logoSocial.contact.number}
+          </a>
         </div>
       </div>
 
@@ -53,6 +61,7 @@ const LogoSocialMedia = () => {
         >
           <FaFacebook />
         </a>
+
         <a
           href={logoSocial.social.instagram}
           target="_blank"
@@ -61,13 +70,14 @@ const LogoSocialMedia = () => {
         >
           <FaInstagram />
         </a>
+
         <a
-          href={logoSocial.social.linkedin} // Add LinkedIn URL from JSON
+          href={logoSocial.social.linkedin}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
         >
-          <FaLinkedin /> {/* LinkedIn icon */}
+          <FaLinkedin />
         </a>
       </div>
     </section>

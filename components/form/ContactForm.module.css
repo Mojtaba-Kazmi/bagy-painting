@@ -1,10 +1,10 @@
 /* Container styles */
 .container {
-  background-color: #fff; /* White background */
-  border-radius: 8px; /* Border radius for rounded corners */
-  margin: 0.2rem; /* Apply margin to the wrapper */
-  max-width: none; /* Allow full width */
-  box-sizing: border-box; /* Include padding and border in element's total width */
+  background-color: #fff;
+  border-radius: 8px;
+  margin: 0.2rem;
+  max-width: none;
+  box-sizing: border-box;
 }
 
 /* Wrapper styles */
@@ -12,27 +12,53 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 100%; /* Make sure the wrapper takes full width */
-  max-width: 1200px; /* Set a maximum width for large screens */
-  margin: 0 auto; /* Center the wrapper */
-  box-sizing: border-box; /* Include padding in total width */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
   padding: 2rem;
 }
 
 .heading {
   display: flex;
-  justify-content: center; /* Use justify-content for horizontal centering */
-  align-items: center; /* This centers the items vertically */
-  text-align: center; /* Ensures text within child elements is centered */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   margin-bottom: 1.5rem;
+}
+
+.licenceBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-top: 1rem;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid rgba(8, 19, 51, 0.14);
+  border-radius: 999px;
+  background-color: #f5f4f6;
+  color: #081333;
+  font-size: 0.82rem;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.licenceBadge span {
+  font-weight: 500;
+}
+
+.licenceBadge strong {
+  font-weight: 800;
+  white-space: nowrap;
 }
 
 /* Form styling */
 .contactForm {
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* Space between form fields */
-  width: 100%; /* Make sure the form takes the full width */
+  gap: 1rem;
+  width: 100%;
 }
 
 /* Submit button styling */
@@ -42,18 +68,18 @@
 }
 
 .submitButton {
-  padding: 0.75rem 1.5rem; /* Add padding for a larger button */
-  font-size: medium; /* Font size */
-  background-color: #081333; /* Darker blue for higher contrast */
-  color: #fff; /* Button text color */
+  padding: 0.75rem 1.5rem;
+  font-size: medium;
+  background-color: #081333;
+  color: #fff;
   border: none;
-  border-radius: 5px; /* Button border radius */
+  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .submitButton:disabled {
-  background-color: #ccc; /* Disable state */
+  background-color: #ccc;
   cursor: not-allowed;
 }
 
@@ -87,7 +113,6 @@
 
 /* Responsive Styling for smaller screens */
 @media (max-width: 768px) {
-
   .wrapper {
     padding: 2rem;
   }
@@ -99,10 +124,17 @@
   .contactForm {
     gap: 0.2rem;
   }
+
+  .licenceBadge {
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0.55rem 0.85rem;
+    font-size: 0.78rem;
+    border-radius: 12px;
+  }
 }
 
 @media (max-width: 600px) {
-  /* Adjust the reCAPTCHA container on smaller screens */
   .recaptchaContainer {
     width: 100%;
     max-width: 4rem;

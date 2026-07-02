@@ -14,29 +14,51 @@
   color: #000;
 }
 
-.contactDetails p a {
+.contactDetails address {
+  font-style: normal;
+  margin: 0;
+}
+
+.contactDetails p {
+  font-style: normal;
+  margin: 0.5rem 0;
+}
+
+.contactDetails a {
+  font-style: normal;
   color: #000;
   text-decoration: none;
 }
 
+.licenceNumber {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #000;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
 .contactNumber {
+  display: inline-block;
   padding: 0.5rem 1rem;
   background-color: #000336;
   border: none;
   font-size: 1.2rem;
   color: #fff !important;
   border-radius: 50px;
+  margin-top: 0.5rem;
   margin-bottom: 1rem;
-}
-
-.contactNumber a {
-  color: #fff !important;
   font-weight: 900;
   text-decoration: none;
 }
 
+.legal {
+  cursor: pointer;
+}
+
 .legal a {
-  color: #000; /* Match header link color */
+  color: #000;
   text-decoration: none;
 }
 
@@ -46,9 +68,9 @@
 
 .socials {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Ensure icons are aligned vertically */
-  gap: 1rem; /* Adjust spacing between icons */
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
   margin-top: 1rem;
 }
 
@@ -58,18 +80,18 @@
 }
 
 .socials a:hover {
-  color: #295d8c; /* Darker shade for hover effect */
+  color: #295d8c;
 }
 
 /* Find Us link */
 .findUs {
   margin-top: 1rem;
-  align-self: center; /* Align to the start of the container */
+  align-self: center;
 }
 
 .findUs a {
-  color: #000; /* Match header link color */
-  text-align: left; /* Align text to the left */
+  color: #000;
+  text-align: left;
   text-decoration: none;
 }
 
@@ -85,18 +107,14 @@
 
   .socials {
     display: flex;
-    justify-content: left; /* Center horizontally */
-    align-items:flex-start; /* Ensure icons are aligned vertically */
-    gap: 1rem; /* Adjust spacing between icons */
+    justify-content: left;
+    align-items: flex-start;
+    gap: 1rem;
     margin-top: 1rem;
   }
-  
+
   .socials a {
     color: #000336;
     font-size: 1.5rem;
   }
-}
-
-.legal {
-  cursor: pointer;
 }

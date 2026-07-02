@@ -1,6 +1,7 @@
 ## Contact Us
 
-If you have any questions about this Privacy Policy, please contact us:
+If you have any questions about this Privacy Policy or our services, please contact us:
 
-- By email: info@bagypainting.com.au
-- By phone number: +61 422 000 876
+- Email: info@bagypainting.com.au
+- Phone: +61 422 000 876
+- SA Building Work Contractor Licence: BLD 327817

@@ -34,7 +34,13 @@ const ContactForm = () => {
               title="Get Your Instant Free Quote!"
               description="Fill in your details, and we'll be in touch soon."
             />
+
+            <div className={styles.licenceBadge}>
+              <span>SA Building Work Contractor Licence</span>
+              <strong>BLD 327817</strong>
+            </div>
           </header>
+
           <ContactFormFields control={control} errors={errors} />
 
           {message?.type === "error" && (
@@ -51,6 +57,7 @@ const ContactForm = () => {
             </button>
           </div>
         </form>
+
         {modalOpen && (
           <SuccessModal
             open={modalOpen}
