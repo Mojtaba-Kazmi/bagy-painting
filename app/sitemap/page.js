@@ -3,7 +3,7 @@ import menuItems from "@/content/data/header/menu-items";
 import { generatePageMetadata } from "@/metadata/generatePageMetadata";
 
 export const metadata = generatePageMetadata({
-  title: "Sitemap | Bagy Painting",
+  title: "Sitemap",
   description:
     "Browse the Bagy Painting sitemap to find services, projects, blog posts, contact details, and quote requests in one place.",
   pathname: "/sitemap",
